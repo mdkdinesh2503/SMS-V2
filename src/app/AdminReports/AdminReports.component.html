@@ -1,0 +1,134 @@
+<app-AdminNavbar></app-AdminNavbar>
+
+<!-- Admin Report section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Report</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1>Contact us..</h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="Adminreport-container">
+
+      <h1>Parents Report Form</h1>
+
+      <form [formGroup]="AdminReportForm" (ngSubmit)="submitList()">
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name" name="Name" required formControlName="Name">
+          </div>
+
+          <div class="input-field">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" name="Email" required formControlName="Email">
+          </div>
+
+          <div class="input-field">
+            <label>Subject</label>
+            <input type="email" placeholder="Enter your Subject" name="Subject" required formControlName="Subject">
+          </div>
+
+          <div class="input-field">
+            <label>Message here</label>
+            <textarea type="text" rows="10" name="Message" required formControlName="Message">
+                      </textarea>
+          </div>
+
+        </div>
+
+        <div class="buttons">
+
+          <button type="submit" class="btn">
+            <i class="fas fa-share"></i>
+            Send
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <app-Search (searchTextChanged)="onSearchTextEntered($event)"></app-Search>
+
+    <section class="AdminStudReport">
+
+      <div class="AdminStudReport-list">
+
+        <h1>Student Report Details</h1>
+
+        <table class="AdminStudReport-table">
+
+          <thead>
+
+            <tr>
+              <th title="Sort By ID" (click)="sort('id')">ID <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By REGISTER NUMBER" (click)="sort('REGISTER_NUMBER')">Register Number <span
+                class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By NAME" (click)="sort('NAME')">Name <span class="fas fa-sort-alpha-down"></span></th>
+              <th>Enquiry</th>
+              <th title="Sort By DATE" (click)="sort('DATE')">date <span class="fas fa-sort-amount-down-alt"></span></th>
+              <th title="Sort By TIME" (click)="sort('TIME')">time <span class="fas fa-sort"></span></th>
+              <th>Details</th>
+            </tr>
+
+          </thead>
+
+          <tbody *ngFor="let reports of reportsFromStudent | orderBy: orderHeader: isDescOrder">
+
+            <tr class="active" *ngIf="searchText === '' || reports.REGISTER_NUMBER.toLowerCase().includes(searchText) || reports.NAME.toLowerCase().includes(searchText) || reports.FIELD.toLowerCase().includes(searchText) || reports.TIME.toLowerCase().includes(searchText) || reports.DATE.toLowerCase().includes(searchText)">
+              <td>{{reports.id}}</td>
+              <td>{{reports.REGISTER_NUMBER}}</td>
+              <td>{{reports.NAME}}</td>
+              <td>{{reports.FIELD}}</td>
+              <td>{{reports.DATE}}</td>
+              <td>{{reports.TIME}}</td>
+              <td><button (click)="editAdminReport(reports.id)">View</button></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+    <br>
+
+  </div>
+
+</div>
+
+<!-- Admin Report section ends here  -->

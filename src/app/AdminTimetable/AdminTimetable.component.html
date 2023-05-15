@@ -1,0 +1,418 @@
+<app-AdminNavbar></app-AdminNavbar>
+
+<!-- Admin Time table section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Time Table</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1>Details...</h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/adminreports">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="Admintimetable-container">
+
+      <h1>Timetable Add</h1>
+
+      <form [formGroup]="AdmintimetableForm"
+        (ngSubmit)="submitTimetableForm()">
+
+        <div class="Different-addtt">
+
+          <div class="input-field">
+            <label>Year</label>
+            <select name="year" required formControlName="YEAR" >
+              <option selected>1st year</option>
+              <option disabled>2nd year</option>
+              <option disabled>3rd year</option>
+              <option disabled>4th year</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label>Department</label>
+            <select name="department" required formControlName="DEPARTMENT" >
+              <option hidden selected>Select anyone..</option>
+              <option>CSE</option>
+              <option>IT</option>
+              <option>ECE</option>
+              <option>EEE</option>
+              <option>CE</option>
+            </select>
+          </div>
+
+        </div>
+
+        <span class="title">Monday</span>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>1st</label>
+            <input autocomplete="off" placeholder="Enter 1st Period" name="monday1st" required formControlName="MONDAY1ST">
+          </div>
+
+          <div class="input-field">
+            <label>2nd</label>
+            <input autocomplete="off" placeholder="Enter 2nd Period" name="monday2nd" required formControlName="MONDAY2ND" >
+          </div>
+
+          <div class="input-field">
+            <label>3rd</label>
+            <input autocomplete="off" placeholder="Enter 3rd Period" name="monday3rd" required formControlName="MONDAY3RD" >
+          </div>
+
+          <div class="input-field">
+            <label>4th</label>
+            <input autocomplete="off" placeholder="Enter 4th Period" name="monday4th" required formControlName="MONDAY4TH" >
+          </div>
+
+          <div class="input-field">
+            <label>5th</label>
+            <input autocomplete="off" placeholder="Enter 5th Period" name="monday5th" required formControlName="MONDAY5TH" >
+          </div>
+
+          <div class="input-field">
+            <label>6th</label>
+            <input autocomplete="off" placeholder="Enter 6th Period" name="monday6th" required formControlName="MONDAY6TH" >
+          </div>
+
+          <div class="input-field">
+            <label>7th</label>
+            <input autocomplete="off" placeholder="Enter 7th Period" name="monday7th" required formControlName="MONDAY7TH" >
+          </div>
+
+        </div>
+
+        <span class="title">Tuesday</span>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>1st</label>
+            <input autocomplete="off" placeholder="Enter 1st Period" name="tuesday1st" required formControlName="TUESDAY1ST" >
+          </div>
+
+          <div class="input-field">
+            <label>2nd</label>
+            <input autocomplete="off" placeholder="Enter 2nd Period" name="tuesday2nd" required formControlName="TUESDAY2ND" >
+          </div>
+
+          <div class="input-field">
+            <label>3rd</label>
+            <input autocomplete="off" placeholder="Enter 3rd Period" name="tuesday3rd" required formControlName="TUESDAY3RD" >
+          </div>
+
+          <div class="input-field">
+            <label>4th</label>
+            <input autocomplete="off" placeholder="Enter 4th Period" name="tuesday4th" required formControlName="TUESDAY4TH" >
+          </div>
+
+          <div class="input-field">
+            <label>5th</label>
+            <input autocomplete="off" placeholder="Enter 5th Period" name="tuesday5th" required formControlName="TUESDAY5TH" >
+          </div>
+
+          <div class="input-field">
+            <label>6th</label>
+            <input autocomplete="off" placeholder="Enter 6th Period" name="tuesday6th" required formControlName="TUESDAY6TH" >
+          </div>
+
+          <div class="input-field">
+            <label>7th</label>
+            <input autocomplete="off" placeholder="Enter 7th Period" name="tuesday7th" required formControlName="TUESDAY7TH" >
+          </div>
+
+        </div>
+
+        <span class="title">Wednesday</span>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>1st</label>
+            <input autocomplete="off" placeholder="Enter 1st Period" name="wednesday1st" required formControlName="WEDNESDAY1ST" >
+          </div>
+
+          <div class="input-field">
+            <label>2nd</label>
+            <input autocomplete="off" placeholder="Enter 2nd Period" name="wednesday2nd" required formControlName="WEDNESDAY2ND" >
+          </div>
+
+          <div class="input-field">
+            <label>3rd</label>
+            <input autocomplete="off" placeholder="Enter 3rd Period" name="wednesday3rd" required formControlName="WEDNESDAY3RD" >
+          </div>
+
+          <div class="input-field">
+            <label>4th</label>
+            <input autocomplete="off" placeholder="Enter 4th Period" name="wednesday4th" required formControlName="WEDNESDAY4TH" >
+          </div>
+
+          <div class="input-field">
+            <label>5th</label>
+            <input autocomplete="off" placeholder="Enter 5th Period" name="wednesday5th" required formControlName="WEDNESDAY5TH" >
+          </div>
+
+          <div class="input-field">
+            <label>6th</label>
+            <input autocomplete="off" placeholder="Enter 6th Period" name="wednesday6th" required formControlName="WEDNESDAY6TH" >
+          </div>
+
+          <div class="input-field">
+            <label>7th</label>
+            <input autocomplete="off" placeholder="Enter 7th Period" name="wednesday7th" required formControlName="WEDNESDAY7TH" >
+          </div>
+
+        </div>
+
+        <span class="title">Thursday</span>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>1st</label>
+            <input autocomplete="off" placeholder="Enter 1st Period" name="thursday1st" required formControlName="THURSDAY1ST" >
+          </div>
+
+          <div class="input-field">
+            <label>2nd</label>
+            <input autocomplete="off" placeholder="Enter 2nd Period" name="thursday2nd" required formControlName="THURSDAY2ND" >
+          </div>
+
+          <div class="input-field">
+            <label>3rd</label>
+            <input autocomplete="off" placeholder="Enter 3rd Period" name="thursday3rd" required formControlName="THURSDAY3RD" >
+          </div>
+
+          <div class="input-field">
+            <label>4th</label>
+            <input autocomplete="off" placeholder="Enter 4th Period" name="thursday4th" required formControlName="THURSDAY4TH" >
+          </div>
+
+          <div class="input-field">
+            <label>5th</label>
+            <input autocomplete="off" placeholder="Enter 5th Period" name="thursday5th" required formControlName="THURSDAY5TH" >
+          </div>
+
+          <div class="input-field">
+            <label>6th</label>
+            <input autocomplete="off" placeholder="Enter 6th Period" name="thursday6th" required formControlName="THURSDAY6TH" >
+          </div>
+
+          <div class="input-field">
+            <label>7th</label>
+            <input autocomplete="off" placeholder="Enter 7th Period" name="thursday7th" required formControlName="THURSDAY7TH" >
+          </div>
+
+        </div>
+
+        <span class="title">Friday</span>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>1st</label>
+            <input autocomplete="off" placeholder="Enter 1st Period" name="friday1st" required formControlName="FRIDAY1ST" >
+          </div>
+
+          <div class="input-field">
+            <label>2nd</label>
+            <input autocomplete="off" placeholder="Enter 2nd Period" name="friday2nd" required formControlName="FRIDAY2ND" >
+          </div>
+
+          <div class="input-field">
+            <label>3rd</label>
+            <input autocomplete="off" placeholder="Enter 3rd Period" name="friday3rd" required formControlName="FRIDAY3RD" >
+          </div>
+
+          <div class="input-field">
+            <label>4th</label>
+            <input autocomplete="off" placeholder="Enter 4th Period" name="friday4th" required formControlName="FRIDAY4TH" >
+          </div>
+
+          <div class="input-field">
+            <label>5th</label>
+            <input autocomplete="off" placeholder="Enter 5th Period" name="friday5th" required formControlName="FRIDAY5TH" >
+          </div>
+
+          <div class="input-field">
+            <label>6th</label>
+            <input autocomplete="off" placeholder="Enter 6th Period" name="friday6th" required formControlName="FRIDAY6TH" >
+          </div>
+
+          <div class="input-field">
+            <label>7th</label>
+            <input autocomplete="off" placeholder="Enter 7th Period" name="friday7th" required formControlName="FRIDAY7TH" >
+          </div>
+
+        </div>
+
+        <div class="buttons">
+
+          <button class="btn" type="submit">
+            <i class="fas fa-share"></i>
+            Add
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <section class="timetable-division">
+
+      <div class="timetable-division-list">
+
+        <h1>Delete Timetable</h1>
+
+        <table class="table">
+
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Year</th>
+              <th>Department</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+
+          <tbody *ngFor="let timetable of timetableFromAdmin">
+
+            <tr class="active">
+              <td>{{timetable.id}}</td>
+              <td>{{timetable.YEAR}}</td>
+              <td>{{timetable.DEPARTMENT}}</td>
+              <td><button class="delete" (click)="deleteData(timetable.id)"><i class="fas fa-trash-alt"></i></button>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+    <div class="table-container">
+
+      <h2>TIME TABLE</h2><br>
+
+      <table class="timetble" *ngFor="let timetable of timetableFromAdmin">
+
+        <th colspan="8" style="font-size: 1.7rem; padding: 8px;background-color: #1abae2;">{{timetable.YEAR}} -
+          {{timetable.DEPARTMENT}}
+        </th>
+
+        <tr class="size">
+          <th>DATE / TIME</th>
+          <th>09.00 A.M. To 09.50 A.M.</th>
+          <th>09.50 A.M. To 10.40 A.M.</th>
+          <th>10.55 A.M. To 11.40 P.M.</th>
+          <th>11.40 A.M. To 12.30 P.M.</th>
+          <th>01.30 P.M. To 02.20 P.M.</th>
+          <th>02.20 P.M. To 03.10 P.M.</th>
+          <th>03.10 P.M. To 04.00 P.M.</th>
+        </tr>
+
+        <tr class="clr1">
+          <th class="size">MON</th>
+          <td>{{timetable.MONDAY1ST}}</td>
+          <td>{{timetable.MONDAY2ND}}</td>
+          <td>{{timetable.MONDAY3RD}}</td>
+          <td>{{timetable.MONDAY4TH}}</td>
+          <td>{{timetable.MONDAY5TH}}</td>
+          <td>{{timetable.MONDAY6TH}}</td>
+          <td>{{timetable.MONDAY7TH}}</td>
+        </tr>
+
+        <tr class="clr3">
+          <th class="size">TUE</th>
+          <td>{{timetable.TUESDAY1ST}}</td>
+          <td>{{timetable.TUESDAY2ND}}</td>
+          <td>{{timetable.TUESDAY3RD}}</td>
+          <td>{{timetable.TUESDAY4TH}}</td>
+          <td>{{timetable.TUESDAY5TH}}</td>
+          <td>{{timetable.TUESDAY6TH}}</td>
+          <td>{{timetable.TUESDAY7TH}}</td>
+        </tr>
+
+        <tr class="clr1">
+          <th class="size">WED</th>
+          <td>{{timetable.WEDNESDAY1ST}}</td>
+          <td>{{timetable.WEDNESDAY2ND}}</td>
+          <td>{{timetable.WEDNESDAY3RD}}</td>
+          <td>{{timetable.WEDNESDAY4TH}}</td>
+          <td>{{timetable.WEDNESDAY5TH}}</td>
+          <td>{{timetable.WEDNESDAY6TH}}</td>
+          <td>{{timetable.WEDNESDAY7TH}}</td>
+        </tr>
+
+        <tr class="clr3">
+          <th class="size">THU</th>
+          <td>{{timetable.THURSDAY1ST}}</td>
+          <td>{{timetable.THURSDAY2ND}}</td>
+          <td>{{timetable.THURSDAY3RD}}</td>
+          <td>{{timetable.THURSDAY4TH}}</td>
+          <td>{{timetable.THURSDAY5TH}}</td>
+          <td>{{timetable.THURSDAY6TH}}</td>
+          <td>{{timetable.THURSDAY7TH}}</td>
+        </tr>
+
+        <tr class="clr1">
+          <th class="size">FRI</th>
+          <td>{{timetable.FRIDAY1ST}}</td>
+          <td>{{timetable.FRIDAY2ND}}</td>
+          <td>{{timetable.FRIDAY3RD}}</td>
+          <td>{{timetable.FRIDAY4TH}}</td>
+          <td>{{timetable.FRIDAY5TH}}</td>
+          <td>{{timetable.FRIDAY6TH}}</td>
+          <td>{{timetable.FRIDAY7TH}}</td>
+        </tr>
+
+      </table>
+
+      <br><br>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Admin Time table section ends here  -->

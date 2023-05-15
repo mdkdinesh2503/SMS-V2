@@ -1,0 +1,172 @@
+<app-AdminNavbar></app-AdminNavbar>
+
+<!-- Admin Attendance section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Attendance</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1> <span class="UserDesign">Hi, {{loginUserName}} ...</span></h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/adminreports">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card-single">
+
+        <div class="card-flex">
+
+          <div class="card-info">
+
+            <div class="card-head">
+              <span>Students</span>
+              <small>Number of Students</small>
+            </div>
+
+            <h2>175</h2>
+
+            <small>Currently active</small>
+
+          </div>
+
+          <div class="card-chart">
+            <span class="fas fa-users"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card-single">
+
+        <div class="card-flex">
+
+          <div class="card-info">
+
+            <div class="card-head">
+              <span>Attendance</span>
+              <small>Number of Marked</small>
+            </div>
+
+            <h2>{{attendanceFromStudent.length}}</h2>
+
+            <small>Currently active</small>
+
+          </div>
+
+          <div class="card-chart">
+            <span class="fas fa-user-secret"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card-single">
+
+        <div class="card-flex">
+
+          <div class="card-info">
+
+            <div class="card-head">
+
+              <span>Present</span>
+
+              <small>Number of Present</small>
+
+            </div>
+
+            <h2>{{value}}</h2>
+
+            <small>Currently active</small>
+
+          </div>
+
+          <div class="card-chart">
+            <span class="fas fa-address-book"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div><br><br>
+
+    <app-Search (searchTextChanged)="onSearchTextEntered($event)"></app-Search>
+
+    <section class="attendance">
+
+      <div class="attendance-list">
+
+        <h1>Attendance List</h1>
+
+        <table class="table">
+
+          <thead>
+            <tr>
+              <th title="Sort By ID" (click)="sort('id')">ID <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By REGISTER NUMBER" (click)="sort('REGISTER_NUMBAR')">Register Number <span
+                  class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By NAME" (click)="sort('NAME')">Name <span class="fas fa-sort-alpha-down"></span></th>
+              <th title="Sort By DATE" (click)="sort('DATE')">Date <span class="fas fa-sort-amount-down-alt"></span>
+              </th>
+              <th title="Sort By TIME" (click)="sort('TIME')">Join Time <span class="fas fa-sort"></span></th>
+              <th>Field</th>
+            </tr>
+          </thead>
+
+          <tbody *ngFor="let reports of attendanceFromStudent | orderBy: orderHeader: isDescOrder">
+
+            <tr class="active" *ngIf="searchText === '' || reports.REGISTER_NUMBAR.toLowerCase().includes(searchText) || reports.NAME.toLowerCase().includes(searchText) || reports.DATE.toLowerCase().includes(searchText) || reports.TIME.toLowerCase().includes(searchText) || reports.ATTENDANCE_FIELD.toLowerCase().includes(searchText)">
+              <td>{{reports.id}}</td>
+              <td>{{reports.REGISTER_NUMBAR}}</td>
+              <td>{{reports.NAME}}</td>
+              <td>{{reports.DATE}}</td>
+              <td>{{reports.TIME}}</td>
+              <td>{{reports.ATTENDANCE_FIELD}}</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
+
+<!-- Admin Attendance section ends here  -->

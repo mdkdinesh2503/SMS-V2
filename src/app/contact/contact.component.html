@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+
+<!-- Main Heading starts -->
+
+<div class="heading-bg">
+  <section class="heading-link">
+      <h3>contact us</h3>
+      <p> <a routerLink="/home">home</a> / contact </p>
+  </section>
+</div>
+
+<!-- Main Heading ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact">
+
+  <h1 class="heading"> get in touch </h1>
+
+  <div class="icons-container">
+      <a (click)="popupTime()">
+          <div class="icons">
+              <i class="fas fa-clock"></i>
+              <h3>opening hours :</h3>
+              <p>09:00am to 04:00pm</p>
+          </div>
+      </a>
+
+      <a href="tel:9787943467">
+      <div class="icons">
+          <i class="fas fa-phone"></i>
+          <h3>phone :</h3>
+          <p>+91-97879-43467</p>
+      </div>
+      </a>
+
+      <a href="mailto:cecsdineshkumarm23@gmail.com">
+          <div class="icons">
+              <i class="fas fa-envelope"></i>
+              <h3> email : </h3>
+              <p>cecsdineshkumarm23@gmail.com</p>
+          </div>
+      </a>
+
+      <a (click)="popupLocation()">
+          <div class="icons">
+              <i class="fas fa-map"></i>
+              <h3>address :</h3>
+              <p>Namakkal, india - 637001</p>
+          </div>
+      </a>
+
+  </div>
+
+  <div class="row">
+
+      <div class="image">
+          <img src="../../assets/images/contact-img.png" alt="">
+      </div>
+
+      <form action="https://formspree.io/f/mdojdykz" method="post" (ngSubmit)="submitListContactForm(name.value, email.value, phone.value, msg.value)">
+          <h3>send us a message</h3>
+          <input type="text" name="UserName :" placeholder="name" class="box" #name>
+          <input type="email" name="Email :" placeholder="email" class="box" #email>
+          <input type="tel" name="Phone Number :" maxlength="10" placeholder="phone" class="box" #phone>
+          <textarea name="Messgae Box :" class="box" placeholder="message" cols="30" rows="10" #msg></textarea>
+          <input type="submit" value="send message" class="btn">
+      </form>
+
+  </div>
+
+</section>
+
+<!-- contact section ends -->
+
+<app-footer></app-footer>

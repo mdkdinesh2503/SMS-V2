@@ -1,0 +1,95 @@
+<app-AdminNavbar></app-AdminNavbar>
+
+<!-- Admin Fees section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Fees</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1>Find Details...</h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/adminreports">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div><br><br>
+
+    <app-Search (searchTextChanged)="onSearchTextEntered($event)"></app-Search>
+
+    <section class="StudFeesDetails">
+
+      <div class="StudFeesDetails-list">
+
+        <h1>Fees Details</h1>
+
+        <table class="StudFeesDetails-table">
+
+          <thead>
+
+            <tr>
+              <th title="Sort By ID" (click)="sort('id')">S/No. <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By REGISTER NUMBER" (click)="sort('REGISTER_NUMBER')">Register Number <span
+                  class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By NAME" (click)="sort('NAME')">Name <span class="fas fa-sort-alpha-down"></span></th>
+              <th>Degree</th>
+              <th title="Sort By DEPARTMENT" (click)="sort('DEPARTMENT')">Department <span
+                  class="fas fa-sort-alpha-down"></span></th>
+              <th title="Sort By AMOUNT" (click)="sort('TOTAL_AMOUNT')">Amount <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By FIELDS" (click)="sort('FEES')">fields <span class="fas fa-sort-alpha-down"></span></th>
+            </tr>
+
+          </thead>
+
+          <tbody *ngFor="let fees of FeesPaymentFromStudent | orderBy: orderHeader: isDescOrder">
+
+            <tr class="active"
+              *ngIf="searchText === '' || fees.REGISTER_NUMBER.toLowerCase().includes(searchText) || fees.NAME.toLowerCase().includes(searchText) || fees.DEPARTMENT.toLowerCase().includes(searchText) || fees.TOTAL_AMOUNT.toLowerCase().includes(searchText) || fees.FEES.toLowerCase().includes(searchText)">
+              <td>{{fees.id}}</td>
+              <td>{{fees.REGISTER_NUMBER}}</td>
+              <td>{{fees.NAME}}</td>
+              <td>{{fees.DEGREE}}</td>
+              <td>{{fees.DEPARTMENT}}</td>
+              <td>{{fees.TOTAL_AMOUNT}}</td>
+              <td>{{fees.FEES}}</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
+
+<!-- Admin Fees section ends here  -->

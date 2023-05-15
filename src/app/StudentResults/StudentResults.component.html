@@ -1,0 +1,84 @@
+<app-StudentNavbar></app-StudentNavbar>
+
+<!-- Student Results section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Result Details</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1> <span class="UserDesign">Hi, {{loginUserName}} Find Your Result...</span></h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/studentresult">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <app-Search (searchTextChanged)="onSearchTextEntered($event)"></app-Search>
+
+    <section class="Res">
+
+      <div class="Result-list">
+
+        <table class="Result-table">
+
+          <thead>
+
+            <tr>
+              <th title="Sort By ID" (click)="sort('id')">ID <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By REGISTER NUMBER" (click)="sort('REGISTER_NUMBER')">Register Number <span
+                class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By NAME" (click)="sort('NAME')">Name <span class="fas fa-sort-alpha-down"></span></th>
+              <th>Result</th>
+              <th>Details</th>
+            </tr>
+
+          </thead>
+
+          <tbody *ngFor="let result of resultsFromAdmin | orderBy: orderHeader: isDescOrder">
+            <tr class="active" *ngIf="searchText === '' || result.REGISTER_NUMBER.toLowerCase().includes(searchText) || result.NAME.toLowerCase().includes(searchText) || result.RESULT.toLowerCase().includes(searchText)">
+              <td>{{result.id}}</td>
+              <td>{{result.REGISTER_NUMBER}}</td>
+              <td>{{result.NAME}}</td>
+              <td>{{result.RESULT}}</td>
+              <td><button (click)="viewStudentResult(result.id)">View</button></td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
+
+<!-- Student Results section ends here  -->

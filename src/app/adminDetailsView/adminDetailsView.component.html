@@ -1,0 +1,333 @@
+<!-- Student Result view section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Details View</h1>
+    </div>
+
+    <div class="icon">
+      <span (click)="goBack()" class="fas fa-arrow-left"></span>
+      <span (click)="goBack()"> Go Back</span>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <br><br><br>
+
+    <div class="Student-container">
+
+      <h1>Student Details Form</h1>
+
+      <form (ngSubmit)="submitList(name.value, dob.value, eml.value, mbl.value, gndr.value, marsta.value, age.value, cmty.value, cste.value, addty.value, arty.value, ctry.value, appno.value, adr1.value, adr2.value, city.value, pncd.value, state.value, ttlmen.value, firgrd.value, inc.value, fthrna.value, fthroc.value, fthrmo.value, mthrna.value, mthroc.value, mthrmo.value, rgtr.value, degr.value, deprt.value, clgna.value, yrpss.value, yrstu.value, mten.value, mtenmo.value, mtenttl.value, mtw.value, mtwmo.value, mtwttl.value)">
+
+        <div class="details personal">
+
+          <span class="title">Personal Details</span>
+
+          <div class="fields">
+
+            <div class="input-field">
+              <label>Full Name</label>
+              <input name="name" type="text" required #name value="{{names}}">
+            </div>
+
+            <div class="input-field">
+              <label>Date of Birth</label>
+              <input name="dob" type="date" required #dob value="{{dobs}}">
+            </div>
+
+            <div class="input-field">
+              <label>Email</label>
+              <input name="eml" type="email" required #eml value="{{emls}}">
+            </div>
+
+            <div class="input-field">
+              <label>Mobile Number</label>
+              <input name="mbl" type="tel" maxlength="10" required #mbl value="{{mbls}}">
+            </div>
+
+            <div class="input-field">
+              <label>Gender</label>
+              <select name="gndr" required #gndr value="{{gndrs}}">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Others</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label>Marital Status</label>
+              <select name="marsta" required #marsta value="{{marstas}}">
+                <option>Single</option>
+                <option>Married</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label>Age</label>
+              <input name="age" maxlength="2" type="tel" required #age value="{{ages}}">
+            </div>
+
+            <div class="input-field">
+              <label>Community</label>
+              <input name="cmty" type="text" required #cmty value="{{cmtys}}">
+            </div>
+
+            <div class="input-field">
+              <label>Caste</label>
+              <input name="cste" type="text" required #cste value="{{cstes}}">
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="details address">
+
+          <span class="title">Address Details</span>
+
+          <div class="fields">
+
+            <div class="input-field">
+
+              <label>Address Type</label>
+
+              <select name="addty" required #addty value="{{addtys}}">
+                <option>Permanent</option>
+                <option>Temporary</option>
+              </select>
+
+            </div>
+
+            <div class="input-field">
+
+              <label>Area Type</label>
+
+              <select name="arty" required #arty value="{{artys}}">
+                <option>Rural</option>
+                <option>Urban</option>
+              </select>
+
+            </div>
+
+            <div class="input-field">
+              <label>Country</label>
+              <input name="ctry" type="text" required #ctry value="{{ctrys}}">
+            </div>
+
+            <div class="input-field">
+              <label>Appartment Number</label>
+              <input name="appno" type="text" required #appno value="{{appnos}}">
+            </div>
+
+            <div class="input-field">
+              <label>Address Line 1</label>
+              <input name="adr1" type="text" required #adr1 value="{{adr1s}}">
+            </div>
+
+            <div class="input-field">
+              <label>Address Line 2</label>
+              <input name="adr2" type="text" required #adr2 value="{{adr2s}}">
+            </div>
+
+            <div class="input-field">
+              <label>City</label>
+              <input name="city" type="text" required #city value="{{citys}}">
+            </div>
+
+            <div class="input-field">
+              <label>Pincode</label>
+              <input name="pncd" type="tel" maxlength="6" required #pncd value="{{pncds}}">
+            </div>
+
+            <div class="input-field">
+              <label>State</label>
+              <input name="state" type="text" required #state value="{{states}}">
+            </div>
+
+          </div>
+
+          <div class="details family">
+
+            <span class="title">Family Details</span>
+
+            <div class="fields">
+
+              <div class="input-field">
+                <label>Total Members</label>
+                <input name="ttlmem" type="text" required #ttlmen value="{{ttlmens}}">
+              </div>
+
+              <div class="input-field">
+
+                <label>First Graduate</label>
+
+                <select name="firgrd" required #firgrd value="{{firgrds}}">
+                  <option>Myself</option>
+                  <option>Father</option>
+                  <option>Mother</option>
+                  <option>Other</option>
+                </select>
+
+              </div>
+
+              <div class="input-field">
+                <label>Family Income</label>
+                <input name="inc" type="number" required #inc value="{{incs}}">
+              </div>
+
+              <div class="input-field">
+                <label>Father Name</label>
+                <input name="fthrna" type="text" required #fthrna value="{{fthrnas}}">
+              </div>
+
+              <div class="input-field">
+                <label>Father Occupation</label>
+                <input name="fthroc" type="text" required #fthroc value="{{fthrocs}}">
+              </div>
+
+              <div class="input-field">
+                <label>Father Mobile Number</label>
+                <input name="fthrmo" type="tel" maxlength="10" required #fthrmo value="{{fthrmos}}">
+              </div>
+
+              <div class="input-field">
+                <label>Mother Name</label>
+                <input name="mthrna" type="text" required #mthrna value="{{mthrnas}}">
+              </div>
+
+              <div class="input-field">
+                <label>Mother Occupation</label>
+                <input name="mthroc" type="text" required #mthroc value="{{mthrocs}}">
+              </div>
+
+              <div class="input-field">
+                <label>Mother Mobile Number</label>
+                <input name="mthrmo" type="tel" maxlength="10" required #mthrmo value="{{mthrmos}}">
+              </div>
+
+            </div>
+
+            <div class="details profesinal">
+
+              <span class="title">College Details</span>
+
+              <div class="fields">
+
+                <div class="input-field">
+                  <label>Register Number</label>
+                  <input name="rgtr" type="tel" maxlength="7" required #rgtr value="{{rgtrs}}">
+                </div>
+
+                <div class="input-field">
+                  <label>Degree</label>
+                  <input name="degr" type="text" required #degr value="{{degrs}}">
+                </div>
+
+                <div class="input-field">
+                  <label>Department</label>
+                  <input name="deprt" type="text" required #deprt value="{{deprts}}">
+                </div>
+
+                <div class="input-field">
+                  <label>College Name</label>
+                  <input name="clgna" type="text" required #clgna value="{{clgnas}}">
+                </div>
+
+                <div class="input-field">
+                  <label>Year of passing</label>
+                  <input name="yrpss" type="tel" maxlength="4" required #yrpss value="{{yrpsss}}">
+                </div>
+
+                <div class="input-field">
+
+                  <label>Year of Studing</label>
+
+                  <select name="yrstu" required #yrstu value="{{yrstus}}">
+                    <option>One</option>
+                    <option>Two</option>
+                    <option>Three</option>
+                    <option>Four</option>
+                    <option>Five</option>
+                  </select>
+
+                </div>
+
+                <div class="input-field">
+                  <label>10th Mark</label>
+                  <input name="mten" type="number" required #mten value="{{mtens}}">
+                </div>
+
+                <div class="input-field">
+
+                  <label>10th Study Mode</label>
+
+                  <select name="mtenmo" required #mtenmo value="{{mtenmos}}">
+                    <option>CBSE</option>
+                    <option>State Board</option>
+                    <option>Matric</option>
+                  </select>
+
+                </div>
+
+                <div class="input-field">
+                  <label>10th Total Mark</label>
+                  <input name="mtenttl" type="number" required #mtenttl value="{{mtenttls}}">
+                </div>
+
+                <div class="input-field">
+                  <label>12th Mark</label>
+                  <input name="mtw" type="number" required #mtw value="{{mtws}}">
+                </div>
+
+                <div class="input-field">
+
+                  <label>12th Study Mode</label>
+
+                  <select name="mtwmo" required #mtwmo value="{{mtwmos}}">
+                    <option>CBSE</option>
+                    <option>State Board</option>
+                    <option>Matric</option>
+                  </select>
+
+                </div>
+
+                <div class="input-field">
+                  <label>12th Total Mark</label>
+                  <input name="mtwttl" type="number" required #mtwttl value="{{mtwttls}}">
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="buttons">
+
+              <button type="submit" class="btn">
+                <i class="fas fa-share"></i>
+                Edit
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <br>
+
+  </div>
+
+</div>
+
+<!-- Student Result view section ends here  -->

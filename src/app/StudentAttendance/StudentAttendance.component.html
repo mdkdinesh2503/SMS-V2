@@ -1,0 +1,102 @@
+<app-StudentNavbar></app-StudentNavbar>
+
+<!-- Student Attendance section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Attendance</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1> <span class="UserDesign">Hi, {{loginUserName}} ...</span></h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/studentreports">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="Att-container">
+
+      <h1>Attendance Form</h1>
+
+      <form #StudentAttendanceForm="ngForm" (ngSubmit)="submitList(Name.value, RegisterNumber.value, Field.value)">
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name" name="Name" required #Name="ngModel" ngModel>
+          </div>
+
+          <div class="input-field">
+            <label>Register Number</label>
+            <input type="tel" maxlength="7" placeholder="Enter your Register Number" name="RegisterNumber" required
+              #RegisterNumber="ngModel" ngModel>
+          </div>
+
+          <div class="input-field">
+            <label>Attendance Field</label>
+            <select name="Field" [disabled]="disbtn" required #Field="ngModel" ngModel>
+              <option hidden selected>Select anyone..</option>
+              <option *ngIf="option1">Present</option>
+              <option *ngIf="option2">Absent</option>
+              <option *ngIf="option3">Excuse</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label>Date</label>
+            <input type="text" disabled name="Date" required #Date="ngModel" [(ngModel)]="dates">
+          </div>
+
+          <div class="input-field">
+            <label>Time</label>
+            <input type="text" name="Time" disabled required #Time="ngModel" [(ngModel)]="times">
+          </div>
+
+        </div>
+
+        <div class="buttons">
+
+          <button class="btn" type="submit" [hidden]="hidbtn">
+            <i class="fas fa-share"></i>
+            Submit
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Student Attendance section ends here  -->

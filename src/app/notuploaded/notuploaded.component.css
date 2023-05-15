@@ -1,0 +1,84 @@
+.image-container,
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  height: 50rem;
+  width: 80rem;
+  background-image: linear-gradient(#fff 0%, #fff 100%);
+  animation: logo 5s infinite;
+  margin: 6rem 19%;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px #c2dbff, 0 0 70px #c2dbff, 0 0 100px #c2dbff;
+}
+
+@keyframes logo {
+  0% {
+    border: 0.2rem solid #007dfe;
+  }
+  25% {
+    border-top: 0.2rem solid #007dfe;
+  }
+
+  50% {
+    border-right: 0.2rem solid #007dfe;
+  }
+
+  75% {
+    border-bottom: 0.2rem solid #007dfe;
+  }
+  100% {
+    border-left: 0.2rem solid #007dfe;
+  }
+}
+
+.content-container {
+  margin: -50rem 20%;
+  position: relative;
+  width: 70rem;
+  height: 40rem;
+}
+
+.content-container img {
+  height: 100%;
+  width: 60%;
+  object-fit: cover;
+  margin-left: 26%;
+  margin-top: -6rem;
+  border-radius: 30%;
+}
+
+.btn {
+  margin-left: 42%;
+}
+
+.btn a {
+  color: #fff;
+  background: #007dfe;
+  border: .2rem solid #007dfe;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 2.6em;
+  letter-spacing: 0.20em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.btn a:hover {
+  color: #007dfe;
+  background: #fff;
+}

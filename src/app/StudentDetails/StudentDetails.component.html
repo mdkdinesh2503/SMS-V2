@@ -1,0 +1,368 @@
+<app-StudentNavbar></app-StudentNavbar>
+
+<!-- Student Details section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+      <div class="menu-toggle">
+          <h1>Student Details</h1>
+      </div>
+
+      <div class="icon">
+        <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+            class="fas fa-file-export"></span></a>
+      </div>
+
+  </header>
+
+  <div class="main">
+
+      <div class="page-header">
+
+          <div>
+              <h1><span class="UserDesign">Fill Details...</span></h1>
+          </div>
+
+          <div class="header-actions">
+
+            <a class="emoji1" routerLink="/studentreports">
+              <span class="fas fa-edit"></span>
+              Enquiry
+            </a>
+
+            <a class="emoji2" (click)="goBack()">
+              <span class="fas fa-arrow-left"></span>
+              Go Back
+            </a>
+
+          </div>
+
+      </div>
+
+      <div class="Student-container">
+
+          <h1>Student Details Form</h1>
+
+          <form (ngSubmit)="submitList(name.value, dob.value, eml.value, mbl.value, gndr.value, marsta.value, age.value, cmty.value, cste.value, addty.value, arty.value, ctry.value, appno.value, adr1.value, adr2.value, city.value, pncd.value, state.value, ttlmen.value, firgrd.value, inc.value, fthrna.value, fthroc.value, fthrmo.value, mthrna.value, mthroc.value, mthrmo.value, rgtr.value, degr.value, deprt.value, clgna.value, yrpss.value, yrstu.value, mten.value, mtenmo.value, mtenttl.value, mtw.value, mtwmo.value, mtwttl.value)">
+
+              <div class="details personal">
+
+                  <span class="title">Personal Details</span>
+
+                  <div class="fields">
+
+                      <div class="input-field">
+                          <label>Full Name</label>
+                          <input name="name" type="text" placeholder="Enter your name" required #name="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Date of Birth</label>
+                          <input name="dob" type="date" required #dob="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Email</label>
+                          <input name="eml" type="email" placeholder="Enter your email" required #eml="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Mobile Number</label>
+                          <input name="mbl" type="tel" maxlength="10" placeholder="Enter mobile number" required #mbl="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Gender</label>
+                          <select name="gndr" required #gndr="ngModel" ngModel>
+                              <option disabled selected>Select gender</option>
+                              <option>Male</option>
+                              <option>Female</option>
+                              <option>Others</option>
+                          </select>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Marital Status</label>
+                          <select name="marsta" required #marsta="ngModel" ngModel>
+                              <option disabled selected>Select marital status</option>
+                              <option>Single</option>
+                              <option>Married</option>
+                          </select>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Age</label>
+                          <input name="age" maxlength="2" type="tel" placeholder="Enter your age" required #age="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Community</label>
+                          <input name="cmty" type="text" placeholder="Enter your community" required #cmty="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Caste</label>
+                          <input name="cste" type="text" placeholder="Enter your caste" required #cste="ngModel" ngModel>
+                      </div>
+
+                  </div>
+
+              </div>
+
+
+              <div class="details address">
+
+                  <span class="title">Address Details</span>
+
+                  <div class="fields">
+
+                      <div class="input-field">
+
+                          <label>Address Type</label>
+
+                          <select name="addty" required #addty="ngModel" ngModel>
+                              <option disabled selected>Select address type</option>
+                              <option>Permanent</option>
+                              <option>Temporary</option>
+                          </select>
+
+                      </div>
+
+                      <div class="input-field">
+
+                          <label>Area Type</label>
+
+                          <select name="arty" required #arty="ngModel" ngModel>
+                              <option disabled selected>Select area type</option>
+                              <option>Rural</option>
+                              <option>Urban</option>
+                          </select>
+
+                      </div>
+
+                      <div class="input-field">
+                          <label>Country</label>
+                          <input name="ctry" type="text" placeholder="Enter your country" required #ctry="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Appartment Number</label>
+                          <input name="appno" type="text" placeholder="Enter appartment number" required #appno="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Address Line 1</label>
+                          <input name="adr1" type="text" placeholder="Enter address line 1" required #adr1="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Address Line 2</label>
+                          <input name="adr2" type="text" placeholder="Enter address line 2" required #adr2="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>City</label>
+                          <input name="city" type="text" placeholder="Enter your city" required #city="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Pincode</label>
+                          <input name="pncd" type="tel" maxlength="6" placeholder="Enter pincode" required #pncd="ngModel" ngModel>
+                      </div>
+
+                      <div class="input-field">
+                          <label>State</label>
+                          <input name="state" type="text" placeholder="Enter your state" required #state="ngModel" ngModel>
+                      </div>
+
+                  </div>
+
+                  <div class="details family">
+
+                      <span class="title">Family Details</span>
+
+                      <div class="fields">
+
+                          <div class="input-field">
+                              <label>Total Members</label>
+                              <input name="ttlmem" type="text" placeholder="Enter family total" required #ttlmen="ngModel" ngModel>
+                          </div>
+
+                          <div class="input-field">
+
+                              <label>First Graduate</label>
+
+                              <select name="firgrd" required #firgrd="ngModel" ngModel>
+                                  <option disabled selected>Select first graduate</option>
+                                  <option>Myself</option>
+                                  <option>Father</option>
+                                  <option>Mother</option>
+                                  <option>Other</option>
+                              </select>
+
+                          </div>
+
+                          <div class="input-field">
+                              <label>Family Income</label>
+                              <input name="inc" type="number" placeholder="Enter family income" required #inc="ngModel" ngModel>
+                          </div>
+
+                          <div class="input-field">
+                              <label>Father Name</label>
+                              <input name="fthrna" type="text" placeholder="Enter father name" required #fthrna="ngModel" ngModel>
+                          </div>
+
+                          <div class="input-field">
+                              <label>Father Occupation</label>
+                              <input name="fthroc" type="text" placeholder="Enter father occupation" required #fthroc="ngModel" ngModel>
+                          </div>
+
+                          <div class="input-field">
+                              <label>Father Mobile Number</label>
+                              <input name="fthrmo" type="tel" maxlength="10"
+                                  placeholder="Enter father mobile number" required #fthrmo="ngModel" ngModel>
+                          </div>
+
+                          <div class="input-field">
+                              <label>Mother Name</label>
+                              <input name="mthrna" type="text" placeholder="Enter mother name" required #mthrna="ngModel" ngModel>
+                          </div>
+
+                          <div class="input-field">
+                              <label>Mother Occupation</label>
+                              <input name="mthroc" type="text" placeholder="Enter mother occupation" required #mthroc="ngModel" ngModel>
+                          </div>
+
+                          <div class="input-field">
+                              <label>Mother Mobile Number</label>
+                              <input name="mthrmo" type="tel" maxlength="10"
+                                  placeholder="Enter mother mobile number" required #mthrmo="ngModel" ngModel>
+                          </div>
+
+                      </div>
+
+                      <div class="details profesinal">
+
+                          <span class="title">College Details</span>
+
+                          <div class="fields">
+
+                              <div class="input-field">
+                                  <label>Register Number</label>
+                                  <input name="rgtr" type="tel" maxlength="7" placeholder="Enter register number" required #rgtr="ngModel" ngModel>
+                              </div>
+
+                              <div class="input-field">
+                                  <label>Degree</label>
+                                  <input name="degr" type="text" placeholder="Enter your degree" required #degr="ngModel" ngModel>
+                              </div>
+
+                              <div class="input-field">
+                                  <label>Department</label>
+                                  <input name="deprt" type="text" placeholder="Enter your department" required #deprt="ngModel" ngModel>
+                              </div>
+
+                              <div class="input-field">
+                                  <label>College Name</label>
+                                  <input name="clgna" type="text" placeholder="Enter college name" required #clgna="ngModel" ngModel>
+                              </div>
+
+                              <div class="input-field">
+                                  <label>Year of passing</label>
+                                  <input name="yrpss" type="tel" maxlength="4" placeholder="Enter year of passing" required #yrpss="ngModel" ngModel>
+                              </div>
+
+                              <div class="input-field">
+
+                                  <label>Year of Studing</label>
+
+                                  <select name="yrstu" required #yrstu="ngModel" ngModel>
+                                      <option disabled selected>Select year of studing</option>
+                                      <option>One</option>
+                                      <option>Two</option>
+                                      <option>Three</option>
+                                      <option>Four</option>
+                                      <option>Five</option>
+                                  </select>
+
+                              </div>
+
+                              <div class="input-field">
+                                  <label>10th Mark</label>
+                                  <input name="mten" type="number" placeholder="Enter your mark" required #mten="ngModel" ngModel>
+                              </div>
+
+                              <div class="input-field">
+
+                                  <label>10th Study Mode</label>
+
+                                  <select name="mtenmo" required #mtenmo="ngModel" ngModel>
+                                      <option disabled selected>Select 10th study mode</option>
+                                      <option>CBSE</option>
+                                      <option>State Board</option>
+                                      <option>Matric</option>
+                                  </select>
+
+                              </div>
+
+                              <div class="input-field">
+                                  <label>10th Total Mark</label>
+                                  <input name="mtenttl" type="number" placeholder="Enter 10th total mark" required #mtenttl="ngModel" ngModel>
+                              </div>
+
+                              <div class="input-field">
+                                  <label>12th Mark</label>
+                                  <input name="mtw" type="number" placeholder="Enter your mark" required #mtw="ngModel" ngModel>
+                              </div>
+
+                              <div class="input-field">
+
+                                  <label>12th Study Mode</label>
+
+                                  <select name="mtwmo" required #mtwmo="ngModel" ngModel>
+                                      <option disabled selected>Select 12th study mode</option>
+                                      <option>CBSE</option>
+                                      <option>State Board</option>
+                                      <option>Matric</option>
+                                  </select>
+
+                              </div>
+
+                              <div class="input-field">
+                                  <label>12th Total Mark</label>
+                                  <input name="mtwttl" type="number" placeholder="Enter 12th total mark" required #mtwttl="ngModel" ngModel>
+                              </div>
+
+                          </div>
+
+                      </div>
+
+                      <div class="buttons">
+
+                          <button class="btn" type="button" (click)="printScreen()">
+                              <i class="fas fa-share"></i>
+                              Print
+                          </button>
+
+                          <button type="submit" class="btn">
+                              <i class="fas fa-share"></i>
+                              Submit
+                          </button>
+
+                      </div>
+
+                  </div>
+
+              </div>
+
+          </form>
+
+      </div>
+
+  </div>
+
+</div>
+
+<!-- Student Details section ends here  -->

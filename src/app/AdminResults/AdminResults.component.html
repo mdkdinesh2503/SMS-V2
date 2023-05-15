@@ -1,0 +1,251 @@
+<app-AdminNavbar></app-AdminNavbar>
+
+<!-- Admin Result section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Result Details</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1>Find Details...</h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/adminresult">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div><br><br>
+
+    <div class="AdminResult-container">
+
+      <h1>Add Result</h1>
+
+      <form [formGroup]="ResultForm" (ngSubmit)="submitList()">
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>Register number</label>
+            <input autocomplete="off" type="tel" maxlength="7"
+              placeholder="Enter Register number" required name="registernumber" formControlName="REGISTER_NUMBER" >
+          </div>
+
+          <div class="input-field">
+            <label>Name</label>
+            <input placeholder="Enter Name" required name="name" formControlName="NAME" >
+          </div>
+
+          <div class="input-field">
+            <label>Result</label>
+            <select required name="result" formControlName="RESULT" >
+              <option hidden selected>Select any one</option>
+              <option>PASS</option>
+              <option>FAIL</option>
+            </select>
+          </div>
+
+        </div>
+
+        <span class="title">Normal Subjects</span>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>Professsional Ethics</label>
+            <select required name="pe" formControlName="PROFESSIONAL_ETHICS" >
+              <option hidden selected>Select any one</option>
+              <option>O</option>
+              <option>A+</option>
+              <option>A</option>
+              <option>B+</option>
+              <option>B</option>
+              <option>RA-F</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label>Big Data</label>
+            <select required name="bd"formControlName="BIGDATA"  >
+              <option hidden selected>Select any one</option>
+              <option>O</option>
+              <option>A+</option>
+              <option>A</option>
+              <option>B+</option>
+              <option>B</option>
+              <option>RA-F</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label>Cryptography and Cloud</label>
+            <select required name="cc" formControlName="CRYPTOGRAPHY" >
+              <option hidden selected>Select any one</option>
+              <option>O</option>
+              <option>A+</option>
+              <option>A</option>
+              <option>B+</option>
+              <option>B</option>
+              <option>RA-F</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>Graphics and Multimedia</label>
+            <select required name="gm" formControlName="GRAPHICS_AND_MULTIMEDIA" >
+              <option hidden selected>Select any one</option>
+              <option>O</option>
+              <option>A+</option>
+              <option>A</option>
+              <option>B+</option>
+              <option>B</option>
+              <option>RA-F</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label>Big Data Lab</label>
+            <select required name="bdl" formControlName="BIGDATA_LAB" >
+              <option hidden selected>Select any one</option>
+              <option>O</option>
+              <option>A+</option>
+              <option>A</option>
+              <option>B+</option>
+              <option>B</option>
+              <option>RA-F</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label>Graphics and Multimedia Lab</label>
+            <select required name="gml" formControlName="GRAPHICS_AND_MULTIMEDIA_LAB" >
+              <option hidden selected>Select any one</option>
+              <option>O</option>
+              <option>A+</option>
+              <option>A</option>
+              <option>B+</option>
+              <option>B</option>
+              <option>RA-F</option>
+            </select>
+          </div>
+
+        </div>
+
+        <span class="title">Elective Subject</span>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>BI / HSN</label>
+            <select required name="bi/hsn" formControlName="BI_HSN" >
+              <option hidden selected>Select any one</option>
+              <option>Bussiness Intelligence</option>
+              <option>High Speed Network</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label>GRADE</label>
+            <select required name="bh" formControlName="BUSSINESS_HIGHSPEED" >
+              <option hidden selected>Select any one</option>
+              <option>O</option>
+              <option>A+</option>
+              <option>A</option>
+              <option>B+</option>
+              <option>B</option>
+              <option>RA-F</option>
+            </select>
+          </div>
+
+          <div class="input-field"></div>
+
+        </div>
+
+        <div class="buttons">
+
+          <button class="btn" type="submit">
+            <i class="fas fa-share"></i>
+            Add
+          </button>
+
+        </div>
+
+      </form>
+
+    </div><br>
+
+    <app-Search (searchTextChanged)="onSearchTextEntered($event)"></app-Search>
+
+    <br>
+
+    <section class="AdminResultDetails">
+
+      <div class="AdminResultDetails-list">
+
+        <table class="AdminResultDetails-table">
+
+          <thead>
+
+            <tr>
+              <th title="Sort By ID" (click)="sort('id')">ID <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By REGISTER NUMBER" (click)="sort('REGISTER_NUMBER')">Register Number <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By NAME" (click)="sort('NAME')">Name <span class="fas fa-sort-alpha-down"></span></th>
+              <th>Result</th>
+              <th>Delete</th>
+              <th>Details</th>
+            </tr>
+
+          </thead>
+
+          <tbody class="active" *ngFor="let result of resultsFromAdmin | orderBy: orderHeader: isDescOrder">
+            <tr class="active" *ngIf="searchText === '' || result.REGISTER_NUMBER.toLowerCase().includes(searchText) || result.NAME.toLowerCase().includes(searchText) || result.RESULT.toLowerCase().includes(searchText)">
+              <td>{{result.id}}</td>
+              <td>{{result.REGISTER_NUMBER}}</td>
+              <td>{{result.NAME}}</td>
+              <td>{{result.RESULT}}</td>
+              <td><button class="delete" (click)="deleteData(result.id)"><i class="fas fa-trash-alt"></i></button></td>
+              <td><button (click)="editAdminResult(result.id)">View</button></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+    <br>
+
+  </div>
+
+</div>
+
+<!-- Admin Result section ends here  -->

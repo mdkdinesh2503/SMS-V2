@@ -1,0 +1,77 @@
+.container {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 25px;
+  margin: 1rem auto;
+  background-color: #fff;
+  border-top: 8px solid #4070f4;
+  border-left: .2rem solid #4070f4;
+  border-right: .2rem solid #4070f4;
+  border-bottom: .2rem solid #4070f4;
+}
+
+.container h1 {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #03262c;
+}
+
+.container h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 3px;
+  width: 160px;
+  border-radius: 8px;
+  background-color: #4070f4;
+}
+
+.container form {
+  margin-top: 16px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.container form .fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.container form .fields .input-field {
+  display: flex;
+  width: calc(100% - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+
+.container .input-field label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #4070f4;
+}
+
+.container .input-field input,
+.container .input-field select {
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  border-radius: 5px;
+  border: .1rem solid #555;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+  width: calc(100%-10%);
+}
+
+.container .input-field input:focus,
+.container .input-field select:focus {
+  box-shadow: .2rem .2rem 0 #d2dfff;
+  border: .1rem solid #4070f4;
+  color: #555;
+}

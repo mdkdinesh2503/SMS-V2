@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+
+<!-- Main Heading starts -->
+
+<div class="heading-bg">
+  <section class="heading-link">
+    <h3>blogs</h3>
+    <p> <a routerLink="/home">home</a> / blogs </p>
+  </section>
+</div>
+
+<!-- Main Heading ends -->
+
+<!-- Blogs section starts  -->
+
+<section class="blogs">
+
+  <h1 class="heading"> our Campus View </h1>
+
+  <div class="container">
+
+    <div class="box">
+      <div class="div">
+        <img title="Over all campus" src="../../assets/images/blogs-1.jpg">
+      </div>
+      <div class="div">
+        <img title="Enterance" src="../../assets/images/blogs-2.jpg">
+      </div>
+      <div class="div">
+        <img title="Library" src="../../assets/images/blogs-3.jpg">
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="div">
+        <img title="Auditorium" src="../../assets/images/blogs-4.jpg">
+      </div>
+      <div class="div">
+        <img title="Classrooms" src="../../assets/images/blogs-5.jpg">
+      </div>
+      <div class="div">
+        <img title="Hostel" src="../../assets/images/blogs-6.jpg">
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="div" *ngIf="hideBox">
+        <img title="Canteen" src="../../assets/images/blogs-7.jpg">
+      </div>
+      <div class="div" *ngIf="hideBox">
+        <img title="Play ground" src="../../assets/images/blogs-8.jpg">
+      </div>
+      <div class="div" *ngIf="hideBox">
+        <img title="Indoor Stadium" src="../../assets/images/blogs-9.jpg">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="load-more">
+    <div class="btn" *ngIf="hideButton" (click)="hideContainer()">load more <span class="fas fa-caret-square-right"></span>
+    </div>
+  </div>
+
+</section>
+
+<!-- Blogs section ends  -->
+
+<app-footer></app-footer>

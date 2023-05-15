@@ -1,0 +1,187 @@
+<!-- Admin Result view section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+      <div class="menu-toggle">
+          <h1>Result</h1>
+      </div>
+
+      <div class="icon">
+          <span (click)="goBack()" class="fas fa-arrow-left"></span>
+          <span (click)="goBack()">  Go Back</span>
+      </div>
+
+  </header>
+
+  <div class="main">
+
+    <br><br><br>
+
+      <div class="ResultView-container">
+
+          <h1> Result Details</h1>
+
+          <form (ngSubmit)="submitList(registerNumberValue.value, nameValue.value, resultValue.value, professionalValue.value, bigDataValue.value, cryptoValue.value, graphicsValue.value, bigDataLabValue.value, graphicsLabValue.value, biHsnValue.value, bussinessHighspeedValue.value)">
+
+            <div class="fields">
+
+              <div class="input-field">
+                <label>Register number</label>
+                <input autocomplete="off" type="tel" maxlength="7"
+                  placeholder="Enter Register number" required name="registernumber" #registerNumberValue value="{{registerNumber}}">
+              </div>
+
+              <div class="input-field">
+                <label>Name</label>
+                <input placeholder="Enter Name" required name="name" #nameValue value="{{name}}">
+              </div>
+
+              <div class="input-field">
+                <label>Result</label>
+                <select required name="result" #resultValue value="{{result}}">
+                  <option hidden selected>Select any one</option>
+                  <option>PASS</option>
+                  <option>FAIL</option>
+                </select>
+              </div>
+
+            </div>
+
+            <span class="title">Normal Subjects</span>
+
+            <div class="fields">
+
+              <div class="input-field">
+                <label>Professsional Ethics</label>
+                <select required name="pe" #professionalValue value="{{professionals}}">
+                  <option hidden selected>Select any one</option>
+                  <option>O</option>
+                  <option>A+</option>
+                  <option>A</option>
+                  <option>B+</option>
+                  <option>B</option>
+                  <option>RA-F</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Big Data</label>
+                <select required name="bd" #bigDataValue value="{{bigData}}">
+                  <option hidden selected>Select any one</option>
+                  <option>O</option>
+                  <option>A+</option>
+                  <option>A</option>
+                  <option>B+</option>
+                  <option>B</option>
+                  <option>RA-F</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Cryptography and Cloud</label>
+                <select required name="cc" #cryptoValue value="{{crypto}}">
+                  <option hidden selected>Select any one</option>
+                  <option>O</option>
+                  <option>A+</option>
+                  <option>A</option>
+                  <option>B+</option>
+                  <option>B</option>
+                  <option>RA-F</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="fields">
+
+              <div class="input-field">
+                <label>Graphics and Multimedia</label>
+                <select required name="gm" #graphicsValue value="{{graphicsMultimedia}}">
+                  <option hidden selected>Select any one</option>
+                  <option>O</option>
+                  <option>A+</option>
+                  <option>A</option>
+                  <option>B+</option>
+                  <option>B</option>
+                  <option>RA-F</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Big Data Lab</label>
+                <select required name="bdl" #bigDataLabValue value="{{bigDataLab}}">
+                  <option hidden selected>Select any one</option>
+                  <option>O</option>
+                  <option>A+</option>
+                  <option>A</option>
+                  <option>B+</option>
+                  <option>B</option>
+                  <option>RA-F</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>Graphics and Multimedia Lab</label>
+                <select required name="gml" #graphicsLabValue value="{{graphicsMultimediaLab}}">
+                  <option hidden selected>Select any one</option>
+                  <option>O</option>
+                  <option>A+</option>
+                  <option>A</option>
+                  <option>B+</option>
+                  <option>B</option>
+                  <option>RA-F</option>
+                </select>
+              </div>
+
+            </div>
+
+            <span class="title">Elective Subject</span>
+
+            <div class="fields">
+
+              <div class="input-field">
+                <label>BI / HSN</label>
+                <select required name="bi/hsn" #biHsnValue value="{{biHsn}}">
+                  <option hidden selected>Select any one</option>
+                  <option>Bussiness Intelligence</option>
+                  <option>High Speed Network</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label>GRADE</label>
+                <select required name="bh" #bussinessHighspeedValue value="{{bussinessHighspeed}}">
+                  <option hidden selected>Select any one</option>
+                  <option>O</option>
+                  <option>A+</option>
+                  <option>A</option>
+                  <option>B+</option>
+                  <option>B</option>
+                  <option>RA-F</option>
+                </select>
+              </div>
+
+              <div class="input-field"></div>
+
+            </div>
+
+            <div class="buttons">
+
+              <button class="btn" type="submit">
+                <i class="fas fa-share"></i>
+                Edit
+              </button>
+
+            </div>
+
+          </form>
+
+      </div>
+
+  </div>
+
+</div>
+
+<!-- Admin Result view section ends here  -->

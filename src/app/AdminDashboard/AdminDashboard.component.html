@@ -1,0 +1,246 @@
+<app-AdminNavbar></app-AdminNavbar>
+
+<!-- Admin dashboard section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Dashboard</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1> <span class="UserDesign">Welcome {{loginUserName}}</span></h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/adminreports">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card-single">
+
+        <div class="card-flex">
+
+          <div class="card-info">
+
+            <div class="card-head">
+              <span>Students</span>
+              <small>Number of Students</small>
+            </div>
+
+            <h2>175</h2>
+
+            <small class="act">Currently active</small>
+
+          </div>
+
+          <div class="card-chart">
+            <span class="fas fa-users"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card-single">
+
+        <div class="card-flex">
+
+          <div class="card-info">
+
+            <div class="card-head">
+              <span>Teachers</span>
+              <small>Number of Teachers</small>
+            </div>
+
+            <h2>60</h2>
+
+            <small class="act">Currently active</small>
+
+          </div>
+
+          <div class="card-chart">
+            <span class="fas fa-chalkboard-teacher"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card-single">
+
+        <div class="card-flex">
+
+          <div class="card-info">
+
+            <div class="card-head">
+
+              <span>Attendance</span>
+
+              <small>Number of Marked</small>
+
+            </div>
+
+            <h2>{{attendanceFromStudent.length}}</h2>
+
+            <small class="act">Currently active</small>
+
+          </div>
+
+          <div class="card-chart">
+            <span class="fas fa-address-book"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="Dash-container">
+
+    <div class="division">
+
+      <!--digital clock start-->
+      <h1> <span class="fas fa-calendar-alt"></span> Date and Time</h1>
+
+      <div class="datetime">
+
+        <div class="date">
+
+          <span>{{day}}</span>,
+
+          <span>{{month}}</span>
+
+          <span>{{dates}}</span>,
+
+          <span>{{year}}</span>
+
+        </div>
+
+        <div class="time">
+
+          <span>{{hours}}</span>:
+          <span>{{minutes}}</span>:
+          <span>{{second}}</span>
+          <span>{{ampm}}</span>
+
+        </div>
+
+      </div>
+
+      <!--digital clock end-->
+
+      <!-- Quick links starts -->
+
+      <div class="quick-links">
+
+        <h1> <span class="fas fa-hand-point-right"></span> Quick links</h1>
+
+        <div class="icon-content">
+
+          <div class="icos one">
+            <a routerLink="/adminattendance">Attendance</a>
+            <a routerLink="/adminmaterials">Materials</a>
+          </div>
+
+          <div class="icos">
+            <a routerLink="/admintimetable">Time table</a>
+            <a routerLink="/adminreports">Reports</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Quick links end  -->
+
+    </div>
+
+    <div class="lists">
+
+      <h1> <span class="fas fa-swatchbook"></span> Students List</h1>
+
+      <div class="section">
+
+        <div class="part">
+          <h4>CSE</h4>
+          <p>A - SECTION</p>
+          <p>19CS001 - 19CS054</p>
+          <p>B - SECTION</p>
+          <p>19CS055 - 19CS099</p>
+        </div>
+
+        <div class="part">
+          <h4>IT</h4>
+          <p>A - SECTION</p>
+          <p>19IT001 - 19IT054</p>
+          <p>B - SECTION</p>
+          <p>19IT055 - 19IT099</p>
+        </div>
+
+        <div class="part">
+          <h4>ECE</h4>
+          <p>A - SECTION</p>
+          <p>19EC001 - 19EC054</p>
+          <p>B - SECTION</p>
+          <p>19EC055 - 19EC099</p>
+        </div>
+
+        <div class="part">
+          <h4>EEE</h4>
+          <p>A - SECTION</p>
+          <p>19EE001 - 19EE054</p>
+          <p>B - SECTION</p>
+          <p>19EE055 - 19EE099</p>
+        </div>
+
+        <div class="part">
+          <h4>CE</h4>
+          <p>A - SECTION</p>
+          <p>19CE001 - 19CE054</p>
+          <p>B - SECTION</p>
+          <p>19CE055 - 19CE099</p>
+        </div>
+
+
+        <div class="part">
+          <h4>AE</h4>
+          <p>A - SECTION</p>
+          <p>19AE001 - 19AE054</p>
+          <p>B - SECTION</p>
+          <p>19AE055 - 19AE099</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Admin dashboard section ends here  -->

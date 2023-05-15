@@ -1,0 +1,94 @@
+<app-AdminNavbar></app-AdminNavbar>
+
+<!-- Admin Details section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Student Details</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1>Find Details...</h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/adminreports">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a (click)="goBack()" class="emoji2">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <app-Search (searchTextChanged)="onSearchTextEntered($event)"></app-Search>
+
+    <section class="StudDetails">
+
+      <div class="StudDetails-list">
+
+        <h1>Details</h1>
+
+        <table class="StudDetails-table">
+
+          <thead>
+
+            <tr>
+              <th title="Sort By ID" (click)="sort('id')">ID <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By REGISTER NUMBER" (click)="sort('REGISTER_NUMBER')">Register Number <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By NAME" (click)="sort('NAME')">Name <span class="fas fa-sort-alpha-down"></span></th>
+              <th>Degree</th>
+              <th>Department</th>
+              <th title="Sort By DATE OF BIRTH" (click)="sort('DATE_OF_BIRTH')">DOB <span class="fas fa-sort-amount-down-alt"></span></th>
+              <th>Delete</th>
+              <th>Details</th>
+            </tr>
+
+          </thead>
+
+          <tbody *ngFor="let Details of detailsFromStudent | orderBy: orderHeader: isDescOrder">
+
+            <tr class="active" *ngIf="searchText === '' || Details.REGISTER_NUMBER.toLowerCase().includes(searchText) || Details.NAME.toLowerCase().includes(searchText) || Details.STUDENT_DEPARTMENT.toLowerCase().includes(searchText) || Details.DATE_OF_BIRTH.toLowerCase().includes(searchText)">
+              <td>{{Details.id}}</td>
+              <td>{{Details.REGISTER_NUMBER}}</td>
+              <td>{{Details.NAME}}</td>
+              <td>{{Details.STUDENT_DEGREE}}</td>
+              <td>{{Details.STUDENT_DEPARTMENT}}</td>
+              <td>{{Details.DATE_OF_BIRTH}}</td>
+              <td><button class="delete" (click)="deleteData(Details.id)"><i class="fas fa-trash-alt"></i></button></td>
+              <td><button (click)="editAdminDetails(Details.id)">View</button></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
+
+<!-- Admin Details section ends here  -->

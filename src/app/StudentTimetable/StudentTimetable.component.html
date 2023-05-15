@@ -1,0 +1,126 @@
+<app-StudentNavbar></app-StudentNavbar>
+
+<!-- Student Timetable section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Time Table</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1> <span class="UserDesign">Hi, {{loginUserName}} ...</span></h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/studentreports">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="table-container">
+
+      <table *ngFor="let timetable of timetableFromAdmin">
+
+        <th colspan="8" style="font-size: 1.7rem; padding: 8px;background-color: #1abae2;">{{timetable.YEAR}} -
+          {{timetable.DEPARTMENT}}
+        </th>
+
+        <tr class="size">
+          <th>DATE / TIME</th>
+          <th>09.00 A.M. To 09.50 A.M.</th>
+          <th>09.50 A.M. To 10.40 A.M.</th>
+          <th>10.55 A.M. To 11.40 P.M.</th>
+          <th>11.40 A.M. To 12.30 P.M.</th>
+          <th>01.30 P.M. To 02.20 P.M.</th>
+          <th>02.20 P.M. To 03.10 P.M.</th>
+          <th>03.10 P.M. To 04.00 P.M.</th>
+        </tr>
+
+        <tr class="clr1">
+          <th class="size">MON</th>
+          <td>{{timetable.MONDAY1ST}}</td>
+          <td>{{timetable.MONDAY2ND}}</td>
+          <td>{{timetable.MONDAY3RD}}</td>
+          <td>{{timetable.MONDAY4TH}}</td>
+          <td>{{timetable.MONDAY5TH}}</td>
+          <td>{{timetable.MONDAY6TH}}</td>
+          <td>{{timetable.MONDAY7TH}}</td>
+        </tr>
+
+        <tr class="clr3">
+          <th class="size">TUE</th>
+          <td>{{timetable.TUESDAY1ST}}</td>
+          <td>{{timetable.TUESDAY2ND}}</td>
+          <td>{{timetable.TUESDAY3RD}}</td>
+          <td>{{timetable.TUESDAY4TH}}</td>
+          <td>{{timetable.TUESDAY5TH}}</td>
+          <td>{{timetable.TUESDAY6TH}}</td>
+          <td>{{timetable.TUESDAY7TH}}</td>
+        </tr>
+
+        <tr class="clr1">
+          <th class="size">WED</th>
+          <td>{{timetable.WEDNESDAY1ST}}</td>
+          <td>{{timetable.WEDNESDAY2ND}}</td>
+          <td>{{timetable.WEDNESDAY3RD}}</td>
+          <td>{{timetable.WEDNESDAY4TH}}</td>
+          <td>{{timetable.WEDNESDAY5TH}}</td>
+          <td>{{timetable.WEDNESDAY6TH}}</td>
+          <td>{{timetable.WEDNESDAY7TH}}</td>
+        </tr>
+
+        <tr class="clr3">
+          <th class="size">THU</th>
+          <td>{{timetable.THURSDAY1ST}}</td>
+          <td>{{timetable.THURSDAY2ND}}</td>
+          <td>{{timetable.THURSDAY3RD}}</td>
+          <td>{{timetable.THURSDAY4TH}}</td>
+          <td>{{timetable.THURSDAY5TH}}</td>
+          <td>{{timetable.THURSDAY6TH}}</td>
+          <td>{{timetable.THURSDAY7TH}}</td>
+        </tr>
+
+        <tr class="clr1">
+          <th class="size">FRI</th>
+          <td>{{timetable.FRIDAY1ST}}</td>
+          <td>{{timetable.FRIDAY2ND}}</td>
+          <td>{{timetable.FRIDAY3RD}}</td>
+          <td>{{timetable.FRIDAY4TH}}</td>
+          <td>{{timetable.FRIDAY5TH}}</td>
+          <td>{{timetable.FRIDAY6TH}}</td>
+          <td>{{timetable.FRIDAY7TH}}</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Student Timetable section ends here  -->

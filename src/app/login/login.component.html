@@ -1,0 +1,149 @@
+<div>
+
+  <!-- Header section Starts  -->
+
+  <header>
+
+    <a class="logo" routerLink="/home"> <i class="fas fa-cloud-moon"></i> <span>C</span>loud... </a>
+
+    <a class="btn-main" routerLink="/home"><i class="fas fa-home"></i><span>&numsp;Home Page</span></a>
+
+  </header>
+
+  <!-- Header section Ends  -->
+
+  <!-- Login form section starts  -->
+
+  <div class="login-container" *ngIf="!blur">
+
+    <div class="login-content">
+
+      <form [formGroup]="LoginReactiveForm" (ngSubmit)="signinList(usernames.value,passwords.value)">
+
+        <a href=""><img src="../../assets/images/review-img.png"></a>
+
+        <h2 class="title">sign-in</h2>
+
+        <div class="input-div one">
+
+          <div class="i">
+            <i class="fas fa-user"></i>
+          </div>
+
+          <div class="div">
+            <input type="text" autocomplete="off" pattern="^[a-zA-Z]+$" name="username" placeholder="Username"
+              class="input" #usernames formControlName="userNameValue" />
+          </div>
+
+        </div>
+
+        <div class="information-error"
+          *ngIf="LoginReactiveForm.controls['userNameValue'].invalid && LoginReactiveForm.controls['userNameValue'].dirty">
+          <p class="error" *ngIf="LoginReactiveForm.controls['userNameValue'].errors?.['required']"><i
+              class="fas fa-exclamation-circle"></i>&numsp; Enter Username to Continue..</p>
+          <p class="error" *ngIf="LoginReactiveForm.controls['userNameValue'].errors?.['pattern']"><i
+              class="fas fa-exclamation-circle"></i>&numsp; Username only contains Alphabets</p>
+        </div>
+        <div class="information-error"
+          *ngIf="LoginReactiveForm.controls['userNameValue'].valid && LoginReactiveForm.controls['userNameValue'].dirty">
+          <small class="success"><i class="fas fa-thumbs-up"></i>&numsp; Correct</small>
+        </div>
+
+        <div class="input-div pass">
+          <div class="i">
+            <i class="fas fa-lock"></i>
+          </div>
+
+          <div class="div">
+            <input type="password" [type]="fieldTextType ? 'text' : 'password'"
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$" name="Password" placeholder="Password "
+              class="input" #passwords formControlName="passwordValue" />
+          </div>
+
+        </div>
+
+        <div class="information-error1"
+          *ngIf="LoginReactiveForm.controls['passwordValue'].invalid&& LoginReactiveForm.controls['passwordValue'].dirty">
+          <p class="error" *ngIf="LoginReactiveForm.controls['passwordValue'].errors?.['required']"><i
+              class="fas fa-exclamation-circle"></i>&numsp; Enter Password to Continue..</p>
+          <p class="error" *ngIf="LoginReactiveForm.controls['passwordValue'].errors?.['pattern']"><i
+              title="password have min 7 digits, uppercase, lowercase, number and special character"
+              class="fas fa-exclamation-circle"></i>&numsp; Follow password Constraints</p>
+        </div>
+        <div class="information-error1"
+          *ngIf="LoginReactiveForm.controls['passwordValue'].valid&& LoginReactiveForm.controls['passwordValue'].dirty">
+          <small class="success"><i class="fas fa-thumbs-up"></i>&numsp; Correct</small>
+        </div>
+
+        <div class="iconvisible">
+          <input type="checkbox" (click)="showPass()">
+          <p> Show Password</p>
+        </div>
+
+        <a class="forgotpass" (click)="openForgotPass()">Forgot Password?</a>
+
+        <button type="submit" [disabled]="!LoginReactiveForm.valid"
+          title="It Enables only the input field does not contain any errors" class="btn-login">LOGIN</button>
+
+        <p class="signup">Dont have a Account : <a routerLink="/register">sign-up</a> </p>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
+<!-- login form section ends  -->
+
+<!-- forgot password section starts -->
+
+<div class="main" *ngIf="blur">
+
+  <div class="forgotpass-container">
+
+    <div class="content">
+
+      <h2>Forgot Password</h2>
+
+      <p class="quotes">It's quick and easy.</p>
+
+      <a class="close-btn" (click)="openLoginPage()"><i class="fas fa-times"></i></a>
+
+    </div>
+
+    <form [formGroup]="forgotPasswordReactiveForm" (ngSubmit)="forgotPass(emails.value)">
+
+      <div class="input-field">
+        <label>Email</label>
+        <input name="email" autocomplete="off" type="email" required
+          pattern="^[0-9a-zA-Z]+[._]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$"
+          placeholder="Enter your email" #emails formControlName="emailValue"> <br>
+        <div class="information-error"
+          *ngIf="forgotPasswordReactiveForm.controls['emailValue'].invalid && forgotPasswordReactiveForm.controls['emailValue'].dirty">
+          <p class="error" *ngIf="forgotPasswordReactiveForm.controls['emailValue'].errors?.['required']"><i
+              class="fas fa-exclamation-circle"></i>&numsp; email
+            is
+            not Empty!</p>
+          <p class="error" *ngIf="forgotPasswordReactiveForm.controls['emailValue'].errors?.['pattern']"><i class="fas fa-exclamation-circle"></i>&numsp; email
+            only
+            in mdk@gmail.com this format
+          </p>
+        </div>
+        <div class="information-error" *ngIf="forgotPasswordReactiveForm.controls['emailValue'].valid && forgotPasswordReactiveForm.controls['emailValue'].dirty">
+          <small class="success"><i class="fas fa-thumbs-up"></i>&numsp; Correct</small>
+        </div>
+      </div>
+
+      <br><br>
+
+      <div class="forgotpass-buttons">
+        <button type="submit" [disabled]="!forgotPasswordReactiveForm.valid" class="btn-forgotpass">Send</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- forgot password section ends -->

@@ -1,0 +1,68 @@
+/*-------------------------------------------------------------
+----------------- Header section starts here-------------------
+---------------------------------------------------------------  */
+
+*{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+
+header {
+    padding: 2rem 9%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #03262c;
+}
+
+header .logo {
+    font-size: 2rem;
+    color: #fff;
+}
+
+header .logo span {
+    color: #4070f4;
+}
+
+header .logo i {
+    color: #4070f4;
+}
+
+header .navbar a {
+    font-size: 1.5rem;
+    border: 1px solid #03262c;
+    color: #fff;
+    margin-left: 2rem;
+    padding: 6px 15px;
+}
+
+header .navbar a:last-child {
+    background-color: #4070f4;
+    padding: .6rem .8rem;
+    color: #fff;
+    border: .2rem solid #afc4ff;
+}
+
+header .navbar a:last-child:hover {
+    background-color: #fff;
+    color: #4070f4;
+    border: .2rem solid #4070f4;
+}
+
+header .navbar a:hover {
+    color: #4070f4;
+    border: 1px solid #afc4ff;
+    background: none;
+}
+
+.activated{
+  background-color: #4070f4;
+  border-radius: 3rem;
+}
+
+/* Header section ends here  */

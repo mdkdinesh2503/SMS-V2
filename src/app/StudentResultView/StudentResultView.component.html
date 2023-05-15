@@ -1,0 +1,122 @@
+<!-- Student Result view section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Result</h1>
+    </div>
+
+    <div class="icon">
+      <span (click)="goBack()" class="fas fa-arrow-left"></span>
+      <span (click)="goBack()"> Go Back</span>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <br><br><br>
+
+    <div class="ResultView-container">
+
+      <h1>View Result</h1>
+
+      <form>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>Register number</label>
+            <input disabled value="{{registerNumber}}">
+          </div>
+
+          <div class="input-field">
+            <label>Name</label>
+            <input disabled value="{{name}}">
+          </div>
+
+          <div class="input-field">
+            <label>Result</label>
+            <input disabled value="{{result}}">
+          </div>
+
+        </div>
+
+        <span class="title">Normal Subjects</span>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>Professsional Ethics</label>
+            <input disabled value="{{professionals}}">
+          </div>
+
+          <div class="input-field">
+            <label>Big Data</label>
+            <input disabled value="{{bigData}}">
+          </div>
+
+          <div class="input-field">
+            <label>Cryptography and Cloud</label>
+            <input disabled value="{{crypto}}">
+          </div>
+
+        </div>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>Graphics and Multimedia</label>
+            <input disabled value="{{graphicsMultimedia}}">
+          </div>
+
+          <div class="input-field">
+            <label>Big Data Lab</label>
+            <input disabled value="{{bigDataLab}}">
+          </div>
+
+          <div class="input-field">
+            <label>Graphics and Multimedia Lab</label>
+            <input disabled value="{{graphicsMultimediaLab}}">
+          </div>
+
+        </div>
+
+        <span class="title">Elective Subject</span>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>BI / HSN</label>
+            <input disabled value="{{biHsn}}">
+          </div>
+
+          <div class="input-field">
+            <label>GRADE</label>
+            <input disabled value="{{bussinessHighspeed}}">
+          </div>
+
+          <div class="input-field"></div>
+
+        </div>
+
+        <div class="buttons">
+
+          <button class="btn" (click)="printFunction()" type="button">
+            <i class="fas fa-share"></i>
+            print
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Student Result view section ends here  -->

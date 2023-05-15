@@ -1,0 +1,91 @@
+/*-------------------------------------------------------------
+----------------- Front page starts here ----------------------
+---------------------------------------------------------------  */
+
+.front-container .front-div-heading h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin: 3rem;
+  text-transform: capitalize;
+  text-shadow: .3rem .3rem 0 #afc4ff;
+}
+
+.front-container .front-div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.front-container .front-div .front-div-1 {
+  flex: 1 1 45rem;
+  text-align: end;
+}
+
+.front-container .front-div .front-div-1 img {
+  width: 75%;
+  height: 40rem;
+}
+
+.front-container .front-div .front-div-2 {
+  flex: 1 1 45rem;
+  margin: 0 7%;
+}
+
+.front-container .front-div .front-div-2 li {
+  list-style: none;
+}
+
+.front-container .front-div .front-div-2 li p {
+  font-size: 2rem;
+  color: #03262c;
+  line-height: 5rem;
+  font-weight: 900;
+}
+
+.front-container .front-div .front-div-2 li span {
+  font-size: 1.5rem;
+  color: #3b4e81;
+  line-height: 5rem;
+  padding: 1rem 0;
+}
+
+.btn {
+  display: inline-flex;
+  margin-top: 1rem;
+  width: fit-content;
+  padding: .7rem 1rem;
+  border: .2rem solid #4070f4;
+  border-radius: .5rem;
+  box-shadow: .5rem .5rem 0 #afc4ff;
+  color: #4070f4;
+  cursor: pointer;
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 3rem;
+  background: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.btn span {
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  background: #4070f4;
+  color: #fff;
+  margin: .2rem;
+}
+
+.btn:hover {
+  background: #4070f4;
+  color: #fff;
+}
+
+.btn:hover span {
+  color: #4070f4;
+  background: #fff;
+  margin-left: 1rem;
+}
+
+/* front page ends here  */

@@ -1,0 +1,136 @@
+/*-------------------------------------------------------------
+----------------- Overall Footer Section starts here-----------
+---------------------------------------------------------------  */
+
+.footer {
+  background-color: #dbe2f1;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+  margin: 0 9rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #4070f4;
+  padding: 1rem 0;
+  margin-bottom: 0px;
+}
+
+.footer .box-container .box .share {
+  margin-top: 0px;
+}
+
+.footer .box-container .box .share a {
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
+  font-size: 1.3rem;
+  color: #4070f4;
+  text-decoration: none;
+  border: .1rem solid #4070f4;
+  border-radius: .5rem;
+  margin-right: .5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer .box-container .box .share a:hover {
+  background: #4070f4;
+  color: #fff;
+  box-shadow: .3rem .3rem 0 #afc4ff;
+}
+
+.footer .box-container .box .link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 100;
+  color: #777777;
+  padding: .9rem 0;
+  display: block;
+}
+
+.footer .box-container .box .link i {
+  margin-right: .5rem;
+}
+
+.footer .box-container .box .sec {
+  margin-right: .7rem;
+  margin-left: .2rem;
+}
+
+.footer .box-container .box i,
+.footer .box-container .box .link:hover {
+  color: #4070f4;
+}
+
+.footer .box-container .box .link:hover i {
+  padding-right: .9rem;
+  transition: 0.3s ease-in-out;
+  color: #03262c;
+}
+
+.footer .box-container .box p {
+  font-size: 1.2rem;
+  line-height: 2;
+  font-weight: 100;
+  color: #777777;
+  margin-top: .5rem;
+}
+
+.footer .box-container .box .email {
+  width: 80%;
+  padding: 1rem 1rem;
+  font-size: 1.2rem;
+  border: 0.1rem solid #4070f4;
+  margin-bottom: 1rem;
+}
+
+.footer .credit {
+  text-align: center;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: .3rem solid #4070f4;
+  padding-top: 2rem;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: lighter;
+  color: #4070f4;
+  border-top: 0.1rem solid #4070f4;
+}
+
+/* Overall footer section ends here  */
+
+/*-------------------------------------------------------------
+----------------- Overall Button Styling starts here-----------
+---------------------------------------------------------------  */
+
+.btn {
+  display: inline-flex;
+  width: fit-content;
+  padding: .1px .5rem;
+  border: .1rem solid #4070f4;
+  border-radius: .5rem;
+  box-shadow: .3rem .3rem 0 #afc4ff;
+  font-weight: 200;
+  color: #4070f4;
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 3rem;
+  background: #fff;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #4070f4;
+  color: #fff;
+}
+
+/* Overall Button styling ends here  */

@@ -1,0 +1,229 @@
+/*------------------------------------------------
+        Login page header section starts here
+--------------------------------------------------  */
+
+header {
+  padding: .9rem 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0px 0px 15px 5px #4070f4;
+  background-color: #03262c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+header .logo i,
+header .logo span {
+  color: #4070f4;
+}
+
+/* Login page header section ends here  */
+
+/*----------------------------------------
+      button section starts here
+------------------------------------------  */
+
+.btn-main {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  padding: 15px 30px;
+  text-transform: capitalize;
+  text-decoration: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.5s;
+  display: inline-flex;
+  margin-top: .5rem;
+  margin-bottom: .3rem;
+  width: fit-content;
+  border: .2rem solid #4070f4;
+  border-radius: .5rem;
+  background-color: #4070f4;
+  color: #fff;
+}
+
+.btn-main:hover {
+  color: #4070f4;
+  background: #fff;
+}
+
+.btn-register {
+  color: #fff;
+  background: #4070f4;
+  box-shadow: 0.2rem 0.2rem 0 #d2dfff;
+  font-size: 1.5rem;
+  padding: 0.8rem 1rem;
+  font-weight: 500;
+  margin: 0 2rem 2rem;
+  justify-content: space-between;
+  border: 0.1rem solid #4070f4;
+  cursor: pointer;
+}
+
+.btn-register:hover {
+  background: #fff;
+  color: #4070f4;
+}
+
+/* button section ends here  */
+
+/*--------------------------------------------
+        Register form section starts here
+----------------------------------------------  */
+
+.main {
+  min-height: 92vh;
+  background-color: #afc4ff;
+  margin-top: 5rem;
+}
+
+.buttons {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.Register-container {
+  max-width: 580px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 25px;
+  margin: 4rem auto;
+  margin-bottom: 5rem;
+  background-color: #fff;
+  box-shadow: 0.2rem 0.2rem 0 #d2dfff;
+  border-top: 8px solid #4070f4;
+  border-left: 0.2rem solid #4070f4;
+  border-right: 0.2rem solid #4070f4;
+  border-bottom: 0.2rem solid #4070f4;
+}
+
+.Register-container h1 {
+  position: relative;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-top: 0px;
+  color: #03262c;
+}
+
+.Register-container h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  width: 230px;
+  border-radius: 8px;
+  background-color: #4070f4;
+}
+
+.Register-container form {
+  margin-top: 16px;
+  background-color: #fff;
+  overflow: auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.Register-container form .fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Register-container form .fields .input-field {
+  display: flex;
+  width: calc(100% - 15px);
+  flex-direction: column;
+  margin: 2px 0;
+}
+
+.Register-container .input-field label {
+  font-size: 1.2rem;
+  font-family: Verdana;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+  color: #4070f4;
+}
+
+.Register-container .input-field input,
+.Register-container .input-field select {
+  display: block;
+  outline: none;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 5px;
+  border: 0.1rem solid #4070f4;
+  color: #777777;
+  padding: 0 10px;
+  height: 42px;
+  margin: 6px 0;
+  width: calc(100%-10%);
+}
+
+.Register-container form .fields .input-field .information-error {
+  display: flex;
+  position: relative;
+  margin-top: -1rem;
+}
+
+.Register-container .input-field input:focus {
+  box-shadow: 0.2rem 0.2rem 0 #d2dfff;
+  color: #000;
+}
+
+.Register-container form .Sign-in {
+  margin-top: 0px;
+  font-size: 1.4rem;
+  color: #000;
+  float: left;
+}
+
+.Register-container form .Sign-in a {
+  font-size: 1.6rem;
+  color: #03262c;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.Register-container form .Sign-in a:hover {
+  color: #4070f4;
+}
+
+input.ng-invalid {
+  border: 0.2rem solid red;
+  box-shadow: 0.2rem 0.2rem 0 #ffb0af;
+}
+
+input.ng-valid {
+  border: 0.2rem solid green;
+  box-shadow: 0.2rem 0.2rem 0 #84fb84;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: red;
+}
+
+.success {
+  font-size: 0.8rem;
+  color: green;
+}
+
+.empty {
+  margin-bottom: 0.2rem;
+}
+
+/* Register form section ends here */

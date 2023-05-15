@@ -1,0 +1,172 @@
+<app-AdminNavbar></app-AdminNavbar>
+
+<!-- Admin Register section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Register List</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1>Hi, There...</h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/adminregisters">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="cards">
+
+      <div class="card-single">
+
+        <div class="card-flex">
+
+          <div class="card-info">
+
+            <div class="card-head">
+              <span>Students</span>
+              <small>Number of Students</small>
+            </div>
+
+            <h2>175</h2>
+
+            <small class="blue">Currently active</small>
+
+          </div>
+
+          <div class="card-chart">
+            <span class="fas fa-users"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card-single">
+
+        <div class="card-flex">
+
+          <div class="card-info">
+
+            <div class="card-head">
+              <span>Register</span>
+              <small>Number of Registers</small>
+            </div>
+
+            <h2>{{registerListFromStudent.length}}</h2>
+
+            <small class="blue">Currently active</small>
+
+          </div>
+
+          <div class="card-chart">
+            <span class="fas fa-book"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card-single">
+
+        <div class="card-flex">
+
+          <div class="card-info">
+
+            <div class="card-head">
+
+              <span>Admin</span>
+
+              <small>Number of Logins</small>
+
+            </div>
+
+            <h2>1</h2>
+
+            <small class="blue">Currently active</small>
+
+          </div>
+
+          <div class="card-chart">
+            <span class="fas fa-address-book"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div><br><br>
+
+    <app-Search (searchTextChanged)="onSearchTextEntered($event)"></app-Search>
+
+    <section class="register">
+
+      <div class="register-list">
+
+        <h1>Register List</h1>
+
+        <table class="table">
+
+          <thead>
+            <tr>
+              <th title="Sort By ID" (click)="sort('id')">ID <span class="fas fa-sort-numeric-down"></span></th>
+              <th title="Sort By USERNAME" (click)="sort('USERNAME')">Username <span class="fas fa-sort-alpha-down"></span></th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Confirm password</th>
+              <th>Delete</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+
+          <tbody *ngFor="let registers of registerListFromStudent | orderBy: orderHeader: isDescOrder">
+
+            <tr class="active" *ngIf="searchText === '' || registers.USERNAME.toLowerCase().includes(searchText) || registers.EMAIL.toLowerCase().includes(searchText) || registers.PASSWORD.toLowerCase().includes(searchText) || registers.CONFIRMPASSWORD.toLowerCase().includes(searchText)">
+              <td>{{registers.id}}</td>
+              <td>{{registers.USERNAME}}</td>
+              <td>{{registers.EMAIL}}</td>
+              <td>{{registers.PASSWORD}}</td>
+              <td>{{registers.CONFIRMPASSWORD}}</td>
+              <td><button class="delete" (click)="deleteData(registers.id)"><i class="fas fa-trash-alt"></i></button></td>
+              <td><button (click)="editRegister(registers.id)" class="edit"><i class="fas fa-edit"></i></button></td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
+
+<!-- Admin Register section ends here  -->

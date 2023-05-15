@@ -1,0 +1,397 @@
+<app-AdminNavbar></app-AdminNavbar>
+
+<!-- Admin Exam section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Exam Details</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1>Find Details...</h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/adminfees">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="Exam-Container">
+
+      <div class="container" (click)="openExamHallAllocation()">
+        <h1>Exam Hall Allocations </h1>
+      </div>
+
+      <div class="container" (click)="openExamTimetable()">
+        <h1>Exam Timetable</h1>
+      </div>
+
+      <div class="container" (click)="openExamPayment()">
+        <h1>Exam Fees Payment List</h1>
+      </div>
+
+      <!-- <div class="container" (click)="openDeleteContainer()">
+        <h1>Delete</h1>
+      </div> -->
+
+    </div>
+
+    <div class="hall-Allocations" *ngIf="hide1">
+
+      <div class="StudentExam-container">
+
+        <h1>Hall Allocations</h1>
+
+        <form
+          (ngSubmit)="submitListHallAllocation(year.value, sem.value, course.value, hallNumber.value, totalStudent.value)">
+
+          <div class="fields">
+
+            <div class="input-field">
+              <label>Year</label>
+              <select #year disabled>
+                <option selected>1st Year</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label>Semester</label>
+              <select #sem disabled>
+                <option selected>1st Semester</option>
+                <option>2nd Semester</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label>Course</label>
+              <select #course>
+                <option hidden selected>Select anyone..</option>
+                <option>Computer Science And Engineering</option>
+                <option>Automobile Engineering</option>
+                <option>Civil Engineering</option>
+                <option>Informational Technology</option>
+                <option>Electrical And Electronics Engineering</option>
+                <option>Electronics And Communication Engineering</option>
+                <option>Mechanical Engineering</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label>Hall No.</label>
+              <input type="text" #hallNumber>
+            </div>
+
+            <div class="input-field">
+              <label>No. of Students</label>
+              <input type="number" #totalStudent>
+            </div>
+
+          </div>
+
+          <div class="buttons">
+
+            <button class="btn" type="submit">
+              <i class="fas fa-share"></i>
+              Add
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <section class="StudExamDetails">
+
+        <div class="StudExamDetails-list">
+
+          <h1>Exam hall Allocations</h1>
+
+          <table class="StudExamDetails-table">
+
+            <thead>
+
+              <tr>
+                <th title="Sort By ID" (click)="sort('id')">S.No <span class="fas fa-sort-numeric-down"></span></th>
+                <th>Year/ Semester</th>
+                <th title="Sort By COURSES" (click)="sort('COURSES')">program <span
+                    class="fas fa-sort-alpha-down"></span></th>
+                <th title="Sort By HALL NUMBER" (click)="sort('HALL_NUMBER')">Hall No. <span
+                    class="fas fa-sort-alpha-down"></span></th>
+                <th title="Sort By TOTAL STUDENTS" (click)="sort('TOTAL_STUDENTS')">No. Of Students<span
+                    class="fas fa-sort-numeric-down"></span></th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr class="active" *ngFor="let hall of hallAllocationFromAdmin | orderBy: orderHeader: isDescOrder">
+                <td>{{hall.id}}</td>
+                <td>{{hall.YEAR}} / {{hall.SEMESTER}}</td>
+                <td>{{hall.COURSES}}</td>
+                <td>{{hall.HALL_NUMBER}}</td>
+                <td>{{hall.TOTAL_STUDENTS}}</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <div class="Exam-Timetable" *ngIf="hide2">
+
+      <div class="StudentExam-container">
+
+        <h1>Timetable</h1>
+
+        <form
+          (ngSubmit)="submitListTimetable(subject.value, exam1.value, exam2.value, exam3.value, exam4.value, exam5.value, exam6.value)">
+
+          <div class="fields">
+
+            <div class="input-field">
+              <label>Subject</label>
+              <select #subject>
+                <option hidden selected>Select anyone..</option>
+                <option>Computer Science And Engineering</option>
+                <option>Automobile Engineering</option>
+                <option>Civil Engineering</option>
+                <option>Informational Technology</option>
+                <option>Electrical And Electronics Engineering</option>
+                <option>Electronics And Communication Engineering</option>
+                <option>Mechanical Engineering</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label>1st Exam</label>
+              <input type="text" #exam1 placeholder="Enter First Subject">
+            </div>
+
+            <div class="input-field">
+              <label>2nd Exam</label>
+              <input type="text" #exam2 placeholder="Enter Second Subject">
+            </div>
+
+            <div class="input-field">
+              <label>3rd Exam</label>
+              <input type="text" #exam3 placeholder="Enter Third Subject">
+            </div>
+
+            <div class="input-field">
+              <label>4th Exam</label>
+              <input type="text" #exam4 placeholder="Enter Fourth Subject">
+            </div>
+
+            <div class="input-field">
+              <label>5th Exam</label>
+              <input type="text" #exam5 placeholder="Enter Fifth Subject">
+            </div>
+
+            <div class="input-field">
+              <label>6th Exam</label>
+              <input type="text" #exam6 placeholder="Enter Sixth Subject">
+            </div>
+
+          </div>
+
+          <div class="buttons">
+
+            <button class="btn" type="submit">
+              <i class="fas fa-share"></i>
+              Add
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+      <section class="StudExamDetails">
+
+        <div class="StudExamDetails-list">
+
+          <h1>Exam Timetable</h1>
+
+          <table class="StudExamDetails-table">
+
+            <thead>
+
+              <tr>
+                <th>Day & Date / <br> Programme</th>
+                <th>05/12/2022 <br> Monday</th>
+                <th>07/12/2022 <br> Wednesday</th>
+                <th>09/12/2022 <br> Friday</th>
+                <th>12/12/2022 <br> Monday</th>
+                <th>14/12/2022 <br> Wednesday</th>
+                <th>16/12/2022 <br> Friday</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Timing : 01.30 P.M. TO 04.30 P.M</td>
+              </tr>
+
+              <tr class="active" *ngFor="let timetable of timetableFromAdmin">
+                <td>{{timetable.SUBJECT}}</td>
+                <td>{{timetable.FIRST_EXAM}}</td>
+                <td>{{timetable.SECOND_EXAM}}</td>
+                <td>{{timetable.THIRD_EXAM}}</td>
+                <td>{{timetable.FOURTH_EXAM}}</td>
+                <td>{{timetable.FIFTH_EXAM}}</td>
+                <td>{{timetable.SIXTH_EXAM}}</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <div class="Exam-Fees-Payment" *ngIf="hide3">
+
+      <app-Search (searchTextChanged)="onSearchTextEntered($event)"></app-Search>
+
+      <section class="StudExamDetails">
+
+        <div class="StudExamDetails-list">
+
+          <h1>Exam Timetable</h1>
+
+          <table class="StudExamDetails-table">
+
+            <thead>
+
+              <tr>
+                <th title="Sort By ID" (click)="sort('id')">S/No. <span class="fas fa-sort-numeric-down"></span></th>
+                <th title="Sort By REGISTER NUMBER" (click)="sort('REGISTER_NUMBER')">Register Number <span
+                    class="fas fa-sort-numeric-down"></span></th>
+                <th title="Sort By NAME" (click)="sort('NAME')">Name <span class="fas fa-sort-alpha-down"></span></th>
+                <th>Degree</th>
+                <th title="Sort By DEPARTMENT" (click)="sort('DEPARTMENT')">Department <span
+                    class="fas fa-sort-alpha-down"></span></th>
+                <th title="Sort By AMOUNT" (click)="sort('TOTAL_AMOUNT')">Amount <span
+                    class="fas fa-sort-numeric-down"></span></th>
+                <th title="Sort By FIELDS" (click)="sort('FEES')">fields <span class="fas fa-sort-alpha-down"></span>
+                </th>
+              </tr>
+
+            </thead>
+
+            <tbody *ngFor="let fees of examFeesFromStudent | orderBy: orderHeader: isDescOrder">
+
+              <tr class="active"
+                *ngIf="searchText === '' || fees.REGISTER_NUMBER.toLowerCase().includes(searchText) || fees.NAME.toLowerCase().includes(searchText) || fees.DEPARTMENT.toLowerCase().includes(searchText) || fees.TOTAL_AMOUNT.toLowerCase().includes(searchText) || fees.FEES.toLowerCase().includes(searchText)">
+                <td>{{fees.id}}</td>
+                <td>{{fees.REGISTER_NUMBER}}</td>
+                <td>{{fees.NAME}}</td>
+                <td>{{fees.DEGREE}}</td>
+                <td>{{fees.DEPARTMENT}}</td>
+                <td>{{fees.TOTAL_AMOUNT}}</td>
+                <td>{{fees.FEES}}</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- <div class="Delete" *ngIf="hide4">
+
+      <div class="Delete-Container">
+
+        <div class="part">
+          <h1>Exam Hall Allocations</h1>
+
+          <div class="buttons">
+
+            <button class="btn">
+              Add
+            </button>
+
+          </div>
+
+          <div class="buttons">
+
+            <button class="btn">
+              Delete
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="part">
+          <h1>Exam Timetable</h1>
+
+          <div class="buttons">
+
+            <button class="btn">
+              Add
+            </button>
+
+          </div>
+
+          <div class="buttons">
+
+            <button class="btn">
+              Delete
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div> -->
+
+  </div>
+
+</div>
+
+<!-- Admin Exam section ends here  -->

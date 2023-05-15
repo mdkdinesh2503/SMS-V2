@@ -1,0 +1,130 @@
+/*-------------------------------------------------------------
+----------------- navigation section starts here---------------
+---------------------------------------------------------------  */
+
+.navigation {
+  height: 100%;
+  width: 3rem;
+  position: relative;
+}
+
+.navigation .menu-btn {
+  position: fixed;
+  left: 2rem;
+  top: 1.5rem;
+  background: #fff;
+  color: #4070f4;
+  height: 3.5rem;
+  width: 3.5rem;
+  z-index: 10000;
+  border: .2rem solid #4070f4;
+  box-shadow: .3rem .3rem 0 #d2dfff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+#btn:checked~.menu-btn {
+  top: 1.5rem;
+  left: 340px;
+}
+
+.navigation .menu-btn i {
+  position: absolute;
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
+
+.navigation .menu-btn i.fa-times {
+  opacity: 0;
+}
+
+#btn:checked~.menu-btn i.fa-times {
+  opacity: 1;
+  transform: rotate(-180deg);
+}
+
+#btn:checked~.menu-btn i.fa-bars {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+#sidebar {
+  position: fixed;
+  border: .2rem solid #4070f4;
+  background: #a6bcfa;
+  height: 100vh;
+  width: 335px;
+  left: -355px;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+#btn:checked~#sidebar {
+  left: 0;
+}
+
+#sidebar .title {
+  padding: 1.5rem;
+  text-align: center;
+  background: #4070f4;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
+  font-family: Verdana;
+  border-bottom: 1px solid #03262c;
+  cursor: pointer;
+}
+
+#sidebar .title i {
+  color: #03262c;
+  font-size: 2.2rem;
+}
+
+#sidebar .list-items {
+  position: relative;
+  width: 100%;
+  height: 92%;
+  list-style: none;
+}
+
+#sidebar .list-items li {
+  padding-left: 30px;
+  line-height: 50px;
+  border-top: 1px solid #4070f4;
+  border-bottom: 1px solid #4070f4;
+  transition: all 0.3s ease;
+}
+
+#sidebar .list-items li:hover {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 0px 10px 3px #4070f4;
+  background-color: #bacbff;
+}
+
+#sidebar .list-items li:first-child {
+  border-top: none;
+}
+
+#sidebar .list-items li a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: .5rem;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+#sidebar .list-items li a i {
+  margin-right: 20px;
+  color: #03262c;
+  font-size: 1.7rem;
+}
+
+/* navigation section ends here  */

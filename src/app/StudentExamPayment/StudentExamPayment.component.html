@@ -1,0 +1,118 @@
+<!-- Student Exam Fees Payment section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Pay Fees</h1>
+    </div>
+
+    <div class="icon">
+      <span (click)="goBack()" class="fas fa-arrow-left"></span>
+      <span (click)="goBack()"> Go Back</span>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <br><br><br>
+
+    <div class="Fees-Container">
+      <div class="Section1">
+
+        <div class="div">
+          <h1>Register Number :</h1>
+          <p>{{studentRegisterNo}}</p>
+        </div>
+
+        <div class="div">
+          <h1>Name :</h1>
+          <p>{{studentName}}</p>
+        </div>
+
+        <div class="div">
+          <h1>Email :</h1>
+          <p>{{studentEmail}}</p>
+        </div>
+
+        <div class="div">
+          <h1>Phone Number :</h1>
+          <p>{{studentPhoneNo}}</p>
+        </div>
+
+        <div class="div">
+          <h1>College Name :</h1>
+          <p>{{studentCollegeName}}</p>
+        </div>
+
+        <div class="div">
+          <h1>Degree :</h1>
+          <p>{{studentDegree}}</p>
+        </div>
+
+        <div class="div">
+          <h1>Department :</h1>
+          <p>{{studentDepartment}}</p>
+        </div>
+
+        <div class="div">
+          <h1>Total Amount :</h1>
+          <p>{{studentTotalAmount}}</p>
+        </div>
+
+      </div>
+      <div class="Section1">
+
+        <h1>Pay Using Credit or Debit Card</h1>
+
+        <div class="Payment-container">
+
+          <form (ngSubmit)="paymentExam(cardNumber.value, month.value ,cvv.value)">
+
+            <div class="fields">
+
+              <div class="input-field">
+                <label>All Cards Accepted</label>
+                <img src="../../assets/images/card_img.png" alt="">
+              </div>
+
+              <div class="input-field">
+                <label>Card Number</label>
+                <input maxlength="16" #cardNumber placeholder="XXXX-XXXX-XXXX-XXXX">
+              </div>
+
+              <div class="input-field">
+                <label>Expiry Month and Year</label>
+                <input type="month" #month>
+              </div>
+
+              <div class="input-field">
+                <label>CVV</label>
+                <input placeholder="XXX" #cvv type="tel" maxlength="3">
+              </div>
+
+            </div>
+
+            <div class="buttons">
+
+              <button class="btn" type="submit">
+                <i class="fas fa-share"></i>
+                Pay
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Student Exam Fees Payment section ends here  -->

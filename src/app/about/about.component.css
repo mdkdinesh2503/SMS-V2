@@ -1,0 +1,268 @@
+/*-------------------------------------------------------------
+----------------- Overall heading starts here------------------
+---------------------------------------------------------------  */
+
+.heading-bg {
+  background-image: url(../../assets/images/heading-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-top: -1rem;
+}
+
+.heading-link {
+  text-align: center;
+  margin-top: -2rem;
+  overflow: hidden;
+}
+
+.heading-link h3 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  font-weight: 100;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.heading-link p {
+  font-size: 1.5rem;
+  line-height: 0;
+  color: #777777;
+  margin-bottom: 2rem;
+}
+
+.heading-link p a {
+  color: #4070f4;
+  text-decoration: none;
+}
+
+.heading-link p a:hover {
+  text-decoration: underline;
+  color: #03262c;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 100;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  color: #03262c;
+}
+
+/* Overall heading ends here  */
+
+/*-------------------------------------------------------------
+----------------- About Section starts here--------------------
+---------------------------------------------------------------  */
+section {
+  padding: 2rem 9%;
+}
+
+.about-image {
+  width: 98.9vw;
+}
+
+.about-image img {
+  width: 100%;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.about .image {
+  flex: 1 1 30rem;
+}
+
+.about .image img {
+  width: 90%;
+}
+
+.about .content {
+  flex: 1 1 35rem;
+}
+
+.about .content .about-title {
+  font-size: 2.2rem;
+  text-transform: capitalize;
+  font-weight: 100;
+  color: #444;
+  margin-top: -8rem;
+  margin-bottom: 10px;
+}
+
+.about .content p {
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #777777;
+}
+
+.about .content span {
+  font-size: 1rem;
+  line-height: 2;
+  border-radius: 5rem;
+  color: #777777;
+  padding: .5rem 1rem;
+  color: #fff;
+  background-color: #4070f4;
+}
+
+/*~~~~~~ review section in About starts here ~~~~~~*/
+
+.review {
+  margin: 10rem 0px;
+}
+
+.review .container {
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+
+.review .container .box {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.4rem 0 #afc4ff;
+  border: 0.2rem solid #4070f4;
+}
+
+.review .container .box p {
+  font-size: 1.3rem;
+  color: #777777;
+  font-family: Verdana;
+  font-weight: 100;
+}
+
+.review .container .box i.quote {
+  font-size: 3rem;
+  color: #4070f4;
+}
+
+.review .container .box .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.review .box .info .name {
+  font-weight: 500;
+  font-family: Verdana;
+  font-size: 25px;
+}
+
+.review .box .info .job {
+  font-size: 20px;
+  font-family: Verdana;
+  font-weight: 100;
+  color: #4070f4;
+}
+
+.review .box .info .stars {
+  margin-top: 2px;
+  overflow: hidden;
+}
+
+.review .box .info .stars i {
+  color: #4070f4;
+  font-size: 1.6rem;
+}
+
+.review .box .content .image {
+  height: 80px;
+  width: 80px;
+  background: #4070f4;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.review .content .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.review .box:hover .content .image img {
+  border: 0.2rem solid #4070f4;
+  border-color: #03262c;
+}
+
+/*~~~~~ Review section in About ends here ~~~~~~~~*/
+
+/*~~~~~ Placement section in About starts here ~~~~~~~~*/
+
+.placement {
+  background-image: url("../../assets/images/home-about.jpg");
+  background-size: cover;
+  height: 25rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  margin: 6rem 0px;
+}
+
+.placement::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+}
+
+.placement-content {
+  margin: 3rem 23%;
+  z-index: 3;
+}
+
+.placement-content h2 {
+  color: #4ca3b3;
+  text-decoration: underline;
+  font-size: 40px;
+}
+
+.placement-content h3 {
+  color: #fff;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.placement-content h4 {
+  color: #fff;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.placement-content p {
+  color: #4070f4;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.placement-company-division {
+  float: left;
+  width: 60%;
+  margin-top: 1.5rem;
+  z-index: 3;
+}
+
+.placement-division img {
+  width: 24%;
+  padding-left: 0.3rem;
+  padding-top: 0.2rem;
+}
+
+/*~~~~~ Placement section in About ends here ~~~~~~~~*/
+
+/* About section ends here  */

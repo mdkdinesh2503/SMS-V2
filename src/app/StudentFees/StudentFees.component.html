@@ -1,0 +1,181 @@
+<app-StudentNavbar></app-StudentNavbar>
+
+<!-- Student Fees section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Fees</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1> <span class="UserDesign">Hi, {{loginUserName}} Pay Fees...</span></h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/studentreports">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="StudentFees-container" *ngIf="hideContainer">
+
+      <h1>Fees Payment</h1>
+
+      <form (ngSubmit)="openFeesPage(registerNumber.value)" *ngIf="hideContainer">
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>College Name</label>
+            <input disabled autocomplete="off" value="Cloud Institute Of Engineering" #clgName>
+          </div>
+
+          <div class="input-field">
+            <label>Register number</label>
+            <input autocomplete="off" maxlength="7" placeholder="Enter Register Number" #registerNumber>
+          </div>
+
+        </div>
+
+        <div class="buttons">
+
+          <button class="btn" type="submit">
+            <i class="fas fa-share"></i>
+            SUBMIT
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="price" *ngIf="openHiddenPage">
+
+      <div class="single-amount">
+
+          <div class="price-header">
+              <span class="year">1st year</span>
+              <h4><i class="fas fa-rupee-sign"></i> 47,000 <span>/y</span></h4>
+          </div>
+
+          <div class="price-feature">
+              <ul>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> College fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Tution fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Semester fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Exam fees</li>
+                  <li class="price-icon-close"><i class="fas fa-times"></i> Hostel fees</li>
+                  <li class="price-icon-close"><i class="fas fa-times"></i> Bus fees (free)</li>
+              </ul>
+          </div>
+
+          <div class="price-footer">
+              <a (click)="payment(47000)">pay now</a>
+          </div>
+
+      </div>
+
+      <div class="single-amount">
+
+          <div class="price-header">
+              <span class="year">2nd year</span>
+              <h4><i class="fas fa-rupee-sign"></i> 48,000 <span>/y</span></h4>
+          </div>
+
+          <div class="price-feature">
+              <ul>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> College fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Tution fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Semester fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Exam fees</li>
+                  <li class="price-icon-close"><i class="fas fa-times"></i> Hostel fees</li>
+                  <li class="price-icon-close"><i class="fas fa-times"></i> Bus fees (free)</li>
+              </ul>
+          </div>
+
+          <div class="price-footer">
+              <a (click)="payment(48000)">pay now</a>
+          </div>
+
+      </div>
+
+      <div class="single-amount">
+
+          <div class="price-header">
+              <span class="year">3rd year</span>
+              <h4><i class="fas fa-rupee-sign"></i> 49,000 <span>/y</span></h4>
+          </div>
+
+          <div class="price-feature">
+              <ul>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> College fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Tution fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Semester fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Exam fees</li>
+                  <li class="price-icon-close"><i class="fas fa-times"></i> Hostel fees</li>
+                  <li class="price-icon-close"><i class="fas fa-times"></i> Bus fees (free)</li>
+              </ul>
+          </div>
+
+          <div class="price-footer">
+              <a (click)="payment(49000)">pay now</a>
+          </div>
+
+      </div>
+
+      <div class="single-amount">
+
+          <div class="price-header">
+              <span class="year">4th year</span>
+              <h4><i class="fas fa-rupee-sign"></i> 50,000 <span>/y</span></h4>
+          </div>
+
+          <div class="price-feature">
+              <ul>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> College fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Tution fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Semester fees</li>
+                  <li class="price-icon-check"><i class="fas fa-check"></i> Exam fees</li>
+                  <li class="price-icon-close"><i class="fas fa-times"></i> Hostel fees</li>
+                  <li class="price-icon-close"><i class="fas fa-times"></i> Bus fees (free)</li>
+              </ul>
+          </div>
+
+          <div class="price-footer">
+              <a (click)="payment(50000)">pay now</a>
+          </div>
+
+      </div>
+
+  </div>
+
+  </div>
+
+</div>
+
+<!-- Student Fees section ends here  -->

@@ -1,0 +1,80 @@
+<!-- Admin Report view section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Report</h1>
+    </div>
+
+    <div class="icon">
+      <span (click)="goBack()" class="fas fa-arrow-left"></span>
+      <span (click)="goBack()"> Go Back</span>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <br><br><br>
+
+    <div class="report-container">
+
+      <h1>Report Form</h1>
+
+      <form>
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>Full Name</label>
+            <input type="text" disabled name="Name" value="{{Name}}">
+          </div>
+
+          <div class="input-field">
+            <label>Register Number</label>
+            <input type="tel" maxlength="7" disabled name="RegisterNumber" value="{{RegisterNumber}}">
+          </div>
+
+          <div class="input-field">
+            <label>Attendance Field</label>
+            <select name="Field" disabled value="{{Field}}">
+              <option hidden selected>Select anyone..</option>
+              <option>Attendance</option>
+              <option>Details Form</option>
+              <option>Fees</option>
+              <option>Timetable</option>
+              <option>exam</option>
+              <option>result</option>
+              <option>other</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label>Date</label>
+            <input type="text" disabled value="{{Dates}}">
+          </div>
+
+          <div class="input-field">
+            <label>Time</label>
+            <input type="text" disabled value="{{Times}}">
+          </div>
+
+          <div class="input-field">
+            <label>Message here</label>
+            <textarea name="msg" disabled type="text" rows="5" value="{{msg}}">
+                      </textarea>
+          </div>
+
+        </div>
+
+      </form>
+
+      <br>
+
+    </div>
+
+  </div>
+
+  <!-- Admin Report view section ends here  -->

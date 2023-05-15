@@ -1,0 +1,70 @@
+<!-- Admin Register Edit section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>REGISTER</h1>
+    </div>
+
+    <div class="icon">
+      <span (click)="goBack()" class="fas fa-arrow-left"></span>
+      <span (click)="goBack()"> Go Back</span>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <br><br><br>
+
+    <div class="RegisterEdit-container">
+
+      <h1> Register List</h1>
+
+      <form (ngSubmit)="submitList(usernames.value, emails.value, passwords.value, confirmpasswords.value)">
+
+        <div class="fields">
+
+          <div class="input-field">
+            <label>USER NAME</label>
+            <input #usernames value="{{userName}}">
+          </div>
+          <p></p>
+
+          <div class="input-field">
+            <label>EMAIL</label>
+            <input #emails value="{{email}}">
+          </div>
+
+          <div class="input-field">
+            <label>PASSWORD</label>
+            <input #passwords value="{{password}}">
+          </div>
+
+          <div class="input-field">
+            <label>CONFIRM PASSWORD</label>
+            <input #confirmpasswords value="{{confirmPassword}}">
+          </div>
+
+        </div>
+
+        <div class="buttons">
+
+          <button class="btn" type="submit">
+            <i class="fas fa-share"></i>
+            Change
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Admin Register Edit section ends here  -->

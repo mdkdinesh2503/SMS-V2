@@ -1,0 +1,251 @@
+<app-StudentNavbar></app-StudentNavbar>
+
+<!-- Student Exam section starts here  -->
+
+<div class="main-content">
+
+  <header>
+
+    <div class="menu-toggle">
+      <h1>Exam Details</h1>
+    </div>
+
+    <div class="icon">
+      <a title="logout" (click)="logOut()"><span class="dismiss">Logout</span><span
+          class="fas fa-file-export"></span></a>
+    </div>
+
+  </header>
+
+  <div class="main">
+
+    <div class="page-header">
+
+      <div>
+        <h1><span class="UserDesign">Find Details...</span></h1>
+      </div>
+
+      <div class="header-actions">
+
+        <a class="emoji1" routerLink="/studentfees">
+          <span class="fas fa-edit"></span>
+          Enquiry
+        </a>
+
+        <a class="emoji2" (click)="goBack()">
+          <span class="fas fa-arrow-left"></span>
+          Go Back
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="Exam-Container">
+
+      <div class="container" (click)="openExamHallAllocation()">
+        <h1>Exam Hall Allocations </h1>
+      </div>
+
+      <div class="container" (click)="openExamTimetable()">
+        <h1>Exam Timetable</h1>
+      </div>
+
+      <div class="container" (click)="openPayExamFees()">
+        <h1>Pay Exam Fees</h1>
+      </div>
+
+      <div class="container" (click)="openExamFeesPaymentList()">
+        <h1>Exam Fees Payment List</h1>
+      </div>
+
+    </div>
+
+    <div class="hall-Allocations" *ngIf="hide1">
+
+      <section class="StudExamDetails">
+
+        <div class="StudExamDetails-list">
+
+          <h1>Exam hall Allocations</h1>
+
+          <table class="StudExamDetails-table">
+
+            <thead>
+
+              <tr>
+                <th title="Sort By ID" (click)="sort('id')">S.No <span class="fas fa-sort-numeric-down"></span></th>
+                <th>Year/ Semester</th>
+                <th title="Sort By COURSES" (click)="sort('COURSES')">program <span
+                    class="fas fa-sort-alpha-down"></span></th>
+                <th title="Sort By HALL NUMBER" (click)="sort('HALL_NUMBER')">Hall No. <span
+                    class="fas fa-sort-alpha-down"></span></th>
+                <th title="Sort By TOTAL STUDENTS" (click)="sort('TOTAL_STUDENTS')">No. Of Students<span
+                    class="fas fa-sort-numeric-down"></span></th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr class="active" *ngFor="let hall of hallAllocationFromAdmin | orderBy: orderHeader: isDescOrder">
+                <td>{{hall.id}}</td>
+                <td>{{hall.YEAR}} / {{hall.SEMESTER}}</td>
+                <td>{{hall.COURSES}}</td>
+                <td>{{hall.HALL_NUMBER}}</td>
+                <td>{{hall.TOTAL_STUDENTS}}</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <div class="Exam-Timetable" *ngIf="hide2">
+
+      <section class="StudExamDetails">
+
+        <div class="StudExamDetails-list">
+
+          <h1>Exam Timetable</h1>
+
+          <table class="StudExamDetails-table">
+
+            <thead>
+
+              <tr>
+                <th>Day & Date / <br> Programme</th>
+                <th>05/12/2022 <br> Monday</th>
+                <th>07/12/2022 <br> Wednesday</th>
+                <th>09/12/2022 <br> Friday</th>
+                <th>12/12/2022 <br> Monday</th>
+                <th>14/12/2022 <br> Wednesday</th>
+                <th>16/12/2022 <br> Friday</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Timing : 01.30 P.M. TO 04.30 P.M</td>
+              </tr>
+
+              <tr class="active" *ngFor="let timetable of timetableFromAdmin">
+                <td>{{timetable.SUBJECT}}</td>
+                <td>{{timetable.FIRST_EXAM}}</td>
+                <td>{{timetable.SECOND_EXAM}}</td>
+                <td>{{timetable.THIRD_EXAM}}</td>
+                <td>{{timetable.FOURTH_EXAM}}</td>
+                <td>{{timetable.FIFTH_EXAM}}</td>
+                <td>{{timetable.SIXTH_EXAM}}</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <div class="Pay-Exam-Fees" *ngIf="hide3">
+
+      <div class="StudentExam-container">
+
+        <h1>Exam Fees</h1>
+
+        <form (ngSubmit)="openExamFeesPage(registerNumber.value)">
+
+          <div class="fields">
+
+            <div class="input-field">
+              <label>College Name</label>
+              <input disabled autocomplete="off" value="Cloud Institute Of Engineering" #clgName>
+            </div>
+
+            <div class="input-field">
+              <label>Register number</label>
+              <input autocomplete="off" maxlength="7" placeholder="Enter Register Number" #registerNumber>
+            </div>
+
+          </div>
+
+          <div class="buttons">
+
+            <button class="btn" type="submit">
+              <i class="fas fa-share"></i>
+              SUBMIT
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <div class="Exam-Fees-Payment-List" *ngIf="hide4">
+
+    <app-Search (searchTextChanged)="onSearchTextEntered($event)"></app-Search>
+
+      <section class="StudExamDetails">
+
+        <div class="StudExamDetails-list">
+
+          <h1>Exam Timetable</h1>
+
+          <table class="StudExamDetails-table">
+
+            <thead>
+
+              <tr>
+                <th title="Sort By ID" (click)="sort('id')">S/No. <span class="fas fa-sort-numeric-down"></span></th>
+                <th title="Sort By REGISTER NUMBER" (click)="sort('REGISTER_NUMBER')">Register Number <span
+                    class="fas fa-sort-numeric-down"></span></th>
+                <th title="Sort By NAME" (click)="sort('NAME')">Name <span class="fas fa-sort-alpha-down"></span></th>
+                <th>Degree</th>
+                <th title="Sort By DEPARTMENT" (click)="sort('DEPARTMENT')">Department <span
+                    class="fas fa-sort-alpha-down"></span></th>
+                <th title="Sort By AMOUNT" (click)="sort('TOTAL_AMOUNT')">Amount <span class="fas fa-sort-numeric-down"></span></th>
+                <th title="Sort By FIELDS" (click)="sort('FEES')">fields <span class="fas fa-sort-alpha-down"></span></th>
+              </tr>
+
+            </thead>
+
+            <tbody *ngFor="let fees of examFeesFromStudent | orderBy: orderHeader: isDescOrder">
+
+              <tr class="active"
+                *ngIf="searchText === '' || fees.REGISTER_NUMBER.toLowerCase().includes(searchText) || fees.NAME.toLowerCase().includes(searchText) || fees.DEPARTMENT.toLowerCase().includes(searchText) || fees.TOTAL_AMOUNT.toLowerCase().includes(searchText) || fees.FEES.toLowerCase().includes(searchText)">
+                <td>{{fees.id}}</td>
+                <td>{{fees.REGISTER_NUMBER}}</td>
+                <td>{{fees.NAME}}</td>
+                <td>{{fees.DEGREE}}</td>
+                <td>{{fees.DEPARTMENT}}</td>
+                <td>{{fees.TOTAL_AMOUNT}}</td>
+                <td>{{fees.FEES}}</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Student Exam section ends here  -->
