@@ -21,6 +21,8 @@ export class AdminDetailsViewComponent implements OnInit {
   ) {}
 
   values: any;
+  regFromDet : any;
+  getValueId : any;
 
   detailsFromStudent: any = '';
 
@@ -72,54 +74,66 @@ export class AdminDetailsViewComponent implements OnInit {
       this.values = params['id'];
     });
 
-    this.service.getStudentDetails().subscribe((data) => {
-      this.detailsFromStudent = data;
-      this.names = this.detailsFromStudent[this.values - 1].NAME;
-      this.dobs = this.detailsFromStudent[this.values - 1].DATE_OF_BIRTH;
-      this.emls = this.detailsFromStudent[this.values - 1].EMAIL;
-      this.mbls = this.detailsFromStudent[this.values - 1].MOBILE_NUMBER;
-      this.gndrs = this.detailsFromStudent[this.values - 1].GENDER;
-      this.marstas = this.detailsFromStudent[this.values - 1].MARITAL_STATUS;
-      this.ages = this.detailsFromStudent[this.values - 1].AGE;
-      this.cmtys = this.detailsFromStudent[this.values - 1].COMMUNITY;
-      this.cstes = this.detailsFromStudent[this.values - 1].CASTE;
-      this.addtys = this.detailsFromStudent[this.values - 1].ADDRESS_TYPE;
-      this.artys = this.detailsFromStudent[this.values - 1].AREA_TYPE;
-      this.ctrys = this.detailsFromStudent[this.values - 1].COUNTRY;
-      this.appnos = this.detailsFromStudent[this.values - 1].APPARTMENT_NUMBER;
-      this.adr1s = this.detailsFromStudent[this.values - 1].ADDRESS_LINE_1;
-      this.adr2s = this.detailsFromStudent[this.values - 1].ADDRESS_LINE_2;
-      this.citys = this.detailsFromStudent[this.values - 1].CITY;
-      this.pncds = this.detailsFromStudent[this.values - 1].PINCODE;
-      this.states = this.detailsFromStudent[this.values - 1].STATE;
-      this.ttlmens =
-        this.detailsFromStudent[this.values - 1].TOTAL_FAMILY_MEMBERS;
-      this.firgrds = this.detailsFromStudent[this.values - 1].FIRST_GRADUATE;
-      this.incs = this.detailsFromStudent[this.values - 1].TOTAL_INCOME;
-      this.fthrnas = this.detailsFromStudent[this.values - 1].FATHER_NAME;
-      this.fthrocs = this.detailsFromStudent[this.values - 1].FATHER_OCCUPATION;
-      this.fthrmos =
-        this.detailsFromStudent[this.values - 1].FATHER_MOBILE_NUMBER;
-      this.mthrnas = this.detailsFromStudent[this.values - 1].MOTHER_NAME;
-      this.mthrocs = this.detailsFromStudent[this.values - 1].MOTHER_OCCUPATION;
-      this.mthrmos =
-        this.detailsFromStudent[this.values - 1].MOTHER_MOBILE_NUMBER;
-      this.rgtrs = this.detailsFromStudent[this.values - 1].REGISTER_NUMBER;
-      this.degrs = this.detailsFromStudent[this.values - 1].STUDENT_DEGREE;
-      this.deprts = this.detailsFromStudent[this.values - 1].STUDENT_DEPARTMENT;
-      this.clgnas =
-        this.detailsFromStudent[this.values - 1].STUDENT_COLLEGE_NAME;
-      this.yrpsss = this.detailsFromStudent[this.values - 1].YEAR_OF_PASSING;
-      this.yrstus = this.detailsFromStudent[this.values - 1].YEAR_OF_STUDING;
-      this.mtens = this.detailsFromStudent[this.values - 1].TENTH_MARK;
-      this.mtenmos = this.detailsFromStudent[this.values - 1].TENTH_STUDY_MODE;
-      this.mtenttls = this.detailsFromStudent[this.values - 1].TENTH_TOTAL_MARK;
-      this.mtws = this.detailsFromStudent[this.values - 1].TWELTH_MARK;
-      this.mtwmos = this.detailsFromStudent[this.values - 1].TWELTH_STUDY_MODE;
-      this.mtwttls = this.detailsFromStudent[this.values - 1].TWELTH_TOTAL_MARK;
+    this.acRoute.params.subscribe((params) => {
+      this.regFromDet = params['register'];
     });
 
-    console.log('id : ' + this.values);
+    this.service.getStudentDetails().subscribe((data) => {
+      this.detailsFromStudent = data;
+
+      for (var i = 0; i < this.detailsFromStudent.length; i++) {
+        if (
+          this.regFromDet == this.detailsFromStudent[i].REGISTER_NUMBER
+        ) {
+          this.getValueId = i;
+        }
+      }
+
+      this.names = this.detailsFromStudent[this.getValueId].NAME;
+      this.dobs = this.detailsFromStudent[this.getValueId].DATE_OF_BIRTH;
+      this.emls = this.detailsFromStudent[this.getValueId].EMAIL;
+      this.mbls = this.detailsFromStudent[this.getValueId].MOBILE_NUMBER;
+      this.gndrs = this.detailsFromStudent[this.getValueId].GENDER;
+      this.marstas = this.detailsFromStudent[this.getValueId].MARITAL_STATUS;
+      this.ages = this.detailsFromStudent[this.getValueId].AGE;
+      this.cmtys = this.detailsFromStudent[this.getValueId].COMMUNITY;
+      this.cstes = this.detailsFromStudent[this.getValueId].CASTE;
+      this.addtys = this.detailsFromStudent[this.getValueId].ADDRESS_TYPE;
+      this.artys = this.detailsFromStudent[this.getValueId].AREA_TYPE;
+      this.ctrys = this.detailsFromStudent[this.getValueId].COUNTRY;
+      this.appnos = this.detailsFromStudent[this.getValueId].APPARTMENT_NUMBER;
+      this.adr1s = this.detailsFromStudent[this.getValueId].ADDRESS_LINE_1;
+      this.adr2s = this.detailsFromStudent[this.getValueId].ADDRESS_LINE_2;
+      this.citys = this.detailsFromStudent[this.getValueId].CITY;
+      this.pncds = this.detailsFromStudent[this.getValueId].PINCODE;
+      this.states = this.detailsFromStudent[this.getValueId].STATE;
+      this.ttlmens =
+        this.detailsFromStudent[this.getValueId].TOTAL_FAMILY_MEMBERS;
+      this.firgrds = this.detailsFromStudent[this.getValueId].FIRST_GRADUATE;
+      this.incs = this.detailsFromStudent[this.getValueId].TOTAL_INCOME;
+      this.fthrnas = this.detailsFromStudent[this.getValueId].FATHER_NAME;
+      this.fthrocs = this.detailsFromStudent[this.getValueId].FATHER_OCCUPATION;
+      this.fthrmos =
+        this.detailsFromStudent[this.getValueId].FATHER_MOBILE_NUMBER;
+      this.mthrnas = this.detailsFromStudent[this.getValueId].MOTHER_NAME;
+      this.mthrocs = this.detailsFromStudent[this.getValueId].MOTHER_OCCUPATION;
+      this.mthrmos =
+        this.detailsFromStudent[this.getValueId].MOTHER_MOBILE_NUMBER;
+      this.rgtrs = this.detailsFromStudent[this.getValueId].REGISTER_NUMBER;
+      this.degrs = this.detailsFromStudent[this.getValueId].STUDENT_DEGREE;
+      this.deprts = this.detailsFromStudent[this.getValueId].STUDENT_DEPARTMENT;
+      this.clgnas =
+        this.detailsFromStudent[this.getValueId].STUDENT_COLLEGE_NAME;
+      this.yrpsss = this.detailsFromStudent[this.getValueId].YEAR_OF_PASSING;
+      this.yrstus = this.detailsFromStudent[this.getValueId].YEAR_OF_STUDING;
+      this.mtens = this.detailsFromStudent[this.getValueId].TENTH_MARK;
+      this.mtenmos = this.detailsFromStudent[this.getValueId].TENTH_STUDY_MODE;
+      this.mtenttls = this.detailsFromStudent[this.getValueId].TENTH_TOTAL_MARK;
+      this.mtws = this.detailsFromStudent[this.getValueId].TWELTH_MARK;
+      this.mtwmos = this.detailsFromStudent[this.getValueId].TWELTH_STUDY_MODE;
+      this.mtwttls = this.detailsFromStudent[this.getValueId].TWELTH_TOTAL_MARK;
+    });
+
   }
 
   goBack() {

@@ -75,8 +75,8 @@ export class AdminResultsComponent implements OnInit {
     this.orderHeader = headerName;
   }
 
-  editAdminResult(id:any) {
-    this.route.navigate(['/adminresultview',id]);
+  editAdminResult(id:any,register:any) {
+    this.route.navigate(['/adminresultview',id,register]);
   }
 
   searchText: string = '';

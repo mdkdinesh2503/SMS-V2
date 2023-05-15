@@ -70,13 +70,13 @@ const routes: Routes = [
   { path: 'studentresults', component: StudentResultsComponent, title: "S T U D E N T - R E S U L T S"},
   { path: 'studenttimetable', component: StudentTimetableComponent, title: "S T U D E N T - T I M E T A B L E"},
   { path: 'notupload', component: NotuploadedComponent, title: "N O T - Y E T - U P L O A D"},
-  { path: 'studentresultview/:id', component: StudentResultViewComponent, title: "S - - R E S U L T - V I E W"},
+  { path: 'studentresultview/:register', component: StudentResultViewComponent, title: "S - - R E S U L T - V I E W"},
   { path: 'studentfeespayment/:id/:register', component: StudentFeesPaymentComponent, title: "S - - F E E S - P A Y M E N T"},
   { path: 'studentexampayment/:registerNumber', component: StudentExamPaymentComponent, title: "S - - E X A M - P A Y M E N T"},
-  { path: 'adminresultview/:id', component: AdminResultViewComponent, title: "A - - R E S U L T - V I E W"},
-  { path: 'admindetailsview/:id', component: AdminDetailsViewComponent, title: "A - - D E T A I L S - V I E W"},
+  { path: 'adminresultview/:id/:register', component: AdminResultViewComponent, title: "A - - R E S U L T - V I E W"},
+  { path: 'admindetailsview/:id/:register', component: AdminDetailsViewComponent, title: "A - - D E T A I L S - V I E W"},
   { path: 'adminreportview/:id', component: AdminReportViewComponent, title: "A - - R E P O R T S - V I E W"},
-  { path: 'adminregisteredit/:id', component: AdminRegisterEditComponent, title: "A - - R E G I S T E R - V I E W"},
+  { path: 'adminregisteredit/:id/:name', component: AdminRegisterEditComponent, title: "A - - R E G I S T E R - V I E W"},
   { path: '**', component: PageErrorComponent, title: "P A G E - N O T - F O U N D"},
 ];
 

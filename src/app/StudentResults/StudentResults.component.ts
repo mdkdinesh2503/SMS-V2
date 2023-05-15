@@ -33,8 +33,8 @@ export class StudentResultsComponent implements OnInit {
     this.location.back();
   }
 
-  viewStudentResult(id: any) {
-    this.route.navigate(['/studentresultview', id]);
+  viewStudentResult(register:any) {
+    this.route.navigate(['/studentresultview', register]);
   }
 
   orderHeader: string = '';

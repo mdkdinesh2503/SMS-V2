@@ -51,8 +51,8 @@ export class AdminRegisterListComponent implements OnInit {
     this.orderHeader = headerName;
   }
 
-  editRegister(id:any) {
-    this.route.navigate(['/adminregisteredit',id]);
+  editRegister(id:any, name:any) {
+    this.route.navigate(['/adminregisteredit', id, name]);
   }
 
   searchText: string = '';

@@ -53,8 +53,8 @@ export class AdminDetailsComponent implements OnInit {
     this.orderHeader = headerName;
   }
 
-  editAdminDetails(id: any) {
-    this.route.navigate(['/admindetailsview', id]);
+  editAdminDetails(id: any, register:any) {
+    this.route.navigate(['/admindetailsview', id, register]);
   }
 
   searchText: string = '';

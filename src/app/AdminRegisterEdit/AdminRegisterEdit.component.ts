@@ -19,6 +19,8 @@ export class AdminRegisterEditComponent implements OnInit {
   ) {}
 
   values: any;
+  nameFromAdmin : any;
+  getValueId : any;
 
   registerListFromStudent: any = '';
 
@@ -35,15 +37,27 @@ export class AdminRegisterEditComponent implements OnInit {
       this.values = params['id'];
     });
 
-    this.service.getRegisterDetails().subscribe((data) => {
-      this.registerListFromStudent = data;
-      this.userName = this.registerListFromStudent[this.values-1].USERNAME;
-      this.email = this.registerListFromStudent[this.values-1].EMAIL;
-      this.password = this.registerListFromStudent[this.values-1].PASSWORD;
-      this.confirmPassword = this.registerListFromStudent[this.values-1].CONFIRMPASSWORD;
+    this.acRoute.params.subscribe((params) => {
+      this.nameFromAdmin = params['name'];
     });
 
-    console.log('id : ' + this.values);
+    this.service.getRegisterDetails().subscribe((data) => {
+      this.registerListFromStudent = data;
+
+      for (var i = 0; i < this.registerListFromStudent.length; i++) {
+        if (
+          this.nameFromAdmin == this.registerListFromStudent[i].USERNAME
+        ) {
+          this.getValueId = i;
+        }
+      }
+
+      this.userName = this.registerListFromStudent[this.getValueId].USERNAME;
+      this.email = this.registerListFromStudent[this.getValueId].EMAIL;
+      this.password = this.registerListFromStudent[this.getValueId].PASSWORD;
+      this.confirmPassword = this.registerListFromStudent[this.getValueId].CONFIRMPASSWORD;
+    });
+
   }
 
   goBack() {
