@@ -21,6 +21,7 @@ header {
 }
 
 .UserDesign {
+  text-transform: capitalize;
   color: #4070f4;
   background-color: #fff;
   padding: 10px;

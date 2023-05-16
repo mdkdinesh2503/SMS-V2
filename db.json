@@ -338,7 +338,32 @@
       "id": 3
     }
   ],
-  "StudentAttendance": [],
+  "StudentAttendance": [
+    {
+      "NAME": "DINESH KUMAR M",
+      "REGISTER_NUMBAR": "1913003",
+      "ATTENDANCE_FIELD": "Absent",
+      "DATE": "16-05-2023",
+      "TIME": "09:34:54 AM",
+      "id": 1
+    },
+    {
+      "NAME": "GANESH M",
+      "REGISTER_NUMBAR": "1913004",
+      "ATTENDANCE_FIELD": "Excuse",
+      "DATE": "16-05-2023",
+      "TIME": "09:35:14 AM",
+      "id": 2
+    },
+    {
+      "NAME": "SAMANTHA M",
+      "REGISTER_NUMBAR": "1913008",
+      "ATTENDANCE_FIELD": "Absent",
+      "DATE": "16-05-2023",
+      "TIME": "09:35:41 AM",
+      "id": 3
+    }
+  ],
   "StudentDetails": [
     {
       "NAME": "APARNA S",
@@ -1069,6 +1094,41 @@
       "DATE": "15-05-2023",
       "TIME": "02:47 PM",
       "id": 4
+    },
+    {
+      "USERNAME": "dinesh",
+      "PASSWORD": "Dinesh@123",
+      "DATE": "16-05-2023",
+      "TIME": "09:34 AM",
+      "id": 5
+    },
+    {
+      "USERNAME": "admin",
+      "PASSWORD": "Admin@123",
+      "DATE": "16-05-2023",
+      "TIME": "09:37 AM",
+      "id": 6
+    },
+    {
+      "USERNAME": "rhenuka",
+      "PASSWORD": "Rhenuka@123",
+      "DATE": "16-05-2023",
+      "TIME": "09:52 AM",
+      "id": 7
+    },
+    {
+      "USERNAME": "admin",
+      "PASSWORD": "Admin@123",
+      "DATE": "16-05-2023",
+      "TIME": "03:10 PM",
+      "id": 8
+    },
+    {
+      "USERNAME": "rhenuka",
+      "PASSWORD": "Rhenuka@123",
+      "DATE": "16-05-2023",
+      "TIME": "03:15 PM",
+      "id": 9
     }
   ]
 }

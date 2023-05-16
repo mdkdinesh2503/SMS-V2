@@ -61,7 +61,7 @@ header {
 }
 
 .UserDesign {
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: #4070f4;
   background-color: #fff;
   padding: 10px;
