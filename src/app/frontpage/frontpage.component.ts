@@ -12,6 +12,9 @@ export class FrontpageComponent implements OnInit {
 
   ngOnInit() {
     this.auth.loginAccess(false);
+    sessionStorage.setItem('PopUp', this.value);
   }
+
+  value:any=true;
 
 }

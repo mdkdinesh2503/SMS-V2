@@ -76,4 +76,53 @@
 
 <!-- idea section ends here  -->
 
+<!-- Pop-Up Display About Admission Starts here -->
+
+<div class="offer-popup" *ngIf="PopupMsg">
+
+  <i class="fas fa-times" (click)="closePopUp()"></i>
+
+  <div class="popup-offer-div">
+
+    <div class="image-popup-div-1">
+      <img src="../../assets/images/Admission-1.jpg" alt="">
+    </div>
+
+    <div class="div-main-popup">
+
+      <div class="popup-content-div">
+        <p>Bring out the Best in you</p>
+      </div>
+
+      <div class="section-popup">
+
+        <div class="image-popup-div-2">
+          <img src="../../assets/images/Admission-3.png" alt="">
+        </div>
+
+        <div class="popup-div-2-content">
+          <p>Course Offered(4 years)</p>
+          <ul>
+            <li>Computer Science and Engineering</li>
+            <li>Information Technology</li>
+            <li>Civil Engineering</li>
+            <li>Mechanical Engineering</li>
+            <li>Automobile Engineering</li>
+            <li>Electrical & Electronics Engineering</li>
+            <li>Electronics & Communication Engineering</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <a href="tel:9787943467" class="phone-popup-div"> <i class="fas fa-phone"></i>&numsp; +91-97879-43467 </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Pop-Up Display About Admission Ends here -->
+
 <app-footer></app-footer>

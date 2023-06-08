@@ -81,4 +81,16 @@ export class AuthService {
     sessionStorage.setItem('AllowAdmin', value);
     sessionStorage.removeItem('USERNAME');
   }
+
+  popUpAccess() : boolean {
+    if (
+      sessionStorage.getItem('PopUp') != null &&
+      sessionStorage.getItem('PopUp') == 'true'
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
