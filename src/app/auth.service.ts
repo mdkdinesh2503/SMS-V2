@@ -46,14 +46,12 @@ export class AuthService {
 
   canAccessAdmin() {
     if (!this.isAuthenticatedAdmin()) {
-      // alert("Please Login to Access!!");
       this.route.navigate(['/login']);
     }
   }
 
   canAccessStudent() {
     if (!this.isAuthenticatedStudent()) {
-      // alert("Please Login to Access!!");
       this.route.navigate(['/login']);
     }
   }
@@ -62,7 +60,6 @@ export class AuthService {
     sessionStorage.setItem('AllowAdmin', value);
 
     if (this.isAuthenticatedAdmin()) {
-      // alert("Please Login to Access!!");
       this.route.navigate(['/admindashboard']);
     }
   }
@@ -71,7 +68,6 @@ export class AuthService {
     sessionStorage.setItem('AllowStudent', value);
 
     if (this.isAuthenticatedStudent()) {
-      // alert("Please Login to Access!!");
       this.route.navigate(['/studentdashboard']);
     }
   }

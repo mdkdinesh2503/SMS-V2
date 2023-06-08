@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   intervalID: any = setInterval(() => {
     this.closePopUp();
-  }, 10000);
+  }, 10000); //1sec = 1000 milli Seconds
 
   closePopUp() {
     clearInterval(this.intervalID);
