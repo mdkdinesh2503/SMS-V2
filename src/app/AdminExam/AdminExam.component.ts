@@ -16,7 +16,7 @@ export class AdminExamComponent implements OnInit {
     private userService: UserService,
     private service: LoginService,
     private auth: AuthService,
-    private route:Router
+    private route: Router
   ) {}
 
   hallAllocationFromAdmin: any;
@@ -24,7 +24,6 @@ export class AdminExamComponent implements OnInit {
   examFeesFromStudent: any;
 
   ngOnInit() {
-
     this.auth.canAccessAdmin();
 
     this.service.getAdminExamHallAllocation().subscribe((data) => {
@@ -59,14 +58,30 @@ export class AdminExamComponent implements OnInit {
       TOTAL_STUDENTS: totalStudent,
     };
 
-    this.userService.adminExamHallAllocation(body).subscribe((data) => {
-      alert('Exam Hall Allocation added successfully');
-      window.location.reload();
-    });
+    if (
+      year != '' &&
+      sem != '' &&
+      course != '' &&
+      hallNumber != '' &&
+      totalStudent != ''
+    ) {
+      this.userService.adminExamHallAllocation(body).subscribe((data) => {
+        alert('Exam Hall Allocation added successfully');
+        window.location.reload();
+      });
+    } else {
+      alert('Fields does not Empty!!');
+    }
   }
 
   submitListTimetable(
-    subject:any, exam1:any, exam2:any, exam3:any, exam4:any, exam5:any, exam6:any
+    subject: any,
+    exam1: any,
+    exam2: any,
+    exam3: any,
+    exam4: any,
+    exam5: any,
+    exam6: any
   ) {
     var body = {
       SUBJECT: subject,
@@ -78,10 +93,22 @@ export class AdminExamComponent implements OnInit {
       SIXTH_EXAM: exam6,
     };
 
-    this.userService.adminExamTimetable(body).subscribe((data) => {
-      alert('Exam Timetable added successfully');
-      window.location.reload();
-    });
+    if (
+      subject != '' &&
+      exam1 != '' &&
+      exam2 != '' &&
+      exam3 != '' &&
+      exam4 != '' &&
+      exam5 != '' &&
+      exam6 != ''
+    ) {
+      this.userService.adminExamTimetable(body).subscribe((data) => {
+        alert('Exam Timetable added successfully');
+        window.location.reload();
+      });
+    } else {
+      alert('Fields does not Empty!!');
+    }
   }
 
   orderHeader: string = '';
@@ -127,7 +154,7 @@ export class AdminExamComponent implements OnInit {
 
   searchText: string = '';
 
-  onSearchTextEntered(searchValue:string) {
+  onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
     // console.log(this.searchText);
   }
@@ -136,5 +163,4 @@ export class AdminExamComponent implements OnInit {
     this.auth.removeToken();
     this.route.navigate(['/login']);
   }
-
 }

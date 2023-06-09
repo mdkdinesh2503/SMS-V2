@@ -16,7 +16,7 @@ export class StudentAttendanceComponent implements OnInit {
     private route: Router,
     private userService: UserService,
     private datepipe: DatePipe,
-    private auth:AuthService
+    private auth: AuthService
   ) {
     this.setNow();
     setInterval(() => {
@@ -78,7 +78,7 @@ export class StudentAttendanceComponent implements OnInit {
     this.auth.canAccessStudent();
   }
 
-  loginUserName:any = this.auth.displayToken() ;
+  loginUserName: any = this.auth.displayToken();
 
   dates: any = this.datepipe.transform(new Date(), 'dd-MM-yyyy');
 
@@ -157,8 +157,8 @@ export class StudentAttendanceComponent implements OnInit {
         alert('Student Attendance Submitted successfully');
         window.location.reload();
       });
-    }else {
-      alert("Fields does not Empty!!");
+    } else {
+      alert('Fields does not Empty!!');
     }
   }
 
@@ -166,5 +166,4 @@ export class StudentAttendanceComponent implements OnInit {
     this.auth.removeToken();
     this.route.navigate(['/login']);
   }
-
 }
