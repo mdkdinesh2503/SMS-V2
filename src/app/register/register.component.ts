@@ -29,7 +29,14 @@ export class RegisterComponent implements OnInit {
 
   registerReactiveForm = this.fb.group(
     {
-      USERNAME: [, [Validators.required]],
+      USERNAME: [
+        ,
+        [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(20),
+        ],
+      ],
       EMAIL: [, [Validators.required]],
       PASSWORD: [, [Validators.required]],
       CONFIRMPASSWORD: [, [Validators.required]],
@@ -40,7 +47,13 @@ export class RegisterComponent implements OnInit {
   );
 
   submitList() {
-    if (!this.registerReactiveForm.valid) {
+    if (this.registerReactiveForm.controls['USERNAME'].errors?.['required']) {
+      alert('Field must not Be Empty!!');
+    } else if (this.registerReactiveForm.controls['EMAIL'].errors?.['required']) {
+      alert('Field must not Be Empty!!');
+    } else if (this.registerReactiveForm.controls['PASSWORD'].errors?.['required']) {
+      alert('Field must not Be Empty!!');
+    } else if (!this.registerReactiveForm.valid) {
       alert('Field must not contain any error');
     } else {
       this.userService

@@ -18,21 +18,29 @@
 
     <h1>Register Form</h1>
 
-    <form [formGroup]="registerReactiveForm"
-      (ngSubmit)="submitList()">
-
+    <form [formGroup]="registerReactiveForm" (ngSubmit)="submitList()" >
 
       <div class="fields">
 
         <div class="input-field">
           <label>Username</label>
-          <input name="username" autocomplete="off" type="text" pattern="^[a-zA-Z]+$" placeholder="Enter your name" formControlName="USERNAME">
+          <input name="username" autocomplete="off" type="text" pattern="^(?![a-z])[a-zA-Z]+(?<![A-Z])$" [minlength]="6"
+            placeholder="Enter your name" formControlName="USERNAME">
           <p class="empty">&numsp;<br></p>
-          <div class="information-error" *ngIf="registerReactiveForm.controls['USERNAME'].invalid && registerReactiveForm.controls['USERNAME'].dirty">
+          <div class="information-error"
+            *ngIf="registerReactiveForm.controls['USERNAME'].invalid && registerReactiveForm.controls['USERNAME'].dirty">
             <p class="error" *ngIf="registerReactiveForm.controls['USERNAME'].errors?.['required']"><i
                 class="fas fa-exclamation-circle"></i>&numsp; Username is not Empty!</p>
-            <p class="error" *ngIf="registerReactiveForm.controls['USERNAME'].errors?.['pattern']"><i
-                class="fas fa-exclamation-circle"></i>&numsp; Username only contains Alphabets</p>
+            <p class="error" *ngIf="registerReactiveForm.controls['USERNAME'].errors?.['minlength']"><i
+                class="fas fa-exclamation-circle"></i>&numsp; Username must Exceeds 6 Characters</p>
+            <p class="error" *ngIf="registerReactiveForm.controls['USERNAME'].errors?.['maxlength']"><i
+                class="fas fa-exclamation-circle"></i>&numsp; Username Does not Exceed 20 Characters</p>
+            <p class="error" *ngIf="registerReactiveForm.controls['USERNAME'].errors?.['pattern']" title="username must be 5 - 20 characters long
+username must be Starts with Capital Letters
+username must not be concecutive more than 3
+Username only contains Alphabets
+username must ends with small Letters insted of Capital letters"><i
+                class="fas fa-exclamation-circle"></i>&numsp; Username Does not Obey Rules</p>
           </div>
           <div class="information-error"
             *ngIf="registerReactiveForm.controls['USERNAME'].valid && registerReactiveForm.controls['USERNAME'].dirty">
@@ -44,7 +52,8 @@
         <div class="input-field">
           <label>Email</label>
           <input name="email" autocomplete="off" type="email"
-            pattern="^[0-9a-zA-Z]+[._]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$" placeholder="Enter your email" formControlName="EMAIL">
+            pattern="^[0-9a-zA-Z]+[._]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$"
+            placeholder="Enter your email" formControlName="EMAIL">
           <p class="empty">&numsp;<br></p>
           <div class="information-error"
             *ngIf="registerReactiveForm.controls['EMAIL'].invalid && registerReactiveForm.controls['EMAIL'].dirty">
@@ -102,8 +111,7 @@
       <br><br>
 
       <div class="buttons">
-        <button type="submit"
-          title="It Enables only the input field does not contain any errors" class="btn-register">Register &numsp; <i class="fas fa-caret-square-right"></i></button>
+        <button type="submit" title="It Enables only the input field does not contain any errors" class="btn-register">Register &numsp; <i class="fas fa-caret-square-right"></i></button>
       </div>
 
       <p class="Sign-in">Already have an account : <a routerLink="/login">sign-in</a></p>
