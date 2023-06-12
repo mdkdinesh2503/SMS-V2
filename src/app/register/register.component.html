@@ -18,7 +18,7 @@
 
     <h1>Register Form</h1>
 
-    <form [formGroup]="registerReactiveForm" (ngSubmit)="submitList()" >
+    <form [formGroup]="registerReactiveForm" (ngSubmit)="submitList()">
 
       <div class="fields">
 
@@ -40,7 +40,7 @@ username must be Starts with Capital Letters
 username must not be concecutive more than 3
 Username only contains Alphabets
 username must ends with small Letters insted of Capital letters"><i
-                class="fas fa-exclamation-circle"></i>&numsp; Username Does not Obey Rules</p>
+                class="fas fa-exclamation-circle"></i>&numsp;Username Does not Obey Rules</p>
           </div>
           <div class="information-error"
             *ngIf="registerReactiveForm.controls['USERNAME'].valid && registerReactiveForm.controls['USERNAME'].dirty">
@@ -71,7 +71,8 @@ username must ends with small Letters insted of Capital letters"><i
 
         <div class="input-field">
           <label>Password</label>
-          <input pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$" name="password" type="password" placeholder="Enter your password" formControlName="PASSWORD" />
+          <input pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$" name="password" type="password"
+            placeholder="Enter your password" formControlName="PASSWORD" />
           <p class="empty">&numsp;<br></p>
           <div class="information-error"
             *ngIf="registerReactiveForm.controls['PASSWORD'].invalid&& registerReactiveForm.controls['PASSWORD'].dirty">
@@ -89,7 +90,8 @@ username must ends with small Letters insted of Capital letters"><i
 
         <div class="input-field">
           <label>Confirm Password</label>
-          <input name="Confirmpassword" type="password" placeholder="Enter your Confirm password" formControlName="CONFIRMPASSWORD">
+          <input name="Confirmpassword" type="password" placeholder="Enter your Confirm password"
+            formControlName="CONFIRMPASSWORD">
           <p class="empty">&numsp;<br></p>
           <div class="information-error"
             *ngIf="registerReactiveForm.controls['CONFIRMPASSWORD'].invalid&& registerReactiveForm.controls['CONFIRMPASSWORD'].dirty">
@@ -111,7 +113,8 @@ username must ends with small Letters insted of Capital letters"><i
       <br><br>
 
       <div class="buttons">
-        <button type="submit" title="It Enables only the input field does not contain any errors" class="btn-register">Register &numsp; <i class="fas fa-caret-square-right"></i></button>
+        <button type="submit" title="It Enables only the input field does not contain any errors"
+          class="btn-register">Register &numsp; <i class="fas fa-caret-square-right"></i></button>
       </div>
 
       <p class="Sign-in">Already have an account : <a routerLink="/login">sign-in</a></p>
