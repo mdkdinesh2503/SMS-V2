@@ -19,6 +19,7 @@ export class LoginService {
   adminExamTimetableUrl:any="http://localhost:3000/AdminExamTimetable";
   studentExamFeesPaymentUrl :any="http://localhost:3000/StudentExamFeesPayment";
   studentCollegeFeesPaymentUrl :any="http://localhost:3000/StudentCollegeFeesPayment";
+  quotesDisplayUrl :any="http://localhost:3000/Quotes";
 
   getRegisterDetails() {
     return this.http.get(this.registerUrl);
@@ -66,6 +67,10 @@ export class LoginService {
 
   getStudentCollegeFeesPaymentUrl(){
     return this.http.get(this.studentCollegeFeesPaymentUrl);
+  }
+
+  getquotesDisplay(){
+    return this.http.get(this.quotesDisplayUrl);
   }
 
 }
