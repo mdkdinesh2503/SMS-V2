@@ -11,41 +11,46 @@ export class AboutComponent implements OnInit {
   constructor(private auth: AuthService, private service: LoginService) {}
 
   quotesFromDatabase: any;
+  quoteData: any;
+  authorData: any;
 
   ngOnInit() {
     this.auth.loginAccess(false);
-    this.checkNow();
+    this.openPopupTimeout();
 
     this.service.getquotesDisplay().subscribe((data) => {
       this.quotesFromDatabase = data;
+      var randomNumber;
+      setInterval(() => {
+        randomNumber = Math.floor(Math.random() * 15) + 1;
+        this.quoteData = this.quotesFromDatabase[randomNumber].quote;
+        this.authorData = this.quotesFromDatabase[randomNumber].author;
+      }, 7000); // no changes
     });
   }
 
-  PopupMsg: boolean = true;
-  value: any = false;
-
-  intervalID: any = setTimeout(() => {
-
-    setInterval(() => {
-      this.openPopUp();
-    }, 5000); //1sec = 1000 milli Seconds
-
-  }, 50000); //50sec = 50000 milli Seconds
+  PopupMsg: boolean = false;
+  setTimeOutOpen:any;
+  setTimeOutClose:any;
 
   closePopUp() {
-    clearInterval(this.intervalID);
-    clearTimeout(this.intervalID);
     this.PopupMsg = false;
+    clearTimeout(this.setTimeOutOpen);
+    clearTimeout(this.setTimeOutClose);
   }
 
-  max = 0;
-
-  openPopUp() {
-    var randomNumber = Math.floor(Math.random() * 15) + 1;
-    console.log(randomNumber);
+  closePopupTimeout() {
+    this.setTimeOutClose = setTimeout(() => {
+    this.PopupMsg = false;
+    this.openPopupTimeout();
+    }, 14000); //1sec = 1000 milli Seconds
   }
 
-  checkNow() {
-    this.intervalID;
+  openPopupTimeout() {
+    this.setTimeOutOpen = setTimeout(() => {
+      this.PopupMsg = true;
+      this.closePopupTimeout();
+    }, 7000); //1sec = 1000 milli Seconds
   }
+
 }

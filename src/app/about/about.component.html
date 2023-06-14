@@ -34,7 +34,9 @@
     <span>You may never know what results come of your action, but if you do nothing there will be no result</span>
 
     <p>College helps students develop into mature, responsible and independent adults. But you’re not entirely on your
-      own colleges offer students many kinds of help making this transition, such as <i title="Tutoring is private academic support, usually provided by an expert teacher">tutoring</i> and academic advising
+      own colleges offer students many kinds of help making this transition, such as <i
+        title="Tutoring is private academic support, usually provided by an expert teacher">tutoring</i> and academic
+      advising
       as well as counseling and other support.
     </p>
 
@@ -203,7 +205,7 @@
 
 <app-footer></app-footer>
 
-<!-- Pop-Up Display About Admission Starts here -->
+<!-- Pop-Up Display About Quotes Starts here -->
 
 <div class="offer-popup" *ngIf="PopupMsg">
 
@@ -211,8 +213,18 @@
 
   <div class="popup-offer-div">
 
+    <h1 class="popup-heading">Quotes</h1>
+
+    <div class="popup-sub-division">
+
+      <p class="slogan">{{quoteData}}</p>
+
+    </div>
+
+    <p class="author">- {{authorData}}</p>
+
   </div>
 
 </div>
 
-<!-- Pop-Up Display About Admission Ends here -->
+<!-- Pop-Up Display About Quotes Ends here -->

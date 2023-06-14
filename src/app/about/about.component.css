@@ -106,7 +106,7 @@ section {
   line-height: 2;
   border-radius: 5rem;
   color: #777777;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   color: #fff;
   background-color: #4070f4;
 }
@@ -275,7 +275,7 @@ section {
   position: fixed;
   display: flex;
   justify-content: center;
-  height: 50vh;
+  height: 40vh;
   top: 7rem;
   left: 1rem;
   z-index: 5;
@@ -301,11 +301,64 @@ section {
 
 .popup-offer-div {
   margin-top: 2rem;
-  background-color: #e6e6e6;
+  padding: 2rem;
+  background-color: gainsboro;
+  overflow: hidden;
   border: 0.2rem solid#4070f4;
   position: relative;
-  height: 25rem;
+  height: 16rem;
   width: 100rem;
+}
+
+.popup-heading {
+  color: #4070f4;
+  border: .2rem solid #4070f4;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  background-color: #fff;
+  border-radius: 5rem;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.popup-sub-division {
+  background-color: #4070f4;
+  text-align: center;
+  border: .2rem solid #03262c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  height: 5rem;
+  margin: 2rem;
+}
+
+.popup-offer-div .slogan {
+  font-size: 1.7rem;
+  color: aliceblue;
+}
+
+.popup-offer-div .author {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  transform: translateX(5%);
+  margin: 0 auto;
+  bottom: 1rem;
+  color: rebeccapurple;
+  font-size: 1.7rem;
+  animation: bouncing-text 7s linear infinite alternate; /* nochanges */
+}
+
+@keyframes bouncing-text {
+  0% {
+      transform: translateX(-38%); /* nochanges */
+  }
+  100% {
+      transform: translateX(58%); /* nochanges */
+  }
 }
 
 /* Popup styling ends here  */
