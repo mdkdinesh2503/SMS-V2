@@ -8,7 +8,9 @@ import { LoginService } from '../login.service';
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-  constructor(private auth: AuthService, private service: LoginService) {}
+  constructor(private auth: AuthService, private service: LoginService) {
+    this.setNow();
+  }
 
   quotesFromDatabase: any;
   quoteData: any;
@@ -16,11 +18,14 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     this.auth.loginAccess(false);
-    this.openPopupTimeout();
 
     this.service.getquotesDisplay().subscribe((data) => {
       this.quotesFromDatabase = data;
       var randomNumber;
+
+      this.quoteData = this.quotesFromDatabase[0].quote;
+      this.authorData = this.quotesFromDatabase[0].author;
+
       setInterval(() => {
         randomNumber = Math.floor(Math.random() * 15) + 1;
         this.quoteData = this.quotesFromDatabase[randomNumber].quote;
@@ -29,9 +34,47 @@ export class AboutComponent implements OnInit {
     });
   }
 
+  hours: string = '';
+  minutes: string = '';
+  seconds: string = '';
+  months: string = '';
+  years: string = '';
+  ampm: any = '';
+
+  setNow() {
+    setInterval(() => {
+      var date = new Date();
+      var hour = date.getHours();
+      var minute = date.getMinutes();
+      var second = date.getSeconds();
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var ap = '';
+
+      if (hour >= 12) {
+        ap = 'PM';
+      } else {
+        ap = 'AM';
+      }
+
+      if (hour > 12) {
+        hour = hour - 12;
+      }
+
+      this.hours = '' + hour + '';
+      this.minutes = '' + minute + '';
+      this.seconds = '' + second + '';
+      this.months = '' + month + '';
+      this.years = '' + year + '';
+      this.ampm = '' + ap + '';
+
+      this.startPopUp();
+    }, 1000);
+  }
+
   PopupMsg: boolean = false;
-  setTimeOutOpen:any;
-  setTimeOutClose:any;
+  setTimeOutOpen: any;
+  setTimeOutClose: any;
 
   closePopUp() {
     this.PopupMsg = false;
@@ -41,8 +84,8 @@ export class AboutComponent implements OnInit {
 
   closePopupTimeout() {
     this.setTimeOutClose = setTimeout(() => {
-    this.PopupMsg = false;
-    this.openPopupTimeout();
+      this.PopupMsg = false;
+      this.openPopupTimeout();
     }, 14000); //1sec = 1000 milli Seconds
   }
 
@@ -53,4 +96,28 @@ export class AboutComponent implements OnInit {
     }, 7000); //1sec = 1000 milli Seconds
   }
 
+  startPopUp() {
+    if (
+      this.hours == '9' &&
+      this.minutes >= '20' &&
+      this.minutes <= '22' &&
+      this.years == '2023' &&
+      this.months == '6'
+    ) {
+      this.PopupMsg = true;
+    }
+
+    if (
+      this.hours == '9' &&
+      this.minutes >= '23' &&
+      this.years == '2023' &&
+      this.months == '6'
+    ) {
+      this.PopupMsg = false;
+    }
+  }
+
+  closedPopUp() {
+    this.PopupMsg = false;
+  }
 }
