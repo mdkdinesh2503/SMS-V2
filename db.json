@@ -1070,99 +1070,6 @@
       "id": 8
     }
   ],
-  "loginlist": [
-    {
-      "USERNAME": "admin",
-      "PASSWORD": "Admin@123",
-      "DATE": "03-04-2023",
-      "TIME": "02:38 PM",
-      "id": 1
-    },
-    {
-      "USERNAME": "aparna",
-      "PASSWORD": "Aparna@123",
-      "DATE": "03-04-2023",
-      "TIME": "02:51 PM",
-      "id": 2
-    },
-    {
-      "USERNAME": "rhenuka",
-      "PASSWORD": "Rhenuka@123",
-      "DATE": "15-05-2023",
-      "TIME": "02:47 PM",
-      "id": 3
-    },
-    {
-      "USERNAME": "admin",
-      "PASSWORD": "Admin@123",
-      "DATE": "15-05-2023",
-      "TIME": "02:47 PM",
-      "id": 4
-    },
-    {
-      "USERNAME": "dinesh",
-      "PASSWORD": "Dinesh@123",
-      "DATE": "16-05-2023",
-      "TIME": "09:34 AM",
-      "id": 5
-    },
-    {
-      "USERNAME": "admin",
-      "PASSWORD": "Admin@123",
-      "DATE": "16-05-2023",
-      "TIME": "09:37 AM",
-      "id": 6
-    },
-    {
-      "USERNAME": "rhenuka",
-      "PASSWORD": "Rhenuka@123",
-      "DATE": "16-05-2023",
-      "TIME": "09:52 AM",
-      "id": 7
-    },
-    {
-      "USERNAME": "admin",
-      "PASSWORD": "Admin@123",
-      "DATE": "16-05-2023",
-      "TIME": "03:10 PM",
-      "id": 8
-    },
-    {
-      "USERNAME": "rhenuka",
-      "PASSWORD": "Rhenuka@123",
-      "DATE": "16-05-2023",
-      "TIME": "03:15 PM",
-      "id": 9
-    },
-    {
-      "USERNAME": "admin",
-      "PASSWORD": "Admin@123",
-      "DATE": "16-05-2023",
-      "TIME": "08:40 PM",
-      "id": 10
-    },
-    {
-      "USERNAME": "samantha",
-      "PASSWORD": "Samantha@123",
-      "DATE": "17-05-2023",
-      "TIME": "09:39 AM",
-      "id": 11
-    },
-    {
-      "USERNAME": "admin",
-      "PASSWORD": "Admin@123",
-      "DATE": "17-05-2023",
-      "TIME": "09:39 AM",
-      "id": 12
-    },
-    {
-      "USERNAME": "admin",
-      "PASSWORD": "Admin@123",
-      "DATE": "17-05-2023",
-      "TIME": "11:19 AM",
-      "id": 13
-    }
-  ],
   "Quotes": [
     {
       "quote": "Life isn’t about getting and having, it’s about giving and being.",
@@ -1588,6 +1495,64 @@
       "quote": "If you can dream it, you can achieve it.",
       "author": "Zig Ziglar",
       "id": 85
+    }
+  ],
+  "loginlist": [
+    {
+      "USERNAME": "admin",
+      "PASSWORD": "Admin@123",
+      "DATE": "03-04-2023",
+      "TIME": "02:38 PM",
+      "id": 1
+    },
+    {
+      "USERNAME": "aparna",
+      "PASSWORD": "Aparna@123",
+      "DATE": "03-04-2023",
+      "TIME": "02:51 PM",
+      "id": 2
+    },
+    {
+      "USERNAME": "rhenuka",
+      "PASSWORD": "Rhenuka@123",
+      "DATE": "15-05-2023",
+      "TIME": "02:47 PM",
+      "id": 3
+    },
+    {
+      "USERNAME": "admin",
+      "PASSWORD": "Admin@123",
+      "DATE": "15-05-2023",
+      "TIME": "02:47 PM",
+      "id": 4
+    },
+    {
+      "USERNAME": "dinesh",
+      "PASSWORD": "Dinesh@123",
+      "DATE": "16-05-2023",
+      "TIME": "09:34 AM",
+      "id": 5
+    },
+    {
+      "USERNAME": "admin",
+      "PASSWORD": "Admin@123",
+      "DATE": "16-05-2023",
+      "TIME": "09:37 AM",
+      "id": 6
+    },
+    {
+      "USERNAME": "rhenuka",
+      "PASSWORD": "Rhenuka@123",
+      "DATE": "16-05-2023",
+      "TIME": "09:52 AM",
+      "id": 7
+    },
+    {
+      "USERNAME": "samantha",
+      "PASSWORD": "Samantha@123",
+      "DATE": "19-06-2023",
+      "TIME": "10:31 AM",
+      "id": 8
     }
   ]
 }

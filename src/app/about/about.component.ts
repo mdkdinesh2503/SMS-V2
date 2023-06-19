@@ -19,6 +19,8 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     this.auth.loginAccess(false);
 
+    // this.openPopupTimeout();
+
     this.service.getquotesDisplay().subscribe((data) => {
       this.quotesFromDatabase = data;
       var randomNumber;
@@ -99,8 +101,8 @@ export class AboutComponent implements OnInit {
   startPopUp() {
     if (
       this.hours == '9' &&
-      this.minutes >= '20' &&
-      this.minutes <= '22' &&
+      this.minutes >= '57' &&
+      this.minutes <= '58' &&
       this.years == '2023' &&
       this.months == '6'
     ) {
@@ -109,7 +111,7 @@ export class AboutComponent implements OnInit {
 
     if (
       this.hours == '9' &&
-      this.minutes >= '23' &&
+      this.minutes >= '59' &&
       this.years == '2023' &&
       this.months == '6'
     ) {

@@ -12,12 +12,21 @@ export class AuthService {
     return token;
   }
 
+  storeTokenId(token: string) {
+    sessionStorage.setItem('ID', token);
+  }
+
   displayToken() {
     return sessionStorage.getItem('USERNAME');
   }
 
+  displayIdToken() {
+    return sessionStorage.getItem('ID');
+  }
+
   removeToken() {
     sessionStorage.removeItem('USERNAME');
+    sessionStorage.removeItem('ID');
     this.storeAccessStudent(false);
     this.storeAccessAdmin(false);
   }
@@ -76,6 +85,7 @@ export class AuthService {
     sessionStorage.setItem('AllowStudent', value);
     sessionStorage.setItem('AllowAdmin', value);
     sessionStorage.removeItem('USERNAME');
+    sessionStorage.removeItem('ID');
   }
 
   popUpAccess() : boolean {

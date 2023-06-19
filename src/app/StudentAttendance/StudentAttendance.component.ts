@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { DatePipe } from '@angular/common';
 import { AuthService } from '../auth.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-StudentAttendance',
@@ -15,6 +16,7 @@ export class StudentAttendanceComponent implements OnInit {
     private location: Location,
     private route: Router,
     private userService: UserService,
+    private loginService: LoginService,
     private datepipe: DatePipe,
     private auth: AuthService
   ) {
@@ -76,9 +78,19 @@ export class StudentAttendanceComponent implements OnInit {
 
   ngOnInit() {
     this.auth.canAccessStudent();
+
+    this.loginService.getStudentDetails().subscribe((data) => {
+      this.detailsFromStudent = data;
+      this.studentRegisterNo = this.detailsFromStudent[this.getIdVal].REGISTER_NUMBER;
+      this.studentName = this.detailsFromStudent[this.getIdVal].NAME;
+    });
   }
 
   loginUserName: any = this.auth.displayToken();
+  detailsFromStudent:any;
+  studentRegisterNo:any ;
+  studentName:any;
+  getIdVal:any = this.auth.displayIdToken();
 
   dates: any = this.datepipe.transform(new Date(), 'dd-MM-yyyy');
 
@@ -143,16 +155,16 @@ export class StudentAttendanceComponent implements OnInit {
     this.location.back();
   }
 
-  submitList(name: any, registerNumber: any, field: any) {
+  submitList(field: any) {
     var body = {
-      NAME: name,
-      REGISTER_NUMBAR: registerNumber,
+      NAME: this.studentName,
+      REGISTER_NUMBAR: this.studentRegisterNo,
       ATTENDANCE_FIELD: field,
       DATE: this.dates,
       TIME: this.times,
     };
 
-    if (name != '' && registerNumber != '' && field != '') {
+    if (field != '') {
       this.userService.studentAttendance(body).subscribe((data) => {
         alert('Student Attendance Submitted successfully');
         window.location.reload();

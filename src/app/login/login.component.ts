@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
   aminLoginList: any = '';
   registersFromStudent: any = '';
   getValueId: any;
+  idDisplay: any;
+  emailValue: any;
 
   date: any = this.datepipe.transform(new Date(), 'dd-MM-yyyy');
   time: string = '';
@@ -160,6 +162,14 @@ export class LoginComponent implements OnInit {
 
       this.userService.loginDetails(body).subscribe((data) => {
         if (confirm('You are Redirect to Student page') == true) {
+          for (var i = 0; i < this.registersFromStudent.length; i++) {
+            if (un == this.registersFromStudent[i].USERNAME) {
+              this.idDisplay = i;
+            }
+          }
+
+          this.auth.storeTokenId(this.idDisplay);
+
           this.auth.storeToken(un);
           this.auth.storeAccessStudent(true);
           this.auth.storeAccessAdmin(false);

@@ -45,19 +45,19 @@
 
       <h1>Attendance Form</h1>
 
-      <form #StudentAttendanceForm="ngForm" (ngSubmit)="submitList(Name.value, RegisterNumber.value, Field.value)">
+      <form #StudentAttendanceForm="ngForm" (ngSubmit)="submitList(Field.value)">
 
         <div class="fields">
 
           <div class="input-field">
             <label>Full Name</label>
-            <input type="text" placeholder="Enter your name" name="Name" required #Name="ngModel" ngModel>
+            <input type="text" placeholder="Enter your name" name="Name" disabled required #Name="ngModel" [(ngModel)]="studentName">
           </div>
 
           <div class="input-field">
             <label>Register Number</label>
-            <input type="tel" maxlength="7" placeholder="Enter your Register Number" name="RegisterNumber" required
-              #RegisterNumber="ngModel" ngModel>
+            <input type="tel" maxlength="7" placeholder="Enter your Register Number" disabled name="RegisterNumber" required
+              #RegisterNumber="ngModel" [(ngModel)]="studentRegisterNo">
           </div>
 
           <div class="input-field">
