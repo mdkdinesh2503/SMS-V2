@@ -323,6 +323,13 @@ section {
   text-align: center;
 }
 
+.popup-sub-heading {
+  color: #03262c;
+  float: right;
+  margin-top: -4rem;
+  margin-right: 2rem;
+}
+
 .popup-sub-division {
   background-color: #4070f4;
   text-align: center;

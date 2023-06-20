@@ -9,12 +9,21 @@ import { LoginService } from '../login.service';
 })
 export class AboutComponent implements OnInit {
   constructor(private auth: AuthService, private service: LoginService) {
-    this.setNow();
+    this.displayDateAndTime;
   }
 
+  // For Count Down Display
+  countDownTimer: any;
+
+  // For Quotes Display
   quotesFromDatabase: any;
   quoteData: any;
   authorData: any;
+
+  //For PopUp Display
+  PopupMsg: boolean = false;
+  setTimeOutOpen: any;
+  setTimeOutClose: any;
 
   ngOnInit() {
     this.auth.loginAccess(false);
@@ -36,47 +45,47 @@ export class AboutComponent implements OnInit {
     });
   }
 
-  hours: string = '';
-  minutes: string = '';
-  seconds: string = '';
-  months: string = '';
-  years: string = '';
-  ampm: any = '';
+  displayDateAndTime: any = setInterval(() => {
+    var date = new Date();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var ap = '';
 
-  setNow() {
-    setInterval(() => {
-      var date = new Date();
-      var hour = date.getHours();
-      var minute = date.getMinutes();
-      var second = date.getSeconds();
-      var year = date.getFullYear();
-      var month = date.getMonth() + 1;
-      var ap = '';
+    if (hour >= 12) {
+      ap = 'PM';
+    } else {
+      ap = 'AM';
+    }
 
-      if (hour >= 12) {
-        ap = 'PM';
-      } else {
-        ap = 'AM';
-      }
+    if (hour > 12) {
+      hour = hour - 12;
+    }
 
-      if (hour > 12) {
-        hour = hour - 12;
-      }
+    var currentDate = new Date().getTime();
+    // End timer enable here for popup offer
+    var endDate = new Date('Jun 20, 2023 06:26:0 PM').getTime();
+    var duration = endDate - currentDate;
 
-      this.hours = '' + hour + '';
-      this.minutes = '' + minute + '';
-      this.seconds = '' + second + '';
-      this.months = '' + month + '';
-      this.years = '' + year + '';
-      this.ampm = '' + ap + '';
+    if (duration < 0) {
+      clearInterval(this.displayDateAndTime);
+      this.PopupMsg = false;
+      // Start timer enable here for popup offer
+    } else if (hour == 6 && minute >= 24 && year == 2023 && month == 6 && ap == 'PM') {
+      var days = Math.floor(duration / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((duration % (1000 * 60)) / 1000);
 
-      this.startPopUp();
-    }, 1000);
-  }
+      this.countDownTimer =
+        days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ';
 
-  PopupMsg: boolean = false;
-  setTimeOutOpen: any;
-  setTimeOutClose: any;
+      this.PopupMsg = true;
+    }
+  }, 1000);
 
   closePopUp() {
     this.PopupMsg = false;
@@ -98,28 +107,4 @@ export class AboutComponent implements OnInit {
     }, 7000); //1sec = 1000 milli Seconds
   }
 
-  startPopUp() {
-    if (
-      this.hours == '9' &&
-      this.minutes >= '57' &&
-      this.minutes <= '58' &&
-      this.years == '2023' &&
-      this.months == '6'
-    ) {
-      this.PopupMsg = true;
-    }
-
-    if (
-      this.hours == '9' &&
-      this.minutes >= '59' &&
-      this.years == '2023' &&
-      this.months == '6'
-    ) {
-      this.PopupMsg = false;
-    }
-  }
-
-  closedPopUp() {
-    this.PopupMsg = false;
-  }
 }
