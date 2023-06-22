@@ -25,8 +25,10 @@ export class LoginComponent implements OnInit {
 
   aminLoginList: any = '';
   registersFromStudent: any = '';
+  detailsFromDatabase:any;
   getValueId: any;
   idDisplay: any;
+  getEmailFromRegister:any;
   emailValue: any;
 
   date: any = this.datepipe.transform(new Date(), 'dd-MM-yyyy');
@@ -78,6 +80,10 @@ export class LoginComponent implements OnInit {
 
     this.service.getRegisterDetails().subscribe((data) => {
       this.registersFromStudent = data;
+    });
+
+    this.service.getStudentDetails().subscribe((data) => {
+      this.detailsFromDatabase = data;
     });
   }
 
@@ -164,6 +170,12 @@ export class LoginComponent implements OnInit {
         if (confirm('You are Redirect to Student page') == true) {
           for (var i = 0; i < this.registersFromStudent.length; i++) {
             if (un == this.registersFromStudent[i].USERNAME) {
+              this.getEmailFromRegister = this.registersFromStudent[i].EMAIL;
+            }
+          }
+
+          for (var i = 0; i < this.detailsFromDatabase.length; i++) {
+            if(this.getEmailFromRegister == this.detailsFromDatabase[i].EMAIL) {
               this.idDisplay = i;
             }
           }
