@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,13 @@ import { UserService } from '../user.service';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private fb: FormBuilder) {}
 
   ngOnInit() {}
+
+  emailReactiveForm = this.fb.group({
+    EMAIL: [, [Validators.pattern]],
+  });
 
   popupLocation() {
     window.open(
@@ -23,7 +28,7 @@ export class FooterComponent implements OnInit {
     var body = {
       NEWS_MAIL: email,
     };
-    if (email != '') {
+    if (this.emailReactiveForm.valid) {
       this.userService.newsLetter(body).subscribe((data) => {
         alert('You are Subscribed Successfully!!!');
         window.location.reload();

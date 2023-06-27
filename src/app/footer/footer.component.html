@@ -40,9 +40,9 @@
       <div class="box">
           <h3>newsletter</h3>
           <p>Latest upadates responses</p>
-          <form (ngSubmit)="submitUpdateList(email.value)">
-              <input type="email" name="" #email placeholder="enter your email" class="email">
-              <input type="submit" value="subscribe" class="btn">
+          <form [formGroup]="emailReactiveForm" (ngSubmit)="submitUpdateList(email.value)">
+              <input type="email" #email pattern="^[0-9a-zA-Z]+[._]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$" placeholder="Enter your email" class="email" formControlName="EMAIL">
+              <button type="submit" class="btn">subscribe</button>
           </form>
       </div>
 

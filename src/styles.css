@@ -5,8 +5,8 @@
 }
 
 html {
-  min-zoom: 75%;
-  max-zoom: 80%;
+  min-zoom: 70%;
+  max-zoom: 70%;
   zoom: 100%;
   overflow-x: hidden;
   scroll-padding-top: 7rem;
