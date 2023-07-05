@@ -37,6 +37,7 @@ import { StudentFeesComponent } from './StudentFees/StudentFees.component';
 import { StudentReportsComponent } from './StudentReports/StudentReports.component';
 import { StudentResultsComponent } from './StudentResults/StudentResults.component';
 import { StudentTimetableComponent } from './StudentTimetable/StudentTimetable.component';
+import { StudentProfileComponent } from './StudentProfile/StudentProfile.component';
 import { AdminRegisterListComponent } from './AdminRegisterList/AdminRegisterList.component';
 import { PageErrorComponent } from './PageError/PageError.component';
 import { NotuploadedComponent } from './notuploaded/notuploaded.component';
@@ -91,7 +92,8 @@ import { SearchComponent } from './Search/Search.component';
       AdminReportViewComponent,
       StudentFeesPaymentComponent,
       StudentExamPaymentComponent,
-      SearchComponent
+      SearchComponent,
+      StudentProfileComponent
    ],
   imports: [
     BrowserModule,
