@@ -41,6 +41,7 @@ import { StudentResultsComponent } from './StudentResults/StudentResults.compone
 import { StudentResultViewComponent } from './StudentResultView/StudentResultView.component';
 import { StudentTimetableComponent } from './StudentTimetable/StudentTimetable.component';
 import { StudentProfileComponent } from './StudentProfile/StudentProfile.component';
+import { StudentReviewComponent } from './StudentReview/StudentReview.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/frontpage', pathMatch: 'full', title: ". . S M S . . C L O U D . ." },
@@ -71,6 +72,7 @@ const routes: Routes = [
   { path: 'studentresults', component: StudentResultsComponent, title: "S T U D E N T - R E S U L T S"},
   { path: 'studenttimetable', component: StudentTimetableComponent, title: "S T U D E N T - T I M E T A B L E"},
   { path: 'studentprofile', component: StudentProfileComponent, title: "S T U D E N T - P R O F I L E"},
+  { path: 'studentreview', component: StudentReviewComponent, title: "S T U D E N T - R E V I E W"},
   { path: 'notupload', component: NotuploadedComponent, title: "N O T - Y E T - U P L O A D"},
   { path: 'studentresultview/:register', component: StudentResultViewComponent, title: "S - - R E S U L T - V I E W"},
   { path: 'studentfeespayment/:id/:register', component: StudentFeesPaymentComponent, title: "S - - F E E S - P A Y M E N T"},
