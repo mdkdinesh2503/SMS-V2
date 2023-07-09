@@ -36,6 +36,8 @@ import { AdminRegisterEditComponent } from './AdminRegisterEdit/AdminRegisterEdi
 import { AdminDetailsViewComponent } from './adminDetailsView/adminDetailsView.component';
 import { AdminResultViewComponent } from './AdminResultView/AdminResultView.component';
 import { AdminReportViewComponent } from './AdminReportView/AdminReportView.component';
+import { AdminReviewComponent } from './AdminReview/AdminReview.component';
+import { AdminReviewViewComponent } from './AdminReviewView/AdminReviewView.component';
 
 import { StudentDashboardComponent } from './StudentDashboard/StudentDashboard.component';
 import { StudentNavbarComponent } from './StudentNavbar/StudentNavbar.component';
@@ -96,7 +98,9 @@ import { StudentReviewComponent } from './StudentReview/StudentReview.component'
       StudentExamPaymentComponent,
       SearchComponent,
       StudentProfileComponent,
-      StudentReviewComponent
+      StudentReviewComponent,
+      AdminReviewComponent,
+      AdminReviewViewComponent
    ],
   imports: [
     BrowserModule,
