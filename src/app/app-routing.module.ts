@@ -15,6 +15,7 @@ import { AdminResultsComponent } from './AdminResults/AdminResults.component';
 import { AdminResultViewComponent } from './AdminResultView/AdminResultView.component';
 import { AdminTimetableComponent } from './AdminTimetable/AdminTimetable.component';
 import { AdminReviewComponent } from './AdminReview/AdminReview.component';
+import { AdminReviewViewComponent } from './AdminReviewView/AdminReviewView.component';
 
 import { AboutComponent } from './about/about.component';
 import { BlogsComponent } from './blogs/blogs.component';
@@ -41,7 +42,6 @@ import { StudentResultViewComponent } from './StudentResultView/StudentResultVie
 import { StudentTimetableComponent } from './StudentTimetable/StudentTimetable.component';
 import { StudentProfileComponent } from './StudentProfile/StudentProfile.component';
 import { StudentReviewComponent } from './StudentReview/StudentReview.component';
-import { AdminReviewViewComponent } from './AdminReviewView/AdminReviewView.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/frontpage', pathMatch: 'full', title: ". . S M S . . C L O U D . ." },

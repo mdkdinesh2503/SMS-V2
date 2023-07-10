@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { confirmPasswordValidator } from '../confirmpassword.validator';
 import { UserService } from '../user.service';
 import { AuthService } from '../auth.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-register',
@@ -18,13 +19,20 @@ import { AuthService } from '../auth.service';
 export class RegisterComponent implements OnInit {
   constructor(
     private userService: UserService,
+    private loginService: LoginService,
     private route: Router,
     private fb: FormBuilder,
     private auth: AuthService
   ) {}
 
+  registerDetailsfromDatabase:any;
+
   ngOnInit() {
     this.auth.loginAccess(false);
+
+    this.loginService.getRegisterDetails().subscribe((data)=> {
+      this.registerDetailsfromDatabase = data;
+    });
   }
 
   registerReactiveForm = this.fb.group(
@@ -39,7 +47,9 @@ export class RegisterComponent implements OnInit {
     }
   );
 
-  submitList() {
+  condition:boolean = true;
+
+  submitList(username:any, email:any) {
     if (this.registerReactiveForm.controls['USERNAME'].errors?.['required']) {
       alert('Username is not Empty!!');
     } else if (this.registerReactiveForm.controls['EMAIL'].errors?.['required']) {
@@ -49,12 +59,30 @@ export class RegisterComponent implements OnInit {
     } else if (!this.registerReactiveForm.valid) {
       alert('Field must not contain any error');
     } else {
-      this.userService
+
+      for(var i=0;i<this.registerDetailsfromDatabase.length;i++) {
+        if(username == this.registerDetailsfromDatabase[i].USERNAME) {
+          alert("Username is Already Exist");
+          this.condition = false;
+        }else if(email == this.registerDetailsfromDatabase[i].EMAIL) {
+          alert("Email is Already Exist");
+          this.condition = false;
+        }else{
+
+        }
+      }
+
+      if(this.condition) {
+        this.userService
         .addRegisters(this.registerReactiveForm.value)
         .subscribe((data) => {
           alert('Registered Successfull');
           this.route.navigate(['/login']);
         });
+      }
+      
+      window.location.reload();
+
     }
   }
 }
