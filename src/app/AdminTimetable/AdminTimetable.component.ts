@@ -24,7 +24,7 @@ export class AdminTimetableComponent implements OnInit {
   timetableFromAdmin: any = '';
 
   ngOnInit() {
-    
+
     this.auth.canAccessAdmin();
 
     this.service.getAdminTimetable().subscribe((data) => {
@@ -139,5 +139,9 @@ export class AdminTimetableComponent implements OnInit {
   logOut() {
     this.auth.removeToken();
     this.route.navigate(['/login']);
+  }
+
+  clickToConvert(filename:string, data:any) {
+    this.auth.onExportClick(filename, data);
   }
 }

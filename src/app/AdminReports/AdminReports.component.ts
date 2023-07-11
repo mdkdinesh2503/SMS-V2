@@ -75,4 +75,8 @@ export class AdminReportsComponent implements OnInit {
     this.route.navigate(['/login']);
   }
 
+  clickToConvert(filename:string, data:any) {
+    this.auth.onExportClick(filename, data);
+  }
+
 }

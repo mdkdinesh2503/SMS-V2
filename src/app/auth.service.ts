@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import * as xlsx from 'xlsx';
 
 @Injectable({
   providedIn: 'root',
@@ -97,6 +98,14 @@ export class AuthService {
     } else {
       return false;
     }
+  }
+
+  onExportClick(fileName:String, data:any):void {
+    const workSheet: xlsx.WorkSheet = xlsx.utils.table_to_sheet(data);
+    const workBook: xlsx.WorkBook = xlsx.utils.book_new();
+
+    xlsx.utils.book_append_sheet(workBook, workSheet, 'Sheet1');
+    xlsx.writeFile(workBook, fileName+'.xlsx');
   }
 
 }

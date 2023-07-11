@@ -123,4 +123,8 @@ export class StudentExamComponent implements OnInit {
     this.auth.removeToken();
     this.route.navigate(['/login']);
   }
+
+  clickToConvert(filename:string, data:any) {
+    this.auth.onExportClick(filename, data);
+  }
 }
