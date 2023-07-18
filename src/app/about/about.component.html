@@ -113,7 +113,7 @@
 
           <div class="job">{{review.DEPARTMENT}}</div>
 
-          <p hidden *ngFor="let star of generateStarSymbols(review.RATING)"></p>
+          <p hidden *ngIf="generateStarSymbols(review.RATING)"></p>
 
           <div class="stars">
             <i class="fas fa-star" *ngFor="let star of stars"></i>

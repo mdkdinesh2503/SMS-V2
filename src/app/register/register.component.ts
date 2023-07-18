@@ -90,13 +90,10 @@ export class RegisterComponent implements OnInit {
       if (this.condition) {
         this.userService
           .addRegisters(this.registerReactiveForm.value)
-          .subscribe(
-            (data) => {
-              alert('Registered Successfull');
-              this.route.navigate(['/login']);
-            },
-            (error) => {}
-          );
+          .subscribe((data) => {
+            alert('Registered Successfull');
+            this.route.navigate(['/login']);
+          });
       }
 
       window.location.reload();
