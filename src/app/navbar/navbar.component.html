@@ -7,7 +7,7 @@
 
   <a class="logo"> <i class="fas fa-cloud-moon"></i> <span>C</span>loud... </a>
 
-  <nav class="navbar">
+  <nav class="navbar" [ngClass]="{'active': isMenuOpen}">
       <a routerLink="/home" routerLinkActive="activated">Home</a>
       <a routerLink="/about" routerLinkActive="activated">About</a>
       <a routerLink="/courses" routerLinkActive="activated">Courses</a>
@@ -17,7 +17,9 @@
       <a routerLink="/login" routerLinkActive="activated">Login</a>
   </nav>
 
-  <!-- <div class="fas fa-bars"></div> -->
+  <div id="menu-btn" *ngIf="hide" (click)="openMenu()" class="fas fa-bars"></div>
+
+  <div id="menu-btn" *ngIf="isMenuOpen" (click)="closeMenu()" class="fas fa-times"></div>
 
 </header>
 

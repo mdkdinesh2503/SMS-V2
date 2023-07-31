@@ -37,25 +37,17 @@
   object-fit: cover;
 }
 
-.home-content-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
 .home .content {
+  width: 100%;
   position: absolute;
+  text-align: center;
   z-index: 3;
-  margin-top: -60rem;
-  margin-left: 25rem;
 }
 
 .home .content h3 {
   font-size: 4.2rem;
   color: #fff;
   margin-bottom: 2px;
-  margin-left: 6.2rem;
   font-weight: 400;
   text-shadow: 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.2);
 }
@@ -63,7 +55,6 @@
 .home .content p {
   font-size: 2rem;
   color: #fff;
-  margin-left: -2rem;
 }
 
 .home-icons-container {
@@ -195,7 +186,7 @@
 
 .btn {
   display: inline-flex;
-  margin: 1rem 41%;
+  margin-top: 1rem;
   width: fit-content;
   padding: 0.5rem 1rem;
   border: 0.1rem solid transparent;
@@ -356,3 +347,31 @@
 }
 
 /* Popup styling ends here  */
+
+@media (max-width:1400px) {
+  .home .content h3 {
+    font-size: 3rem;
+  }
+  .home .content p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width:1100px) {
+
+  .home .content h3 {
+    font-size: 2.5rem;
+  }
+  .home .content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width:700px) {
+  .home .content h3 {
+    font-size: 2.1rem;
+  }
+  .home .content p {
+    font-size: 1rem;
+  }
+}
