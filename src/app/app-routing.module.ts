@@ -17,17 +17,17 @@ import { AdminTimetableComponent } from './AdminTimetable/AdminTimetable.compone
 import { AdminReviewComponent } from './AdminReview/AdminReview.component';
 import { AdminReviewViewComponent } from './AdminReviewView/AdminReviewView.component';
 
-import { AboutComponent } from './about/about.component';
-import { BlogsComponent } from './blogs/blogs.component';
-import { ContactComponent } from './contact/contact.component';
-import { CoursesComponent } from './courses/courses.component';
-import { FrontpageComponent } from './frontpage/frontpage.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { NotuploadedComponent } from './notuploaded/notuploaded.component';
+import { AboutComponent } from './About/About.component';
+import { BlogsComponent } from './Blogs/Blogs.component';
+import { ContactComponent } from './Contact/Contact.component';
+import { CoursesComponent } from './Courses/Courses.component';
+import { FrontpageComponent } from './FrontPage/FrontPage.component';
+import { HomeComponent } from './Home/Home.component';
+import { LoginComponent } from './Login/Login.component';
+import { NotuploadedComponent } from './NotUploaded/NotUploaded.component';
 import { PageErrorComponent } from './PageError/PageError.component';
-import { RegisterComponent } from './register/register.component';
-import { ServicesComponent } from './services/services.component';
+import { RegisterComponent } from './Register/Register.component';
+import { ServicesComponent } from './Services/Services.component';
 
 import { StudentAttendanceComponent } from './StudentAttendance/StudentAttendance.component';
 import { StudentDashboardComponent } from './StudentDashboard/StudentDashboard.component';
