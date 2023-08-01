@@ -3,7 +3,7 @@ import { AuthService } from '../auth.service';
 import { LoginService } from '../login.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { UpdateService } from '../Update.service';
+import { UpdateService } from '../update.service';
 
 @Component({
   selector: 'app-StudentProfile',

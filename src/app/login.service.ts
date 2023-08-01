@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -7,75 +8,60 @@ import { Injectable } from '@angular/core';
 export class LoginService {
   constructor(private http: HttpClient) {}
 
-  registerUrl:any = "http://localhost:3000/Registers";
-  adminListUrl:any= "http://localhost:3000/AdminList";
-  studentDetailsUrl:any= "http://localhost:3000/StudentDetails";
-  studentAttendanceUrl:any= "http://localhost:3000/StudentAttendance";
-  studentReportsUrl:any= "http://localhost:3000/StudentReports";
-  adminTimetableUrl:any= "http://localhost:3000/AdminTimetable";
-  adminResultUrl:any= "http://localhost:3000/AdminResult";
-  adminParentsReportUrl:any= "http://localhost:3000/AdminReports";
-  adminExamHallAllocationUrl:any="http://localhost:3000/AdminExamHallAllocation";
-  adminExamTimetableUrl:any="http://localhost:3000/AdminExamTimetable";
-  studentExamFeesPaymentUrl :any="http://localhost:3000/StudentExamFeesPayment";
-  studentCollegeFeesPaymentUrl :any="http://localhost:3000/StudentCollegeFeesPayment";
-  quotesDisplayUrl :any="http://localhost:3000/Quotes";
-  studentReview :any="http://localhost:3000/StudentReview";
-
   getRegisterDetails() {
-    return this.http.get(this.registerUrl);
+    return this.http.get(environment.registerUrl);
   }
 
   getAdminListDetails() {
-    return this.http.get(this.adminListUrl);
+    return this.http.get(environment.adminListUrl);
   }
 
   getStudentDetails() {
-    return this.http.get(this.studentDetailsUrl);
+    return this.http.get(environment.studentDetailsUrl);
   }
 
   getStudentAttendance() {
-    return this.http.get(this.studentAttendanceUrl);
+    return this.http.get(environment.studentAttendanceUrl);
   }
 
   getStudentReports() {
-    return this.http.get(this.studentReportsUrl);
+    return this.http.get(environment.studentReportsUrl);
   }
 
   getAdminTimetable() {
-    return this.http.get(this.adminTimetableUrl);
+    return this.http.get(environment.adminTimetableUrl);
   }
 
   getAdminResult() {
-    return this.http.get(this.adminResultUrl);
+    return this.http.get(environment.adminResultUrl);
   }
 
   getAdminParentsReport() {
-    return this.http.get(this.adminParentsReportUrl);
+    return this.http.get(environment.adminParentsReportUrl);
   }
 
   getAdminExamHallAllocation(){
-    return this.http.get(this.adminExamHallAllocationUrl);
+    return this.http.get(environment.adminExamHallAllocationUrl);
   }
 
   getAdminExamTimetable(){
-    return this.http.get(this.adminExamTimetableUrl);
+    return this.http.get(environment.adminExamTimetableUrl);
   }
 
   getStudentExamFeesPayment(){
-    return this.http.get(this.studentExamFeesPaymentUrl);
+    return this.http.get(environment.studentExamFeesPaymentUrl);
   }
 
   getStudentCollegeFeesPaymentUrl(){
-    return this.http.get(this.studentCollegeFeesPaymentUrl);
+    return this.http.get(environment.studentCollegeFeesPaymentUrl);
   }
 
   getquotesDisplay(){
-    return this.http.get(this.quotesDisplayUrl);
+    return this.http.get(environment.quotesDisplayUrl);
   }
 
   getStudentReview() {
-    return this.http.get(this.studentReview);
+    return this.http.get(environment.studentReviewUrl);
   }
 
 }

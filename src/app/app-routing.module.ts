@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminAttendanceComponent } from './AdminAttendance/AdminAttendance.component';
 import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.component';
 import { AdminDetailsComponent } from './AdminDetails/AdminDetails.component';
-import { AdminDetailsViewComponent } from './adminDetailsView/adminDetailsView.component';
+import { AdminDetailsViewComponent } from './AdminDetailsView/AdminDetailsView.component';
 import { AdminExamComponent } from './AdminExam/AdminExam.component';
 import { AdminFeesComponent } from './AdminFees/AdminFees.component';
 import { AdminRegisterEditComponent } from './AdminRegisterEdit/AdminRegisterEdit.component';

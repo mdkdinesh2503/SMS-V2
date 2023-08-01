@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +11,19 @@ export class UpdateService {
 
   updateRegisterData(body:any,id:any){
 
-    return this.client.put("http://localhost:3000/Registers"+"/"+id,body);
+    return this.client.put(environment.registerUrl+"/"+id,body);
 
   }
 
   updateAdminData(body:any,id:any){
 
-    return this.client.put("http://localhost:3000/StudentDetails"+"/"+id,body);
+    return this.client.put(environment.studentDetailsUrl+"/"+id,body);
 
   }
 
   updateAdminResult(body:any,id:any){
 
-    return this.client.put("http://localhost:3000/AdminResult"+"/"+id,body);
+    return this.client.put(environment.adminResultUrl+"/"+id,body);
 
   }
 

@@ -34,7 +34,7 @@ import { AdminResultsComponent } from './AdminResults/AdminResults.component';
 import { AdminTimetableComponent } from './AdminTimetable/AdminTimetable.component';
 import { AdminRegisterListComponent } from './AdminRegisterList/AdminRegisterList.component';
 import { AdminRegisterEditComponent } from './AdminRegisterEdit/AdminRegisterEdit.component';
-import { AdminDetailsViewComponent } from './adminDetailsView/adminDetailsView.component';
+import { AdminDetailsViewComponent } from './AdminDetailsView/AdminDetailsView.component';
 import { AdminResultViewComponent } from './AdminResultView/AdminResultView.component';
 import { AdminReportViewComponent } from './AdminReportView/AdminReportView.component';
 import { AdminReviewComponent } from './AdminReview/AdminReview.component';
