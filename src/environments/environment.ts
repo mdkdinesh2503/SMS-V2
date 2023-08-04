@@ -17,4 +17,13 @@ export const environment = {
   studentReviewUrl :"http://localhost:3000/StudentReview",
   loginUrl : "http://localhost:3000/loginlist",
   newsLetterUrl : "http://localhost:3000/NewsLetter",
+  loggerUrl : "http://localhost:3000/loggerData",
+
+  successLoggerValue : {
+    insertMessage : 'Successfully Inserted Values into Database' ,
+    deleteMessage : 'Your Values are Successfully Removed from Database',
+    updateMessage : 'Your Values are Updated and Changed Successfully',
+    level: 'INFO',
+  }
+
 };

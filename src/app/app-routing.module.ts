@@ -17,7 +17,7 @@ import { AdminTimetableComponent } from './AdminTimetable/AdminTimetable.compone
 import { AdminReviewComponent } from './AdminReview/AdminReview.component';
 import { AdminReviewViewComponent } from './AdminReviewView/AdminReviewView.component';
 
-import { AboutComponent } from './About/About.component';
+import { AboutComponent } from './About/about.component';
 import { BlogsComponent } from './Blogs/Blogs.component';
 import { ContactComponent } from './Contact/Contact.component';
 import { CoursesComponent } from './Courses/Courses.component';

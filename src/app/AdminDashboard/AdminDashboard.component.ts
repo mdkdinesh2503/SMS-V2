@@ -55,7 +55,7 @@ export class AdminDashboardComponent implements OnInit {
         'May',
         'June',
         'July',
-        'Augest',
+        'August',
         'September',
         'October',
         'November',

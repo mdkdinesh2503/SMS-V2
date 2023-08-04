@@ -3,7 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AboutComponent } from './About.component';
+import { AboutComponent } from './about.component';
+import { AuthService } from '../auth.service';
+import { LoginService } from '../login.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
@@ -11,7 +14,9 @@ describe('AboutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutComponent ]
+      declarations: [ AboutComponent ],
+      imports:[HttpClientModule],
+      providers: [  AuthService,LoginService],
     })
     .compileComponents();
   }));

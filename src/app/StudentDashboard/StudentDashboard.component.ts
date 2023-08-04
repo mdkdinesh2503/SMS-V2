@@ -56,7 +56,7 @@ export class StudentDashboardComponent implements OnInit {
         'May',
         'June',
         'July',
-        'Augest',
+        'August',
         'September',
         'October',
         'November',

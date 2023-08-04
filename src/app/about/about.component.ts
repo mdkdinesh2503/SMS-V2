@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { LoginService } from '../login.service';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-about',
@@ -8,7 +9,7 @@ import { LoginService } from '../login.service';
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-  constructor(private auth: AuthService, private service: LoginService) {
+  constructor(private auth: AuthService, private service: LoginService, private logger:NGXLogger) {
     this.displayDateAndTime;
   }
 
@@ -51,6 +52,7 @@ export class AboutComponent implements OnInit {
       },
       (error) => {
         this.auth.errorDisplay('HttpErrorResponse');
+        this.logger.error(this.auth.loggerAlert);
         this.display = true;
       }
     );

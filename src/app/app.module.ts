@@ -5,13 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { OrderModule } from 'ngx-order-pipe';
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './Navbar/Navbar.component';
 import { FooterComponent } from './Footer/Footer.component';
 import { HomeComponent } from './Home/Home.component';
 import { FrontpageComponent } from './FrontPage/FrontPage.component';
-import { AboutComponent } from './About/About.component';
+import { AboutComponent } from './About/about.component';
 import { BlogsComponent } from './Blogs/Blogs.component';
 import { ContactComponent } from './Contact/Contact.component';
 import { ServicesComponent } from './Services/Services.component';
@@ -110,7 +111,12 @@ import { StudentReviewComponent } from './StudentReview/StudentReview.component'
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    OrderModule
+    OrderModule,
+    LoggerModule.forRoot({
+      serverLoggingUrl: 'http://localhost:3000/',
+      level: NgxLoggerLevel.DEBUG,
+      serverLogLevel: NgxLoggerLevel.ERROR
+    }),
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

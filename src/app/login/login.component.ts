@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { UserService } from '../user.service';
 import { AuthService } from '../auth.service';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
     private route: Router,
     private fb: FormBuilder,
     private datepipe: DatePipe,
-    private auth: AuthService
+    private auth: AuthService,
+    private logger:NGXLogger
   ) {
     this.setNow();
   }
@@ -82,6 +84,7 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
         this.auth.errorDisplay('HttpErrorResponse');
+        this.logger.error(this.auth.loggerAlert);
         this.display = true;
       }
     );
@@ -219,9 +222,18 @@ export class LoginComponent implements OnInit {
         }
       });
     } else {
+
+      var alertMessage = {
+        USERNAME: un,
+        WARN:"Username or Password is Incorrect - Login Page",
+        DATE: this.date,
+        TIME: this.time,
+      };
+
       alert('Username or Password is Incorrect!');
       this.auth.storeAccessAdmin(false);
       this.auth.storeAccessStudent(false);
+      this.userService.loggerFiles(alertMessage).subscribe();
     }
   }
 

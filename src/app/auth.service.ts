@@ -8,6 +8,8 @@ import * as xlsx from 'xlsx';
 export class AuthService {
   constructor(private route: Router) {}
 
+  loggerAlert:String = "Error Occured while Retriving Values from DB.JSON";
+
   storeToken(token: string) {
     sessionStorage.setItem('USERNAME', token);
     return token;

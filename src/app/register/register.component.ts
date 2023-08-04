@@ -10,6 +10,7 @@ import { confirmPasswordValidator } from '../confirmpassword.validator';
 import { UserService } from '../user.service';
 import { AuthService } from '../auth.service';
 import { LoginService } from '../login.service';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +23,8 @@ export class RegisterComponent implements OnInit {
     private loginService: LoginService,
     private route: Router,
     private fb: FormBuilder,
-    private auth: AuthService
+    private auth: AuthService,
+    private logger: NGXLogger
   ) {}
 
   registerDetailsfromDatabase: any;
@@ -39,6 +41,7 @@ export class RegisterComponent implements OnInit {
       (error) => {
         // console.error('An HTTP error occurred:', error);
         this.auth.errorDisplay('HttpErrorResponse');
+        this.logger.error(this.auth.loggerAlert);
         this.display = true;
       }
     );
@@ -90,13 +93,14 @@ export class RegisterComponent implements OnInit {
       if (this.condition) {
         this.userService
           .addRegisters(this.registerReactiveForm.value)
-          .subscribe((data) => {
-            alert('Registered Successfull');
-            this.route.navigate(['/login']);
-          });
+          .subscribe();
+
+        alert('Registered Successfull');
+        this.route.navigate(['/login']);
+      }else {
+        window.location.reload();
       }
 
-      window.location.reload();
     }
   }
 }
