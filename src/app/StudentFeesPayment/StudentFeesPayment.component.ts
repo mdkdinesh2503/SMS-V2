@@ -36,11 +36,11 @@ export class StudentFeesPaymentComponent implements OnInit {
 
     this.auth.canAccessStudent();
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.studentRegisterNo = params['id'];
     });
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.stuentTotalAmount = params['register'];
     });
 

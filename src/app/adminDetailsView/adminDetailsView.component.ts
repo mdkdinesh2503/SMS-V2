@@ -70,11 +70,11 @@ export class AdminDetailsViewComponent implements OnInit {
 
     this.auth.canAccessAdmin();
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.values = params['id'];
     });
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.regFromDet = params['register'];
     });
 

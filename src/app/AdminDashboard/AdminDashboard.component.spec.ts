@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminDashboardComponent } from './AdminDashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+import { AdminNavbarComponent } from '../AdminNavbar/AdminNavbar.component';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 describe('AdminDashboardComponent', () => {
   let component: AdminDashboardComponent;
@@ -11,7 +15,9 @@ describe('AdminDashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminDashboardComponent ]
+      declarations: [ AdminDashboardComponent, AdminNavbarComponent],
+      providers:[DatePipe],
+      imports:[HttpClientModule, RouterOutlet, RouterLinkActive],
     })
     .compileComponents();
   }));

@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminRegisterEditComponent } from './AdminRegisterEdit.component';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger } from 'ngx-logger';
 
 describe('AdminRegisterEditComponent', () => {
   let component: AdminRegisterEditComponent;
@@ -11,7 +14,16 @@ describe('AdminRegisterEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminRegisterEditComponent ]
+      declarations: [ AdminRegisterEditComponent ],
+      imports:[HttpClientModule],
+      providers:[{
+        provide: ActivatedRoute,
+        useValue: {
+          snapshot: {
+            paramMap: convertToParamMap({ /* mock your route params here */ }),
+          },
+        },
+      }]
     })
     .compileComponents();
   }));
@@ -25,4 +37,18 @@ describe('AdminRegisterEditComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [AdminRegisterEditComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },
+    ],
+  }).compileComponents();
 });

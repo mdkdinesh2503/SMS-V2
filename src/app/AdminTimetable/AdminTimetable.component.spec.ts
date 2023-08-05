@@ -4,6 +4,11 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminTimetableComponent } from './AdminTimetable.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger } from 'ngx-logger';
+import { AdminNavbarComponent } from '../AdminNavbar/AdminNavbar.component';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AdminTimetableComponent', () => {
   let component: AdminTimetableComponent;
@@ -11,7 +16,8 @@ describe('AdminTimetableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminTimetableComponent ]
+      declarations: [ AdminTimetableComponent, AdminNavbarComponent ],
+      imports:[HttpClientModule, RouterOutlet, RouterLinkActive, FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   }));
@@ -25,4 +31,18 @@ describe('AdminTimetableComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [AdminTimetableComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },
+    ],
+  }).compileComponents();
 });

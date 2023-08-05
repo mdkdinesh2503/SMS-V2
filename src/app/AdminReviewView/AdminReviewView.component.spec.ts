@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminReviewViewComponent } from './AdminReviewView.component';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 describe('AdminRegisterEditComponent', () => {
   let component: AdminReviewViewComponent;
@@ -11,7 +14,16 @@ describe('AdminRegisterEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminReviewViewComponent ]
+      declarations: [ AdminReviewViewComponent ],
+      imports:[HttpClientModule, FormsModule],
+      providers:[{
+        provide: ActivatedRoute,
+        useValue: {
+          snapshot: {
+            paramMap: convertToParamMap({ /* mock your route params here */ }),
+          },
+        },
+      }]
     })
     .compileComponents();
   }));

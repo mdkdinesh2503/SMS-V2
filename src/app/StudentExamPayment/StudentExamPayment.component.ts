@@ -36,7 +36,7 @@ export class StudentExamPaymentComponent implements OnInit {
 
     this.auth.canAccessStudent();
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.studentRegisterNo = params['registerNumber'];
     });
 

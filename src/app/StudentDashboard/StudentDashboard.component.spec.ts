@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { StudentDashboardComponent } from './StudentDashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+import { StudentNavbarComponent } from '../StudentNavbar/StudentNavbar.component';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 describe('StudentDashboardComponent', () => {
   let component: StudentDashboardComponent;
@@ -11,7 +15,9 @@ describe('StudentDashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StudentDashboardComponent ]
+      declarations: [ StudentDashboardComponent, StudentNavbarComponent ],
+      imports:[HttpClientModule, RouterOutlet, RouterLinkActive],
+      providers:[DatePipe]
     })
     .compileComponents();
   }));

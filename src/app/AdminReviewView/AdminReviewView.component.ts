@@ -33,7 +33,7 @@ export class AdminReviewViewComponent implements OnInit {
   ngOnInit() {
     this.auth.canAccessAdmin();
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.register = params['id'];
     });
 

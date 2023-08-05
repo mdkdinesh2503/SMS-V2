@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { StudentResultsComponent } from './StudentResults.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StudentNavbarComponent } from '../StudentNavbar/StudentNavbar.component';
+import { SearchComponent } from '../Search/Search.component';
 
 describe('StudentResultsComponent', () => {
   let component: StudentResultsComponent;
@@ -11,7 +14,8 @@ describe('StudentResultsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StudentResultsComponent ]
+      declarations: [ StudentResultsComponent, StudentNavbarComponent, SearchComponent ],
+      imports:[HttpClientModule]
     })
     .compileComponents();
   }));

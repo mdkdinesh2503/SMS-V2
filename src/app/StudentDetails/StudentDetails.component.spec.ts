@@ -4,6 +4,12 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { StudentDetailsComponent } from './StudentDetails.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger } from 'ngx-logger';
+import { DatePipe } from '@angular/common';
+import { StudentNavbarComponent } from '../StudentNavbar/StudentNavbar.component';
+import { FormsModule } from '@angular/forms';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 describe('StudentDetailsComponent', () => {
   let component: StudentDetailsComponent;
@@ -11,7 +17,8 @@ describe('StudentDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StudentDetailsComponent ]
+      declarations: [ StudentDetailsComponent , StudentNavbarComponent],
+      imports:[HttpClientModule, FormsModule, RouterOutlet, RouterLinkActive]
     })
     .compileComponents();
   }));
@@ -25,4 +32,18 @@ describe('StudentDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [StudentDetailsComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },DatePipe
+    ],
+  }).compileComponents();
 });

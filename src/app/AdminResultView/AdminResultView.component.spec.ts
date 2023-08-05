@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminResultViewComponent } from './AdminResultView.component';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger } from 'ngx-logger';
 
 describe('AdminResultViewComponent', () => {
   let component: AdminResultViewComponent;
@@ -11,7 +14,16 @@ describe('AdminResultViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminResultViewComponent ]
+      declarations: [ AdminResultViewComponent ],
+      imports:[HttpClientModule],
+      providers:[{
+        provide: ActivatedRoute,
+        useValue: {
+          snapshot: {
+            paramMap: convertToParamMap({ /* mock your route params here */ }),
+          },
+        },
+      }]
     })
     .compileComponents();
   }));
@@ -25,4 +37,18 @@ describe('AdminResultViewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [AdminResultViewComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },
+    ],
+  }).compileComponents();
 });

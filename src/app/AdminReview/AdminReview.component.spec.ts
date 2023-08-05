@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminReviewComponent } from './AdminReview.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger } from 'ngx-logger';
+import { AdminNavbarComponent } from '../AdminNavbar/AdminNavbar.component';
+import { SearchComponent } from '../Search/Search.component';
 
 describe('AdminRegisterEditComponent', () => {
   let component: AdminReviewComponent;
@@ -11,7 +15,8 @@ describe('AdminRegisterEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminReviewComponent ]
+      declarations: [ AdminReviewComponent, AdminNavbarComponent, SearchComponent],
+      imports:[HttpClientModule]
     })
     .compileComponents();
   }));
@@ -25,4 +30,18 @@ describe('AdminRegisterEditComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [AdminReviewComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },
+    ],
+  }).compileComponents();
 });

@@ -33,11 +33,11 @@ export class AdminRegisterEditComponent implements OnInit {
 
     this.auth.canAccessAdmin();
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.values = params['id'];
     });
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.nameFromAdmin = params['name'];
     });
 

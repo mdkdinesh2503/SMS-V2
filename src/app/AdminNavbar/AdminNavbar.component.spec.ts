@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminNavbarComponent } from './AdminNavbar.component';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 describe('AdminNavbarComponent', () => {
   let component: AdminNavbarComponent;
@@ -11,7 +12,8 @@ describe('AdminNavbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminNavbarComponent ]
+      declarations: [ AdminNavbarComponent ],
+      imports:[RouterOutlet, RouterLinkActive]
     })
     .compileComponents();
   }));

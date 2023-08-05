@@ -1,33 +1,51 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
 import { AboutComponent } from './about.component';
 import { AuthService } from '../auth.service';
 import { LoginService } from '../login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger} from 'ngx-logger';
+import { NavbarComponent } from '../Navbar/Navbar.component';
+import { FooterComponent } from '../Footer/Footer.component';
+import { RouterOutlet } from '@angular/router';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
+  let authService: AuthService;
+  let loginService: LoginService;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AboutComponent ],
-      imports:[HttpClientModule],
-      providers: [  AuthService,LoginService],
-    })
-    .compileComponents();
-  }));
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [AboutComponent, NavbarComponent, FooterComponent],
+      imports:[HttpClientModule, RouterOutlet],
+      providers: [AuthService, LoginService]
+    }).compileComponents();
+    // mockLoginService
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    authService = TestBed.inject(AuthService);
+    loginService = TestBed.inject(LoginService);
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
+
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [AboutComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },
+    ],
+  }).compileComponents();
 });

@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { StudentFeesPaymentComponent } from './StudentFeesPayment.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger } from 'ngx-logger';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
 
 describe('StudentFeesPaymentComponent', () => {
   let component: StudentFeesPaymentComponent;
@@ -11,7 +14,16 @@ describe('StudentFeesPaymentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StudentFeesPaymentComponent ]
+      declarations: [ StudentFeesPaymentComponent ],
+      imports:[HttpClientModule],
+      providers:[{
+        provide: ActivatedRoute,
+        useValue: {
+          snapshot: {
+            paramMap: convertToParamMap({ /* mock your route params here */ }),
+          },
+        },
+      }]
     })
     .compileComponents();
   }));
@@ -25,4 +37,18 @@ describe('StudentFeesPaymentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [StudentFeesPaymentComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },
+    ],
+  }).compileComponents();
 });

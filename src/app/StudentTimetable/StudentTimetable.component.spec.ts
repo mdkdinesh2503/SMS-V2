@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { StudentTimetableComponent } from './StudentTimetable.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StudentNavbarComponent } from '../StudentNavbar/StudentNavbar.component';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 describe('StudentTimetableComponent', () => {
   let component: StudentTimetableComponent;
@@ -11,7 +14,8 @@ describe('StudentTimetableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StudentTimetableComponent ]
+      declarations: [ StudentTimetableComponent, StudentNavbarComponent ],
+      imports:[HttpClientModule, RouterOutlet, RouterLinkActive],
     })
     .compileComponents();
   }));

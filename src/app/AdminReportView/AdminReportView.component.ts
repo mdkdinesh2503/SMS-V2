@@ -35,7 +35,7 @@ export class AdminReportViewComponent implements OnInit {
 
     this.auth.canAccessAdmin();
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.values = params['id'];
     });
 

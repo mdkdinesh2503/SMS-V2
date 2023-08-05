@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { StudentNavbarComponent } from './StudentNavbar.component';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 describe('StudentNavbarComponent', () => {
   let component: StudentNavbarComponent;
@@ -11,7 +12,8 @@ describe('StudentNavbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StudentNavbarComponent ]
+      declarations: [ StudentNavbarComponent ],
+      imports:[RouterOutlet, RouterLinkActive]
     })
     .compileComponents();
   }));

@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { StudentProfileComponent } from './StudentProfile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger } from 'ngx-logger';
 
 describe('AdminRegisterEditComponent', () => {
   let component: StudentProfileComponent;
@@ -11,7 +13,8 @@ describe('AdminRegisterEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StudentProfileComponent ]
+      declarations: [ StudentProfileComponent ],
+      imports:[HttpClientModule]
     })
     .compileComponents();
   }));
@@ -25,4 +28,18 @@ describe('AdminRegisterEditComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [StudentProfileComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },
+    ],
+  }).compileComponents();
 });

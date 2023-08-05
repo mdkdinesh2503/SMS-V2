@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminFeesComponent } from './AdminFees.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminNavbarComponent } from '../AdminNavbar/AdminNavbar.component';
+import { SearchComponent } from '../Search/Search.component';
 
 describe('AdminFeesComponent', () => {
   let component: AdminFeesComponent;
@@ -11,7 +14,8 @@ describe('AdminFeesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminFeesComponent ]
+      declarations: [ AdminFeesComponent, AdminNavbarComponent, SearchComponent],
+      imports:[HttpClientModule],
     })
     .compileComponents();
   }));

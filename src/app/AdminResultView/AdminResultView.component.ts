@@ -41,11 +41,11 @@ export class AdminResultViewComponent implements OnInit {
 
     this.auth.canAccessAdmin();
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.values = params['id'];
     });
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.regFromRes = params['register'];
     });
 

@@ -39,7 +39,7 @@ export class StudentResultViewComponent implements OnInit {
 
     this.auth.canAccessStudent();
 
-    this.acRoute.params.subscribe((params) => {
+    this.acRoute.params?.subscribe((params) => {
       this.regFromRes = params['register'];
     });
 

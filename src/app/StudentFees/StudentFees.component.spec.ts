@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { StudentFeesComponent } from './StudentFees.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger } from 'ngx-logger';
+import { StudentNavbarComponent } from '../StudentNavbar/StudentNavbar.component';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 describe('StudentFeesComponent', () => {
   let component: StudentFeesComponent;
@@ -11,7 +15,8 @@ describe('StudentFeesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StudentFeesComponent ]
+      declarations: [ StudentFeesComponent, StudentNavbarComponent],
+      imports:[HttpClientModule, RouterOutlet, RouterLinkActive]
     })
     .compileComponents();
   }));
@@ -25,4 +30,18 @@ describe('StudentFeesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [StudentFeesComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },
+    ],
+  }).compileComponents();
 });

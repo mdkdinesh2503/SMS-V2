@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AdminRegisterListComponent } from './AdminRegisterList.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NGXLogger } from 'ngx-logger';
+import { AdminNavbarComponent } from '../AdminNavbar/AdminNavbar.component';
+import { SearchComponent } from '../Search/Search.component';
 
 describe('AdminRegisterListComponent', () => {
   let component: AdminRegisterListComponent;
@@ -11,7 +15,8 @@ describe('AdminRegisterListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminRegisterListComponent ]
+      declarations: [ AdminRegisterListComponent, AdminNavbarComponent, SearchComponent],
+      imports:[HttpClientModule],
     })
     .compileComponents();
   }));
@@ -25,4 +30,18 @@ describe('AdminRegisterListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+});
+
+beforeEach(async () => {
+  await TestBed.configureTestingModule({
+    declarations: [AdminRegisterListComponent],
+    providers: [
+      {
+        provide: NGXLogger,
+        useValue: {
+          // Create a mock of NGXLogger if needed
+        },
+      },
+    ],
+  }).compileComponents();
 });
