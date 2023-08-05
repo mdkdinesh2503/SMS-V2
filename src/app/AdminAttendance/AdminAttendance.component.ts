@@ -16,10 +16,7 @@ export class AdminAttendanceComponent implements OnInit {
     private auth: AuthService,
     private route:Router
   ) {
-    this.countPresent();
   }
-
-  countPresent() {}
 
   value: number = 0;
   loginUserName: any = this.auth.displayToken();

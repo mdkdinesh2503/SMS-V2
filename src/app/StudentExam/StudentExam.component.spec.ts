@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
 import { StudentNavbarComponent } from '../StudentNavbar/StudentNavbar.component';
 import { RouterLinkActive, RouterOutlet } from '@angular/router';
+import { OrderModule } from 'ngx-order-pipe';
 
 describe('StudentExamComponent', () => {
   let component: StudentExamComponent;
@@ -16,7 +17,7 @@ describe('StudentExamComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ StudentExamComponent , StudentNavbarComponent],
-      imports:[HttpClientModule, RouterOutlet, RouterLinkActive]
+      imports:[HttpClientModule, RouterOutlet, RouterLinkActive, OrderModule]
     })
     .compileComponents();
   }));

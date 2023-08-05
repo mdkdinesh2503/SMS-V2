@@ -7,7 +7,8 @@ import { AdminExamComponent } from './AdminExam.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
 import { AdminNavbarComponent } from '../AdminNavbar/AdminNavbar.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
+import { OrderModule } from 'ngx-order-pipe';
 
 describe('AdminExamComponent', () => {
   let component: AdminExamComponent;
@@ -16,7 +17,7 @@ describe('AdminExamComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AdminExamComponent, AdminNavbarComponent ],
-      imports:[HttpClientModule, RouterOutlet],
+      imports:[HttpClientModule, RouterOutlet, OrderModule, RouterLinkActive],
     })
     .compileComponents();
   }));

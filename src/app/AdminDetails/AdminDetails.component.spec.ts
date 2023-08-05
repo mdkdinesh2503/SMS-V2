@@ -8,6 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
 import { AdminNavbarComponent } from '../AdminNavbar/AdminNavbar.component';
 import { SearchComponent } from '../Search/Search.component';
+import { OrderModule } from 'ngx-order-pipe';
+import { RouterLinkActive, RouterOutlet } from '@angular/router';
+import { FormsModule, NgModel } from '@angular/forms';
 
 describe('AdminDetailsComponent', () => {
   let component: AdminDetailsComponent;
@@ -15,8 +18,8 @@ describe('AdminDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminDetailsComponent, AdminNavbarComponent, SearchComponent ],
-      imports:[HttpClientModule],
+      declarations: [ AdminDetailsComponent, AdminNavbarComponent, SearchComponent, NgModel],
+      imports:[HttpClientModule, OrderModule, RouterOutlet, RouterLinkActive, FormsModule],
     })
     .compileComponents();
   }));

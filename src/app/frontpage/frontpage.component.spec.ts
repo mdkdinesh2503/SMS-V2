@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { FrontpageComponent } from './FrontPage.component';
+import { ActivatedRoute, convertToParamMap, RouterLink } from '@angular/router';
 
 describe('FrontpageComponent', () => {
   let component: FrontpageComponent;
@@ -11,7 +12,16 @@ describe('FrontpageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FrontpageComponent ]
+      declarations: [ FrontpageComponent ],
+      imports:[RouterLink],
+      providers:[{
+        provide: ActivatedRoute,
+        useValue: {
+          snapshot: {
+            paramMap: convertToParamMap({ /* mock your route params here */ }),
+          },
+        },
+      }]
     })
     .compileComponents();
   }));
