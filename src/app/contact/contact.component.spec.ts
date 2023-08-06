@@ -9,7 +9,7 @@ import { FooterComponent } from '../Footer/Footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
 import { RouterLinkActive, RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -18,7 +18,7 @@ describe('ContactComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ContactComponent, NavbarComponent, FooterComponent],
-      imports:[HttpClientModule, RouterOutlet, RouterLinkActive, FormsModule]
+      imports:[HttpClientModule, RouterOutlet, RouterLinkActive, FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   }));

@@ -9,7 +9,7 @@ import { FooterComponent } from '../Footer/Footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
 import { RouterLinkActive, RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('CoursesComponent', () => {
   let component: CoursesComponent;
@@ -18,7 +18,7 @@ describe('CoursesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CoursesComponent, NavbarComponent, FooterComponent ],
-      imports:[HttpClientModule, RouterOutlet, RouterLinkActive, FormsModule]
+      imports:[HttpClientModule, RouterOutlet, RouterLinkActive, FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   }));

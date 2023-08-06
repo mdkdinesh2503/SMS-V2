@@ -6,7 +6,7 @@ import { DebugElement } from '@angular/core';
 import { RegisterComponent } from './Register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
@@ -15,7 +15,7 @@ describe('RegisterComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RegisterComponent ],
-      imports:[HttpClientModule]
+      imports:[HttpClientModule, ReactiveFormsModule]
     })
     .compileComponents();
   }));

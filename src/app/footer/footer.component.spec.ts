@@ -6,7 +6,7 @@ import { DebugElement } from '@angular/core';
 import { FooterComponent } from './Footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -15,7 +15,7 @@ describe('FooterComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ FooterComponent ],
-      imports:[HttpClientModule, FormsModule]
+      imports:[HttpClientModule, FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   }));

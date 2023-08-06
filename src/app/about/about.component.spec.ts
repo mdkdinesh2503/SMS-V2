@@ -7,6 +7,7 @@ import { NGXLogger} from 'ngx-logger';
 import { NavbarComponent } from '../Navbar/Navbar.component';
 import { FooterComponent } from '../Footer/Footer.component';
 import { RouterOutlet } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
@@ -17,7 +18,7 @@ describe('AboutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AboutComponent, NavbarComponent, FooterComponent],
-      imports:[HttpClientModule, RouterOutlet],
+      imports:[HttpClientModule, RouterOutlet, ReactiveFormsModule],
       providers: [AuthService, LoginService]
     }).compileComponents();
     // mockLoginService
