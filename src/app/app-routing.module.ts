@@ -58,7 +58,7 @@ const routes: Routes = [
   { path: 'admindashboard', component: AdminDashboardComponent, title: "A D M I N - D A S H B O A R D"},
   { path: 'admindetails', component: AdminDetailsComponent, title: "A D M I N - D E T A I L S"},
   { path: 'adminattendance', component: AdminAttendanceComponent, title: "A D M I N - A T T E N D A N C E "},
-  { path: 'Adminexam', component: AdminExamComponent, title: "A D M I N - E X A M"},
+  { path: 'adminexam', component: AdminExamComponent, title: "A D M I N - E X A M"},
   { path: 'adminfees', component: AdminFeesComponent, title: "A D M I N - F E E S"},
   { path: 'adminregisterlist', component: AdminRegisterListComponent, title: "A D M I N - R E G I S T E R - L I S T"},
   { path: 'adminreports', component: AdminReportsComponent, title: "A D M I N - R E P O R T S"},
