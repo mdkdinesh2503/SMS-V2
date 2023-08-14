@@ -88,6 +88,7 @@ const routes: Routes = [
 
   { path: 'construction', component: NotuploadedComponent, title: "C O N S T R U C T I O N"},
   { path: '**', component: PageErrorComponent, title: "P A G E - N O T - F O U N D"},
+  { path: 'pageError', component: PageErrorComponent, title: "P A G E - N O T - F O U N D"},
 ];
 
 @NgModule({

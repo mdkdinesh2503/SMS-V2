@@ -1,5 +1,5 @@
 export const environment = {
-  maintanence: true,
+  maintanence: false,
 
   registerUrl:"http://localhost:3000/Registers",
   adminListUrl: "http://localhost:3000/AdminList",
