@@ -3,9 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ServicesComponent } from './Services.component';
-import { NavbarComponent } from '../Navbar/Navbar.component';
-import { FooterComponent } from '../Footer/Footer.component';
+import { ServicesComponent } from './services.component';
+import { NavbarComponent } from '../Navbar/navbar.component';
+import { FooterComponent } from '../Footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
 import { RouterLinkActive, RouterOutlet } from '@angular/router';

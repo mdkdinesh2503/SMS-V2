@@ -3,10 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { StudentExamComponent } from './StudentExam.component';
+import { StudentExamComponent } from './studentExam.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
-import { StudentNavbarComponent } from '../StudentNavbar/StudentNavbar.component';
+import { StudentNavbarComponent } from '../StudentNavbar/studentNavbar.component';
 import { RouterLinkActive, RouterOutlet } from '@angular/router';
 import { OrderModule } from 'ngx-order-pipe';
 

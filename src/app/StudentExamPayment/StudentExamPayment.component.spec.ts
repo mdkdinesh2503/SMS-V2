@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { StudentExamPaymentComponent } from './StudentExamPayment.component';
+import { StudentExamPaymentComponent } from './studentExamPayment.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';

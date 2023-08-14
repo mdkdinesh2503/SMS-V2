@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  maintanence: true,
 
   registerUrl:"http://localhost:3000/Registers",
   adminListUrl: "http://localhost:3000/AdminList",
@@ -25,5 +25,5 @@ export const environment = {
     updateMessage : 'Your Values are Updated and Changed Successfully',
     level: 'INFO',
   }
-  
+
 };

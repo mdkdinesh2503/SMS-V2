@@ -3,10 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { StudentFeesComponent } from './StudentFees.component';
+import { StudentFeesComponent } from './studentFees.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
-import { StudentNavbarComponent } from '../StudentNavbar/StudentNavbar.component';
+import { StudentNavbarComponent } from '../StudentNavbar/studentNavbar.component';
 import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 describe('StudentFeesComponent', () => {

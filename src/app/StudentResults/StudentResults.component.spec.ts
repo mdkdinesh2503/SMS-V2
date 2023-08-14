@@ -3,10 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { StudentResultsComponent } from './StudentResults.component';
+import { StudentResultsComponent } from './studentResults.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StudentNavbarComponent } from '../StudentNavbar/StudentNavbar.component';
-import { SearchComponent } from '../Search/Search.component';
+import { StudentNavbarComponent } from '../StudentNavbar/studentNavbar.component';
+import { SearchComponent } from '../Search/search.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule, NgModel } from '@angular/forms';

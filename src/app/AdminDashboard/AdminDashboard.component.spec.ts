@@ -3,10 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AdminDashboardComponent } from './AdminDashboard.component';
+import { AdminDashboardComponent } from './adminDashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-import { AdminNavbarComponent } from '../AdminNavbar/AdminNavbar.component';
+import { AdminNavbarComponent } from '../AdminNavbar/adminNavbar.component';
 import { RouterLinkActive, RouterOutlet } from '@angular/router';
 
 describe('AdminDashboardComponent', () => {

@@ -3,11 +3,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AdminResultsComponent } from './AdminResults.component';
+import { AdminResultsComponent } from './adminResults.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
-import { AdminNavbarComponent } from '../AdminNavbar/AdminNavbar.component';
-import { SearchComponent } from '../Search/Search.component';
+import { AdminNavbarComponent } from '../AdminNavbar/adminNavbar.component';
+import { SearchComponent } from '../Search/search.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';

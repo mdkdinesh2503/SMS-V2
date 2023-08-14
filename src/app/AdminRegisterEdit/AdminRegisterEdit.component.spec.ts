@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AdminRegisterEditComponent } from './AdminRegisterEdit.component';
+import { AdminRegisterEditComponent } from './adminRegisterEdit.component';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NGXLogger } from 'ngx-logger';
